@@ -48,7 +48,5 @@
             </form>          
         </div>
     
-        <h1>PROBANDO GIT HAY QUE BORRARLO</h1>
-        <h2>aca segui haciendo otro cambio</h2>
 </body>
 </html>
