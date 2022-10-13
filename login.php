@@ -13,11 +13,12 @@
         </div>
            <!-- Envio de datos seguro -->
         <div class="login-content">
-            <!-- Formulario-->
+            <!-- Formulario-metodo de envio-->
             <form method="post" action="">
                <!-- imagen de avatar -->
                 <img src="">
                 <h2>Bienvenido</h2>
+                <!--llamar controlador-->
                 <?php
                 include "modelo/conexion.php";
                 include "Controlador/controlador_login.php";
