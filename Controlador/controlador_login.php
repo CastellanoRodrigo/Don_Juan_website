@@ -14,7 +14,8 @@ if(!empty($_POST["btningresar"])) {
         $_SESSION["nombre"]=$datos->nombre;
         $_SESSION["apellido"]=$datos->apellido;
         $_SESSION["tipo_usuario"]=$datos->tipo_usuario;
-        header("location: inicio.php");          
+        /* header("location: inicio.php"); */  
+        header("location: inicio.php");     
        }else{
         echo "<div class='alert alert-danger'>Acceso denegado</div>";
     }
