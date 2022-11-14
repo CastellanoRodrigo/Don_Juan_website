@@ -10,7 +10,7 @@
             <body>
                 <section class="home">
                     <div class="BarraNavegacion">
-                        <h1> CAMPO DON JUAN S.R.L.</h1>
+                        <h1> G.A.F.A </h1>
                         <div>
                             <img src="imagenes/Gafa.jpg">
                         </div>     

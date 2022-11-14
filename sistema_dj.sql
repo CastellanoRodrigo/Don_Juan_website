@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2022 a las 19:12:02
+-- Tiempo de generación: 14-11-2022 a las 21:07:05
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -151,26 +151,17 @@ INSERT INTO `detallecampaña` (`Id_DetalleCampaña`, `Id_Campaña`, `Id_Compra`,
 
 CREATE TABLE `estado_parcela` (
   `Id_EstadoParcela` int(20) NOT NULL,
-  `Estado` varchar(25) NOT NULL,
-  `Id_Parcela` int(20) NOT NULL
+  `Estado` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `estado_parcela`
 --
 
-INSERT INTO `estado_parcela` (`Id_EstadoParcela`, `Estado`, `Id_Parcela`) VALUES
-(1, 'Libre', 1),
-(2, 'Ocupacion Parcial', 2),
-(3, 'Ocupacion Completa', 3),
-(1, 'Libre', 4),
-(2, 'Ocupacion Parcial', 5),
-(3, 'Ocupacion Completa', 6),
-(1, 'Libre', 7),
-(2, 'Ocupacion Parcial', 8),
-(1, 'Libre', 9),
-(2, 'Ocupacion Parcial', 10),
-(3, 'Ocupacion Completa', 11);
+INSERT INTO `estado_parcela` (`Id_EstadoParcela`, `Estado`) VALUES
+(1, 'Libre'),
+(2, 'Ocupacion Parcial'),
+(3, 'Ocupacion Completa');
 
 -- --------------------------------------------------------
 
@@ -217,24 +208,25 @@ INSERT INTO `historial_estado` (`Id_Historial_Estado`, `Estado`) VALUES
 
 CREATE TABLE `parcela` (
   `Id_Parcela` int(11) NOT NULL,
-  `CantidadHectareas` int(11) NOT NULL
+  `CantidadHectareas` int(11) NOT NULL,
+  `Id_EstadoParcela` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `parcela`
 --
 
-INSERT INTO `parcela` (`Id_Parcela`, `CantidadHectareas`) VALUES
-(1, 43),
-(2, 90),
-(3, 100),
-(4, 70),
-(5, 100),
-(6, 70),
-(8, 35),
-(9, 65),
-(10, 95),
-(11, 30);
+INSERT INTO `parcela` (`Id_Parcela`, `CantidadHectareas`, `Id_EstadoParcela`) VALUES
+(1, 43, 0),
+(2, 90, 0),
+(3, 100, 0),
+(4, 70, 0),
+(5, 100, 0),
+(6, 70, 0),
+(8, 35, 0),
+(9, 65, 0),
+(10, 95, 0),
+(11, 30, 0);
 
 -- --------------------------------------------------------
 
