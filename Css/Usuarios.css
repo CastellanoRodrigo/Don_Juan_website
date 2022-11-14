@@ -1,9 +1,6 @@
 body{
     margin: 0px;
     padding: 0px;
-    font-family: 'Poppins', sans-serif;
-    align-items: center;
-    text-align: center;
 }
 
 /*Con esta clase nos permite personalizar el fondo*/
@@ -98,7 +95,7 @@ body{
 }
 
 .ImagenParcela{
-    background-image: url("../../imagenes/Campo.jpg");
+    background-image: url("../../imagenes/Ususarios.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -216,6 +213,7 @@ body{
     background-color: rgba(0, 0, 0, .5); 
 }
 
+
 /* ------   Estilos de las parcelas ------ */
 /* Esta linea trae de internet el tipo de letra*/
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
@@ -225,87 +223,15 @@ body{
   box-sizing: border-box;
 }
 
-table{
-    text-align: left;
-    align-items: left;
-}
-
 /* Esto nos permite dar estilo a todo lo que este en Body*/
-/* body {
+body {
   background-color: #edeef6;
   font-family: 'Poppins', sans-serif;
   align-items: center;
   text-align: center;
 }
-*/
-/* Esto nos permite dar estilo a los botones*/
-
-table button {
-    background-color: #47a386;
-    border: 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    font-size: 14px;
-    padding: 50px 30px;
-  }
 
 /* Esto nos permite que al pasar con el mouse cambie de color*/
-table button:hover, table button:active{
+button:hover, button:active{
     background-color: black;
-}
-
-
-/* Esto nos permite dar el formato de la Ventana Modal (Popup) dentro de la pagina*/
-.modal-container {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.3);
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  pointer-events: none;
-  /* El Popup esta presente en la pagina, pero con Opacity lo oculta*/
-  opacity: 0;  
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  transition: opacity 0.3s ease;
-}
-
-/* Esto nos permite que al hacer click muestre el Popup*/
-.show {
-  pointer-events: auto;
-  opacity: 1;
-}
-
-/* Esto nos permite dar estilo dentro del Popup*/
-.modal {
-  background-color: #fff;
-  width: 600px;
-  max-width: 100%;
-  padding: 30px 50px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-.modal h1 {
-  margin: 0;
-}
-
-.modal p {
-  opacity: 0.7;
-  font-size: 14px;
-}
-
-/* Esto nos permite dar el mismo estilo del Popup a la pagina de "DescripcionParcelas.html"*/
-.Parrafo {
-    background-color: #fff;
-  width: 600px;
-  max-width: 100%;
-  padding: 30px 50px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
 }
