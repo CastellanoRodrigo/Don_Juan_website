@@ -61,7 +61,7 @@ if (empty($_SESSION["id"])) {
                             <button id="close">Cerrar</button>
                         </div>
                     </div> 
-                    <script src="JavaScript.js"></script>           
+                    <script src="../JavaScript/Popup.js"></script>           
                 <button class="BotonModificar"> MODIFICAR CAMPAÑA </button>
                 <button class="BotonEliminar"> ELIMINAR CAMPAÑA </button>
             </div>
