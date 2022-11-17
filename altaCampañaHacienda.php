@@ -77,7 +77,7 @@ include "modelo/conexion.php";
      <form method="post">		
 		 <select name="cmbEstado" size="1"style="width: 120px; height: 28px">
                             <option value="0" selected="selected">Asignar Estado</option>
-                            <option value="Inciciado">Iniciado</option>
+                            <option value="Iniciado">Iniciado</option>
                             <option value="Finalizado">Finalizado</option>                           
     </select>
                   

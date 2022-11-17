@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2022 a las 21:13:47
+-- Tiempo de generación: 17-11-2022 a las 21:48:09
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -55,7 +55,7 @@ CREATE TABLE `campañahacienda` (
 --
 
 INSERT INTO `campañahacienda` (`Id_CampañaHacienda`, `Id_Parcela`, `NombreCampaña`, `Id_DetalleHacienda`, `Estado`) VALUES
-(1, 4, 'Aberdinangus', 1, 'Inciciado');
+(1, 8, 'Aberdinangus', 1, 'Iniciado');
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,8 @@ CREATE TABLE `campañasiembra` (
 --
 
 INSERT INTO `campañasiembra` (`Id_CampañaSiembra`, `Id_Parcela`, `NombreCampaña`, `Id_DetalleSiembra`, `Estado`) VALUES
-(1, 5, 'Cosecha Gruesa Maiz 2023', 1, 'Iniciada');
+(1, 5, 'Cosecha Gruesa Maiz 2023', 1, 'Iniciado'),
+(0, 0, '', 0, '0');
 
 -- --------------------------------------------------------
 
