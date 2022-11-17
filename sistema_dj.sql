@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2022 a las 19:58:54
+-- Tiempo de generación: 17-11-2022 a las 21:13:47
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -43,12 +43,19 @@ CREATE TABLE `alquiler` (
 --
 
 CREATE TABLE `campañahacienda` (
-  `Id_Campaña` int(20) NOT NULL,
+  `Id_CampañaHacienda` int(20) NOT NULL,
   `Id_Parcela` int(20) NOT NULL,
   `NombreCampaña` varchar(25) NOT NULL,
   `Id_DetalleHacienda` int(20) NOT NULL,
   `Estado` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `campañahacienda`
+--
+
+INSERT INTO `campañahacienda` (`Id_CampañaHacienda`, `Id_Parcela`, `NombreCampaña`, `Id_DetalleHacienda`, `Estado`) VALUES
+(1, 4, 'Aberdinangus', 1, 'Inciciado');
 
 -- --------------------------------------------------------
 
@@ -138,7 +145,7 @@ CREATE TABLE `compras` (
 
 CREATE TABLE `detallecampañahacienda` (
   `Id_DetalleHacienda` int(20) NOT NULL,
-  `Id_Campaña` int(20) NOT NULL,
+  `Id_CampañaHacienda` int(20) NOT NULL,
   `FechaInicio` date NOT NULL,
   `FechaCierre` date NOT NULL,
   `CantidadHectareas` int(20) NOT NULL,
@@ -156,7 +163,7 @@ CREATE TABLE `detallecampañahacienda` (
 
 CREATE TABLE `detallecampañasiembra` (
   `Id_DetalleSiembra` int(20) NOT NULL,
-  `Id_Campaña` int(20) NOT NULL,
+  `Id_CampañaSiembra` int(20) NOT NULL,
   `FechaInicio` date NOT NULL,
   `FechaCierre` date NOT NULL,
   `CantidadHectareas` int(20) NOT NULL,
