@@ -69,11 +69,11 @@ if (empty($_SESSION["id"])) {
             <div>
                 <table align="center">
                     <tr>
-                        <th><a><button id="open"> Parcela 1 </button></a></th>
-                        <th><a href="DescripcionParcelas.html" target="_blank"><button id="open"> Parcela 2 </button></a></th>
+                        <th><a href="CargaCampaña.php"><button id="open"> Parcela 1 </button></a></th>
+                        <th><a href="CargaCampaña.php" target="_blank"><button id="open"> Parcela 2 </button></a></th>
                     </tr>
                     <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 3 </button></a></th>
+                        <th><a href="CargaCampaña.php"><button id="open"> Parcela 3 </button></a></th>
                         <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 4 </button></a></th>
                     </tr>
                     <tr>
