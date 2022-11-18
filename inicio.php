@@ -31,9 +31,9 @@ if (empty($_SESSION["id"])) {
         <div class="BarraNavegacion">
             <img src="imagenes/Gafa.jpg">
             <nav>
-                <a href="*"> Inicio </a>             
-                <a href="*"> Consultas </a>
-                <a href="*"> Usuarios </a>
+                <a href="inicio.php"> Inicio </a>             
+                <a href="Consultas.php"> Consultas </a>
+                <a href="Usuarios.php"> Usuarios </a>
             </nav>
             <div>
                 <button class="BotonSalir" href="controlador/controlador_cerrar_session.php"> Salir </button>
@@ -98,7 +98,7 @@ if (empty($_SESSION["id"])) {
             <h1>INFORMACION DE LAS PARCELAS</h1>
         </div>
         <section class="BarraInferior">
-            <h1>Nosotros</h1>
+            <a href="Nosotros.php">Nosotros</a>
         </section>
     </section>
     

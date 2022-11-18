@@ -12,9 +12,9 @@
         <div class="BarraNavegacion">
             <img src="imagenes/Gafa.jpg">
             <nav>
-                <a href="*"> Inicio </a>             
-                <a href="*"> Consultas </a>
-                <a href="*"> Usuarios </a>
+                <a href="inicio.php"> Inicio </a>             
+                <a href="Consultas.php"> Consultas </a>
+                <a href="Usuarios.php"> Usuarios </a>
             </nav>
             <div>
                 <button class="BotonSalir"> Salir </button>
@@ -32,7 +32,7 @@
         <div>IMAGEN NUESTRA</div>
     </section>
     <section class="BarraInferior">
-        <h1>Nosotros</h1>
+        <a href="Nosotros.php">Nosotros</a>
     </section>
 </body>
 </html>

@@ -205,7 +205,7 @@ body{
 
 /*Aca definimos un DIV para que no afecte el diseño de la Barra de navegacion*/
 .Espacio{
-    height: 125px;
+    height: 115px;
 }
 
 /*Esto le da un filtro a la imagen de parcelas*/
