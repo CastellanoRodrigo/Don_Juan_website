@@ -36,14 +36,6 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 264px">
-   ID del detalle de la campaña:</td>
-   <td style="width: 366px">
-    
-		 <input name="txtIdDetalle" type="text" style="height: 30px; width: 127px" />
-	 </td>
- </tr>
- <tr>
   <td style="width: 264px; height: 69px;">
    Parcelas involucradas:</td>
    <td style="width: 366px; height: 69px;">
@@ -108,7 +100,7 @@ include "modelo/conexion.php";
      $idcamp=$_POST['txtId'];
      $parcela=$_POST['cmbparcela'];
      $nombre=$_POST['txtNombre']; 
-     $iddetalle=$_POST['txtIdDetalle'];
+     //$iddetalle=$_POST['txtIdDetalle'];
      $estado=$_POST['cmbEstado'];
 
      // Cadena que controla si hay una campaña creada con ese Id
@@ -119,7 +111,7 @@ include "modelo/conexion.php";
       $c=$re->num_rows; 
       if ( $c==0)
      {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO campañahacienda(Id_CampañaHacienda, Id_Parcela, NombreCampaña, Id_DetalleHacienda, Estado) VALUES ('$idcamp','$parcela','$nombre','$iddetalle','$estado')";
+        $cad = "INSERT INTO campañahacienda(Id_CampañaHacienda, Id_Parcela, NombreCampaña, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
