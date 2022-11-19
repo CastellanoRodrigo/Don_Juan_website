@@ -2,7 +2,7 @@
 include('./template/cabecera.php');?>
 
 <title>Inicio</title>
-
+        
         <section>
             <div class="Espacio"></div>
             <div class="Cover2">
@@ -63,5 +63,5 @@ include('./template/cabecera.php');?>
         </div>
 
         <?php #Llammo a pie 
-        include('./template/pie.php');?>
+include('./template/pie.php');?>
  
