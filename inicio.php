@@ -12,7 +12,8 @@ include('./template/cabecera.php');?>
             </div>
         </section>
         <div>
-            <div>               
+            <div>  
+                <!-- Onclick= nos lleva al formulario de carga -->             
                 <button class="BotonAñadir" id="open" onclick="location.href='altaCampañaHacienda.php'"> AÑADIR CAMPAÑA DE HACIENDA</button>
                 <button class="BotonAñadir2" id="open" onclick="location.href='altaCampañaSiembra.php'"> AÑADIR CAMPAÑA DE SIEMBRA</button>
                     <!-- <div id="modal_container" class="modal-container">
