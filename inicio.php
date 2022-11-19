@@ -13,11 +13,12 @@ include('./template/cabecera.php');?>
         </section>
         <div>
             <div>               
-                <button class="BotonAñadir" id="open"> AÑADIR CAMPAÑA DE HACIENDA</button>
-                <button class="BotonAñadir2" id="open"> AÑADIR CAMPAÑA DE SIEMBRA</button>
-                    <div id="modal_container" class="modal-container">
-                       <!-- Comente este codigo porque nunca funciono,
-                            No como vos maty q ue me cagaste el nombre de la persona que estaba logueada, forro entabacado de mierda espero me leas xD
+                <button class="BotonAñadir" id="open" onclick="location.href='altaCampañaHacienda.php'"> AÑADIR CAMPAÑA DE HACIENDA</button>
+                <button class="BotonAñadir2" id="open" onclick="location.href='altaCampañaSiembra.php'"> AÑADIR CAMPAÑA DE SIEMBRA</button>
+                    <!-- <div id="modal_container" class="modal-container">
+
+---  Comente este codigo porque nunca funciono,
+                            No como vos maty que me cagaste el nombre de la persona que estaba logueada, forro entabacado de mierda espero me leas xD ---
 
 
                             <div class="modal">
@@ -29,9 +30,9 @@ include('./template/cabecera.php');?>
                             <p> Rendimiento especulado: 360 Tons. </p>
                             <button id="close">Cerrar</button>
                         </div>
-                        -->
+                        
                     </div> 
-                    <script src="../JavaScript/Popup.js"></script>           
+                    <script src="../JavaScript/Popup.js"></script>     -->      
                 <button class="BotonModificar"> MODIFICAR CAMPAÑA </button>
                 <button class="BotonEliminar"> ELIMINAR CAMPAÑA </button>
             </div>
