@@ -130,13 +130,27 @@ body{
 
 /*  --- Estilos de Botones de campaña ---  */
 .BotonAñadir{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: list-item;
     width: 280px;
     height: 45px;
     left: 25px;
     top: 441px;
     background: #8BFF63;
+    border-radius: 50px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.BotonAñadir2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: list-item;
+    width: 280px;
+    height: 45px;
+    left: 25px;
+    top: 441px;
+    background: #63b4ff;
     border-radius: 50px;
     margin: 10px;
     cursor: pointer;
