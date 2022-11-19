@@ -38,3 +38,6 @@ if (empty($_SESSION["id"])) {
             <div>
                 <button class="BotonSalir" href="controlador/controlador_cerrar_session.php"> Salir </button>
             </div>
+
+           
+        

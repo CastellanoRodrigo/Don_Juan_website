@@ -1,12 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/cabecera.php');?>
 
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Detalles campañas Siembra</title>
-
-</head>
-
+<!-- Body -->
 <body>
   <!--llamar controlador-->
 <?php
@@ -180,5 +176,5 @@ include "modelo/conexion.php";
 }
 ?>
 
-</body>
-</html>
+<?php #Llammo a pie 
+include('./template/pie.php');?>

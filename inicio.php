@@ -1,5 +1,8 @@
+<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/cabecera.php');?>
+
 <title>Inicio</title>
-        </div>
+
         <section>
             <div class="Espacio"></div>
             <div class="Cover2">
@@ -58,4 +61,7 @@
         <div>
             <h1>INFORMACION DE LAS PARCELAS</h1>
         </div>
+
+        <?php #Llammo a pie 
+        include('./template/pie.php');?>
  

@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="Css/CargaCampaña.css">
+<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/cabecera.php');?>
+
     <title>Carga de Campaña</title>
-</head>
+ <!-- Body -->
 <body>
 <section class="home">
         <div class="BarraNavegacion">
@@ -148,7 +144,6 @@
 
     </section>
     <section class="BarraInferior">
-        <a href="Nosotros.php">Nosotros</a>
-    </section>
-</body>
-</html>
+
+<?php #Llammo a pie 
+include('./template/pie.php');?>
