@@ -9,6 +9,10 @@ include('./template/cabecera.php');?>
 include "modelo/conexion.php";
 // include "Controlador/controlador_login.php";
 ?>
+<br>
+<br>
+<br>
+<br>
 <center>
 <h2>Dar de alta nueva campaña de Siembra:</h2>
 </center>
