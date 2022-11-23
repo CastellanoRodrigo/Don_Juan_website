@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2022 a las 01:35:07
+-- Tiempo de generación: 23-11-2022 a las 22:01:06
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -118,7 +118,7 @@ CREATE TABLE `detalleinicialhacienda` (
 
 INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Categoria`, `InversionInicial`) VALUES
 (1, 1, '2022-11-19', '2024-01-05', 45, 50, 'Novillo', '350000'),
-(2, 0, '2022-11-22', '2024-06-15', 50, 25, 'Novillo', '66666666');
+(2, 2, '2022-11-22', '2024-06-15', 50, 25, 'Vaca', '66666666');
 
 -- --------------------------------------------------------
 
@@ -270,7 +270,6 @@ CREATE TABLE `proyectosiembra` (
 
 INSERT INTO `proyectosiembra` (`Id_ProyectoSiembra`, `Id_Parcela`, `NombreProyecto`, `Estado`) VALUES
 (1, 5, 'Cosecha Gruesa Maiz 2023', 'Iniciado'),
-(0, 0, '', '0'),
 (2, 1, 'Alfalfa 2023', 'Iniciado');
 
 -- --------------------------------------------------------
