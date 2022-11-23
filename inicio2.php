@@ -19,8 +19,8 @@ include('./template/cabecera.php');?>
                     <!-- <div id="modal_container" class="modal-container">
 
 ---  Comente este codigo porque nunca funciono,
-                            No como vos maty que me cagaste el nombre de la persona que estaba logueada, forro entabacado de mierda espero me leas xD ---
-
+                            No como vos maty que me cagaste el nombre de la persona que estaba logueada, forro entabacado de mierda espero me leas xD 
+                            JAJAJAJAJAJAJJA YO SI LO LEI- hernan ------
 
                             <div class="modal">
                             <h1>Descripcion de Parcela 1</h1>
@@ -50,18 +50,18 @@ include('./template/cabecera.php');?>
                     </tr>
                     <tr>
                         <th><a href="parcela5.php"><button id="open"> Parcela 5 </button></a></th>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 6 </button></a></th>
+                        <th><a href="parcela6.php"><button id="open"> Parcela 6 </button></a></th>
                     </tr>
                     <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 7 </button></a></th>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 8 </button></a></th>
+                        <th><a href="parcela7.php"><button id="open"> Parcela 7 </button></a></th>
+                        <th><a href="parcela8.php"><button id="open"> Parcela 8 </button></a></th>
                     </tr>
                     <tr>
                         <th><a href="parcela9.php"><button id="open"> Parcela 9 </button></a></th>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 10 </button></a></th>
+                        <th><a href="parcela10.php"><button id="open"> Parcela 10 </button></a></th>
                     </tr>
                     <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 11</button></a></th>
+                        <th><a href="parcela11"><button id="open"> Parcela 11</button></a></th>
                     </tr>
                 </table>
             </div>

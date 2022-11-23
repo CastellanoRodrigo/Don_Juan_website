@@ -15,7 +15,7 @@ include "modelo/conexion.php";
 // include "Controlador/controlador_login.php";
 ?>
 	<center>
-	<h2>Muestra detalles proyectos de la parcela 9</h2>
+	<h2>Muestra detalles proyectos de la parcela 10</h2>
 	</center>
 	
 	<br>
@@ -27,7 +27,7 @@ include "modelo/conexion.php";
 	<br>
 	<br>
 	<center>
-<table border=2 width=400><tr><td style= "text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold; width: 108px;"> Id_Detalle</td>
+    <table border=2 width=400><tr><td style= "text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold; width: 108px;"> Id_Detalle</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;"> Id_Proyecto</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;"> NombreProyecto</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 97px;"> FechaInicio</td>
@@ -38,7 +38,7 @@ include "modelo/conexion.php";
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 162px;"> InversionInicial</td>
     <td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 162px;"> Parcela</td>   
 	</tr>
-</center>
+    </center>
 	   <?php
 	   	// conexion con la bd
 	   		
@@ -53,11 +53,7 @@ include "modelo/conexion.php";
 						d.CantidadHectareas, d.CantidadCabezas, d.Categoria, d.InversionInicial, p.Id_Parcela 
 						FROM detalleinicialhacienda d
 						INNER JOIN proyectohacienda p ON d.Id_ProyectoHacienda = p.Id_ProyectoHacienda
-						WHERE p.Id_Parcela='9'");	
-						
-	//ESTA ES LA POSTA
-	//("select * from detalleinicialhacienda"); 					
-		//<td> $myrow[0] </td>
+						WHERE p.Id_Parcela='10'");	
 		
 	 while ($myrow=$registros->fetch_row()) //mientras haya registros muestra dia y hora
      {
@@ -109,7 +105,7 @@ include "modelo/conexion.php";
   							FROM detalleinicialsiembra d
  						    INNER JOIN proyectosiembra p ON d.Id_ProyectoSiembra = p.Id_ProyectoSiembra
   							INNER JOIN siembra s ON d.Id_Cultivo = s.Id_Cultivo
- 						    WHERE p.Id_Parcela='9'");    
+ 						    WHERE p.Id_Parcela='10'");    
     
 
      while ($myrow=$registros->fetch_row()) //mientras haya registros muestra dia y hora
