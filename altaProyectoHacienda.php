@@ -1,7 +1,7 @@
 <?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
 include('./template/cabecera.php');?>
 
-<title>Alta campaña de hacienda</title>
+<title>Alta Proyecto de hacienda</title>
 
 <body>
   <!--llamar controlador-->
@@ -14,14 +14,14 @@ include "modelo/conexion.php";
 <br>
 <br>
 <center>
-<h2>Dar de alta nueva campaña de hacienda:</h2>
+<h2>Dar de alta nuevo proyecto hacienda:</h2>
 </center>
 <form method="post">
  <center>
  <table>
  <tr>
   <td style="height: 47px; width: 264px;">
-   Nombre de la campaña:</td>
+   Nombre del proyecto:</td>
   <td style="width: 366px; height: 47px">
    
 	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" />
@@ -29,7 +29,7 @@ include "modelo/conexion.php";
  </tr>
  <tr>
   <td style="width: 264px">
-   ID de la campaña:</td>
+   ID del proyecto:</td>
   <td style="width: 366px">
    
 	   <input name="txtId" type="text" class="auto-style1" style="height: 30px; width: 127px" />
@@ -104,23 +104,23 @@ include "modelo/conexion.php";
      $estado=$_POST['cmbEstado'];
 
      // Cadena que controla si hay una campaña creada con ese Id
-     $sql="select  * from campañahacienda  where Id_CampañaHacienda= $idcamp";
+     $sql="select  * from ProyectoHacienda  where Id_ProyectoHacienda= $idcamp";
      // Ejecuta sentencia en sql
       $re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
       $c=$re->num_rows; 
       if ( $c==0)
      {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO campañahacienda(Id_CampañaHacienda, Id_Parcela, NombreCampaña, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
+        $cad = "INSERT INTO ProyectoHacienda(Id_ProyectoHacienda, Id_Parcela, NombreProyecto, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
-       echo "La campaña fue dada de alta con éxito";
+       echo "El Proyecto fue dado de alta con exito";
     }
     else 
     {
       // mensaje que ya existe por lo tanto no fue dado de alta
-      echo "Ya existe una campaña con ese ID";
+      echo "Ya existe un proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
      }
      

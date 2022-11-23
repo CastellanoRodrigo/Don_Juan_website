@@ -41,15 +41,15 @@ include('./template/cabecera.php');?>
             <div>
                 <table align="center">
                     <tr>
-                        <th><a href="CargaCampaña.php"><button id="open"> Parcela 1 </button></a></th>
-                        <th><a href="CargaCampaña.php" target="_blank"><button id="open"> Parcela 2 </button></a></th>
+                        <th><a href="parcela1.php"><button id="open"> Parcela 1 </button></a></th>
+                        <th><a href="parcela2.php"><button id="open"> Parcela 2 </button></a></th>
                     </tr>
                     <tr>
-                        <th><a href="CargaCampaña.php"><button id="open"> Parcela 3 </button></a></th>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 4 </button></a></th>
+                        <th><a href="parcela3.php"><button id="open"> Parcela 3 </button></a></th>
+                        <th><a href="parcela4.php"><button id="open"> Parcela 4 </button></a></th>
                     </tr>
                     <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 5 </button></a></th>
+                        <th><a href="parcela5.php"><button id="open"> Parcela 5 </button></a></th>
                         <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 6 </button></a></th>
                     </tr>
                     <tr>
@@ -57,7 +57,7 @@ include('./template/cabecera.php');?>
                         <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 8 </button></a></th>
                     </tr>
                     <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 9 </button></a></th>
+                        <th><a href="parcela9.php"><button id="open"> Parcela 9 </button></a></th>
                         <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 10 </button></a></th>
                     </tr>
                     <tr>

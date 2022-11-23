@@ -1,7 +1,7 @@
 <?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
 include('./template/cabecera.php');?>
 
-<title>Detalles campañas Hacienda</title>
+<title>Detalles Proyecto Hacienda</title>
 <!-- Body -->
 <body>
   <!--llamar controlador-->
@@ -10,14 +10,18 @@ include "modelo/conexion.php";
 // include "Controlador/controlador_login.php";
 ?>
 <center>
-<h2>Asignar detalles a la campaña de Hacienda:</h2>
+<h2>Asignar detalles al proyecto de Hacienda:</h2>
+<br>
+<br>
+<br>
+<br>
 </center>
 <form method="post">
  <center>
  <table>
  <tr>
   <td style="height: 47px; width: 332px;">
-   Nombre de la campaña:</td>
+   Nombre del proyecto</td>
   <td style="width: 366px; height: 47px"> 
 	   &nbsp;<select  name="cmbNombre" style="width: 155px; height: 28px;">
   
@@ -26,11 +30,11 @@ include "modelo/conexion.php";
 	   <?php
 	      $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 	 
-          $query = $mysqli -> query ("SELECT * FROM CampañaHacienda ");
+          $query = $mysqli -> query ("SELECT * FROM ProyectoHacienda ");
   
           while ($valores = mysqli_fetch_array($query)) {
   
-            echo '<option value="'.$valores['Id_CampañaHacienda'].'">'.$valores['NombreCampaña'].'</option>';
+            echo '<option value="'.$valores['Id_ProyectoHacienda'].'">'.$valores['NombreProyecto'].'</option>';
   
           } 
         ?>
@@ -47,7 +51,7 @@ include "modelo/conexion.php";
  </tr>
  <tr>
   <td style="width: 332px; height: 44px;">
-   ID del detalle de la campaña:</td>
+   ID del Proyecto</td>
    <td style="width: 366px; height: 44px;">
     
 		 <input name="txtIdDetalle" type="text" style="height: 30px; width: 127px" />
@@ -125,27 +129,26 @@ include "modelo/conexion.php";
      $categoria=$_POST['txtCategoria'];
      $inversion=$_POST['txtInversion'];	 
 	 		
-     //(Id_DetalleHacienda, Id_CampañaHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Categoria, InversionInicial)
 		
      // Cadena que controla si hay una campaña creada con ese Id
-     $sql="select  * from detallecampañahacienda  where Id_DetalleHacienda= $iddetalle";
+     $sql="select  * from detalleinicialhacienda  where Id_DetalleHacienda= $iddetalle";
      // Ejecuta sentencia en sql
       $re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
       $c=$re->num_rows; 
       if ( $c==0)
      {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detallecampañahacienda(Id_DetalleHacienda, Id_CampañaHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Categoria, InversionInicial) VALUES ('$iddetalle','$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
+        $cad = "INSERT INTO detalleinicialhacienda(Id_DetalleHacienda, Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Categoria, InversionInicial) VALUES ('$iddetalle','$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
                            
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
-       echo "La campaña fue dada de alta con éxito";
+       echo "El pryecto fue dada de alta con exito";
     }
     else 
     {
       // mensaje que ya existe por lo tanto no fue dado de alta
-      echo "Ya existe una campaña con ese ID";
+      echo "Ya existe una proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
      }
      

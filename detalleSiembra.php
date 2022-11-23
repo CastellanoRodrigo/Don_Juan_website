@@ -10,14 +10,19 @@ include "modelo/conexion.php";
 // include "Controlador/controlador_login.php";
 ?>
 <center>
-<h2>Asignar detalles a campaña de Siembra:</h2>
+<h2>Asignar detalles proyecto de Siembra:</h2>
+<br>
+<br>
+<br>
+<br>
+
 </center>
 <form method="post">
  <center>
  <table>
  <tr>
   <td style="height: 47px; width: 274px;">
-   Nombre de la campaña:</td>
+   Nombre del proyecto:</td>
   <td style="width: 366px; height: 47px"> 
 	   &nbsp;<select  name="cmbNombre" style="width: 155px; height: 28px;">
   
@@ -26,11 +31,11 @@ include "modelo/conexion.php";
 	   <?php
 	      $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 	 
-          $query = $mysqli -> query ("SELECT * FROM CampañaSiembra ");
+          $query = $mysqli -> query ("SELECT * FROM ProyectoSiembra ");
   
           while ($valores = mysqli_fetch_array($query)) {
   
-            echo '<option value="'.$valores['Id_CampañaSiembra'].'">'.$valores['NombreCampaña'].'</option>';
+            echo '<option value="'.$valores['Id_ProyectoSiembra'].'">'.$valores['NombreProyecto'].'</option>';
   
           }
   
@@ -144,30 +149,27 @@ include "modelo/conexion.php";
      $rinde=$_POST['txtRinde'];
      $inversion=$_POST['txtInversion'];	 
 	 		
-     //Id_DetalleSiembra	Id_CampañaSiembra	FechaInicio	FechaCierre	CantidadHectareas	Id_Cultivo	RindeEspeculado	InversionInicial
+     //Id_DetalleSiembra	Id_ProyectoSiembra	FechaInicio	FechaCierre	CantidadHectareas	Id_Cultivo	RindeEspeculado	InversionInicial
 		
      // Cadena que controla si hay una campaña creada con ese Id
-     $sql="select  * from detallecampañasiembra  where Id_DetalleSiembra= $iddetalle";
+     $sql="select  * from detalleinicialsiembra  where Id_DetalleSiembra= $iddetalle";
      // Ejecuta sentencia en sql
       $re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
       $c=$re->num_rows; 
       if ( $c==0)
      {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detallecampañasiembra(Id_DetalleSiembra, Id_CampañaSiembra, FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial) VALUES ('$iddetalle','$nombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";
-        
-        //('$iddetalle','$cmbNombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";       
-        //$cad = "INSERT INTO detallecampañasiembra(Id_DetalleSiembra, Id_CampañaSiembra, FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial) VALUES  
-               
+        $cad = "INSERT INTO detalleinicialsiembra(Id_DetalleSiembra, Id_ProyectoSiembra, FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial) VALUES ('$iddetalle','$nombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";
+                           
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
-       echo "La campaña fue dada de alta con éxito";
+       echo "El proyecto fue dado de alta con exito";
     }
     else 
     {
       // mensaje que ya existe por lo tanto no fue dado de alta
-      echo "Ya existe una campaña con ese ID";
+      echo "Ya existe un proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
      }
      
