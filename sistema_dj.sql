@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2022 a las 00:39:13
+-- Tiempo de generación: 23-11-2022 a las 01:35:07
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -35,49 +35,6 @@ CREATE TABLE `alquiler` (
   `FechaFin` date NOT NULL,
   `Estado` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `campañahacienda`
---
-
-CREATE TABLE `campañahacienda` (
-  `Id_CampañaHacienda` int(20) NOT NULL,
-  `Id_Parcela` int(20) NOT NULL,
-  `NombreCampaña` varchar(25) NOT NULL,
-  `Estado` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `campañahacienda`
---
-
-INSERT INTO `campañahacienda` (`Id_CampañaHacienda`, `Id_Parcela`, `NombreCampaña`, `Estado`) VALUES
-(1, 8, 'Aberdinangus', 'Iniciado'),
-(2, 9, 'Helford', 'Iniciado');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `campañasiembra`
---
-
-CREATE TABLE `campañasiembra` (
-  `Id_CampañaSiembra` int(20) NOT NULL,
-  `Id_Parcela` int(20) NOT NULL,
-  `NombreCampaña` varchar(25) NOT NULL,
-  `Estado` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `campañasiembra`
---
-
-INSERT INTO `campañasiembra` (`Id_CampañaSiembra`, `Id_Parcela`, `NombreCampaña`, `Estado`) VALUES
-(1, 5, 'Cosecha Gruesa Maiz 2023', 'Iniciado'),
-(0, 0, '', '0'),
-(2, 1, 'Alfalfa 2023', 'Iniciado');
 
 -- --------------------------------------------------------
 
@@ -141,12 +98,12 @@ CREATE TABLE `compras` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detallecampañahacienda`
+-- Estructura de tabla para la tabla `detalleinicialhacienda`
 --
 
-CREATE TABLE `detallecampañahacienda` (
+CREATE TABLE `detalleinicialhacienda` (
   `Id_DetalleHacienda` int(20) NOT NULL,
-  `Id_CampañaHacienda` int(20) NOT NULL,
+  `Id_ProyectoHacienda` int(20) NOT NULL,
   `FechaInicio` date NOT NULL,
   `FechaCierre` date NOT NULL,
   `CantidadHectareas` int(20) NOT NULL,
@@ -156,21 +113,22 @@ CREATE TABLE `detallecampañahacienda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `detallecampañahacienda`
+-- Volcado de datos para la tabla `detalleinicialhacienda`
 --
 
-INSERT INTO `detallecampañahacienda` (`Id_DetalleHacienda`, `Id_CampañaHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Categoria`, `InversionInicial`) VALUES
-(1, 1, '2022-11-19', '2024-01-05', 45, 50, 'Novillo', '350000');
+INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Categoria`, `InversionInicial`) VALUES
+(1, 1, '2022-11-19', '2024-01-05', 45, 50, 'Novillo', '350000'),
+(2, 0, '2022-11-22', '2024-06-15', 50, 25, 'Novillo', '66666666');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `detallecampañasiembra`
+-- Estructura de tabla para la tabla `detalleinicialsiembra`
 --
 
-CREATE TABLE `detallecampañasiembra` (
+CREATE TABLE `detalleinicialsiembra` (
   `Id_DetalleSiembra` int(20) NOT NULL,
-  `Id_CampañaSiembra` int(20) NOT NULL,
+  `Id_ProyectoSiembra` int(20) NOT NULL,
   `FechaInicio` date NOT NULL,
   `FechaCierre` date NOT NULL,
   `CantidadHectareas` int(20) NOT NULL,
@@ -180,12 +138,13 @@ CREATE TABLE `detallecampañasiembra` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `detallecampañasiembra`
+-- Volcado de datos para la tabla `detalleinicialsiembra`
 --
 
-INSERT INTO `detallecampañasiembra` (`Id_DetalleSiembra`, `Id_CampañaSiembra`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `Id_Cultivo`, `RindeEspeculado`, `InversionInicial`) VALUES
+INSERT INTO `detalleinicialsiembra` (`Id_DetalleSiembra`, `Id_ProyectoSiembra`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `Id_Cultivo`, `RindeEspeculado`, `InversionInicial`) VALUES
 (1, 1, '0000-00-00', '0000-00-00', 50, 1, 250000, '500000'),
-(2, 1, '2022-10-10', '2023-11-11', 50, 1, 250000, '500000');
+(2, 1, '2022-10-10', '2023-11-11', 50, 1, 250000, '500000'),
+(3, 2, '2022-07-12', '2023-04-10', 30, 6, 150000, '200000');
 
 -- --------------------------------------------------------
 
@@ -270,6 +229,49 @@ INSERT INTO `parcela` (`Id_Parcela`, `CantidadHectareas`) VALUES
 (9, 65),
 (10, 95),
 (11, 30);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proyectohacienda`
+--
+
+CREATE TABLE `proyectohacienda` (
+  `Id_ProyectoHacienda` int(20) NOT NULL,
+  `Id_Parcela` int(20) NOT NULL,
+  `NombreProyecto` varchar(25) NOT NULL,
+  `Estado` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `proyectohacienda`
+--
+
+INSERT INTO `proyectohacienda` (`Id_ProyectoHacienda`, `Id_Parcela`, `NombreProyecto`, `Estado`) VALUES
+(1, 8, 'Aberdinangus', 'Iniciado'),
+(2, 9, 'Helford', 'Iniciado');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proyectosiembra`
+--
+
+CREATE TABLE `proyectosiembra` (
+  `Id_ProyectoSiembra` int(20) NOT NULL,
+  `Id_Parcela` int(20) NOT NULL,
+  `NombreProyecto` varchar(25) NOT NULL,
+  `Estado` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `proyectosiembra`
+--
+
+INSERT INTO `proyectosiembra` (`Id_ProyectoSiembra`, `Id_Parcela`, `NombreProyecto`, `Estado`) VALUES
+(1, 5, 'Cosecha Gruesa Maiz 2023', 'Iniciado'),
+(0, 0, '', '0'),
+(2, 1, 'Alfalfa 2023', 'Iniciado');
 
 -- --------------------------------------------------------
 
