@@ -57,7 +57,7 @@ include "modelo/conexion.php";
 						INNER JOIN proyectohacienda p ON d.Id_ProyectoHacienda = p.Id_ProyectoHacienda
 						WHERE p.Id_Parcela='1'");	
 
-	 while ($myrow=$registros->fetch_row()) //mientras haya registros muestra dia y hora
+	 while ($myrow=$registros->fetch_row()) //mientras haya registros muestra la informacion
      {
       	    
    	   echo "<tr>

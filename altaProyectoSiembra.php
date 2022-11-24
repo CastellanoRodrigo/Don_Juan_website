@@ -47,7 +47,7 @@ include "modelo/conexion.php";
 		<select  name="cmbparcela" style="width: 120px; height: 28px;">
   
         <option name="cmbParcelas" value="0">Seleccionar</option>
-  
+    
         <?php
   
           $query = $mysqli -> query ("SELECT * FROM Parcela ");
@@ -106,12 +106,13 @@ include "modelo/conexion.php";
      // Cadena que controla si hay una campaña creada con ese Id
      $sql="select  * from ProyectoSiembra  where Id_ProyectoSiembra= $idcamp";
      // Ejecuta sentencia en sql
+     //$re significa registro y $cn significa conexion
       $re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
       $c=$re->num_rows; 
       if ( $c==0)
      {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO ProyectoSiembra(Id_ProyectoSiembra, Id_Parcela, NombreProyecto, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
+        $cad = "(INSERT INTO ProyectoSiembra(Id_ProyectoSiembra, Id_Parcela, NombreProyecto, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
