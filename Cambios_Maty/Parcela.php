@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>PARECELAS</title>
-</head>
+<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./Template/Cabecera.php');?>
+
 <body>
+<title>PARCELAS</title>
    <div class="head">      
         <div class="logo">
             <img src="img/Gafa.jpg"></i>
@@ -34,28 +28,28 @@
             <button class="BotonesCampaña"> ELIMINAR CAMPAÑA </button>
         </div>
         <div class="BotonParcelas">
-            <a class="Boton11" href="CargaCampaña.php"><button id="open"> 11 </button></a>
-            <a class="Boton9" href="CargaCampaña.php"><button id="open"> 9 </button></a>
-            <a class="Boton10" href="CargaCampaña.php"><button id="open"> 10 </button></a>
+            <a class="Boton11" href="./Parcelas/parcela11.php"><button id="open"> 11 </button></a>
+            <a class="Boton9" href="./Parcelas/parcela9.php"><button id="open"> 9 </button></a>
+            <a class="Boton10" href="./Parcelas/parcela10.php"><button id="open"> 10 </button></a>
         </div>
         <div class="BotonParcelas">
             <a class="BotonInvisible"></a>
-            <a class="Boton8" href="CargaCampaña.php"><button id="open"> 8 </button></a>
-            <a class="Boton7"href="CargaCampaña.php"><button id="open"> 7 </button></a>
+            <a class="Boton8" href="./Parcelas/parcela8.php"><button id="open"> 8 </button></a>
+            <a class="Boton7"href="./Parcelas/parcela7.php"><button id="open"> 7 </button></a>
         </div>
         <div class="BotonParcelas">
-            <a class="Boton6" href="CargaCampaña.php"><button id="open"> 6 </button></a>
-            <a class="Boton4"href="CargaCampaña.php"><button id="open"> 4 </button></a>
-            <a class="Boton3"href="CargaCampaña.php"><button id="open"> 3 </button></a>
+            <a class="Boton6" href="./Parcelas/parcela6.php"><button id="open"> 6 </button></a>
+            <a class="Boton4"href="./Parcelas/parcela4.php"><button id="open"> 4 </button></a>
+            <a class="Boton3"href="./Parcelas/parcela3.php"><button id="open"> 3 </button></a>
             <a class="BotonInvisible2"></a>
         </div>
         <div class="BotonParcelas">
-            <a class="Boton5" href="CargaCampaña.php"><button id="open"> 5 </button></a>
-            <a class="Boton2"href="CargaCampaña.php"><button id="open"> 2 </button></a>
+            <a class="Boton5" href="./Parcelas/parcela5.php"><button id="open"> 5 </button></a>
+            <a class="Boton2"href="./Parcelas/parcela2.php"><button id="open"> 2 </button></a>
             <a class="BotonInvisible3"></a>
         </div>
         <div class="BotonParcelas">
-            <a class="Boton1" href="CargaCampaña.php"><button id="open"> 1 </button></a>
+            <a class="Boton1" href="./Parcelas/parcela1.php"><button id="open"> 1 </button></a>
             <a class="BotonInvisible4"></a>
         </div>
         <div>
@@ -79,16 +73,5 @@
         </div>       
    </section>
 
-   <div class="contact contentPIE"> 
-        <nav class="navbarPIE">
-            <a href="Parcela.php">Inicio</a>
-            <a href="Consultas.php">Consulta</a>
-            <a href="Usuarios.php">Usuarios</a>
-        </nav>
-        <div>
-            <a href="QuienesSomos.php" class="titlePIE">Quienes somos</a>
-        </div>  
-    </div>
-    
-</body>
-</html>
+   <?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./Template/Pie.php');?>

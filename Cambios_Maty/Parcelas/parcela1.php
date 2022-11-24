@@ -1,14 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Don Juan S.R.L detalles</title>
-<link href="Hojaestilo.css" rel="stylesheet" type="text/css" /> <!-- Convoca al archivo de hojas de estilo llamado estilo.css-->
-</head>
-<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
-include('./template/cabecera.php');?>
 
+<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./Template/Cabecera.php');?>
+
+<title>Parcela 1 detalles</title>
 <!-- Body -->
 <body>
   <!--llamar controlador-->
@@ -16,19 +11,18 @@ include('./template/cabecera.php');?>
 include "modelo/conexion.php";
 // include "Controlador/controlador_login.php";
 ?>
-	
-	
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	<center>
 	<h2>Muestra detalles proyectos de la parcela 1</h2>
 	</center>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<center><table border=2 width=400><tr>
 	<td style= "text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold; width: 108px;">Id_Detalle</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;">Id_Proyecto</td>
@@ -83,7 +77,6 @@ include "modelo/conexion.php";
 
     ?>
 	
-	
 	<center> <table border=2 width=400>
     <tr><td style= text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold>Id_Detalle</td>
 	<td style= text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;> Id_Proyecto</td>
@@ -137,10 +130,6 @@ include "modelo/conexion.php";
  		 	
 ?>
 
-	<br>
-	<br>
-	<br>
-	<br>
 </body>
 
 <?php #Llammo a pie 
