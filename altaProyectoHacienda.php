@@ -28,14 +28,6 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 264px">
-   ID del proyecto:</td>
-  <td style="width: 366px">
-   
-	   <input name="txtId" type="text" class="auto-style1" style="height: 30px; width: 127px" />
-	 </td>
- </tr>
- <tr>
   <td style="width: 264px; height: 69px;">
    Parcelas involucradas:</td>
    <td style="width: 366px; height: 69px;">
@@ -97,32 +89,34 @@ include "modelo/conexion.php";
    {  // Conecta a la base de datos
       $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
-     $idcamp=$_POST['txtId'];
+     //$idcamp=$_POST['txtId'];
      $parcela=$_POST['cmbparcela'];
      $nombre=$_POST['txtNombre']; 
      //$iddetalle=$_POST['txtIdDetalle'];
      $estado=$_POST['cmbEstado'];
 
+     //FALTA EL CONTROL DE QUE NO EXISTA OTRA CAMPAÑA CON EL MISMO NOMBRE
      // Cadena que controla si hay una campaña creada con ese Id
-     $sql="select  * from ProyectoHacienda  where Id_ProyectoHacienda= $idcamp";
+     //$sql="select  * from ProyectoHacienda  where Id_ProyectoHacienda= $idcamp";
      // Ejecuta sentencia en sql
-      $re=$cn->query($sql);
+      //$re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
-      $c=$re->num_rows; 
-      if ( $c==0)
-     {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO ProyectoHacienda(Id_ProyectoHacienda, Id_Parcela, NombreProyecto, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
+      //$c=$re->num_rows; 
+      //if ( $c==0)
+      // HASTA ACA SERIA EL CONTROL QUE SE NECESITA HACER
+     //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
+        $cad = "INSERT INTO ProyectoHacienda(Id_Parcela, NombreProyecto, Estado) VALUES ('$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
        echo "El Proyecto fue dado de alta con exito";
-    }
-    else 
-    {
-      // mensaje que ya existe por lo tanto no fue dado de alta
-      echo "Ya existe un proyecto con ese ID";
+    //}
+    //else 
+   // {
+      // mensaje que ya existe por lo tanto no fue dado de alta FALTA EL CONTROL
+      //echo "Ya existe un proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
-     }
+    // }
      
   // cierra la conexion   
  $cn->close();
