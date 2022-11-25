@@ -1,7 +1,7 @@
 <?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
 include('./template/cabecera.php');?>
 
-<title>Detalles campañas Siembra</title>
+<title>Detalles Proyecto Siembra</title>
 <!-- Body -->
 <body>
   <!--llamar controlador-->
@@ -49,14 +49,6 @@ include "modelo/conexion.php";
   <td style="width: 366px">
    
 	   <input name="txtFechaInicio" type="text" class="auto-style1" style="height: 30px; width: 127px" />
-	 </td>
- </tr>
- <tr>
-  <td style="width: 274px">
-   ID del detalle de la campaña:</td>
-   <td style="width: 366px">
-    
-		 <input name="txtIdDetalle" type="text" style="height: 30px; width: 127px" />
 	 </td>
  </tr>
  <tr>
@@ -140,7 +132,7 @@ include "modelo/conexion.php";
    {  // Conecta a la base de datos
       $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
-     $iddetalle=$_POST['txtIdDetalle'];
+     //$iddetalle=$_POST['txtIdDetalle'];
      $nombre=$_POST['cmbNombre']; 
      $fechainicio=$_POST['txtFechaInicio'];
      $fechacierre=$_POST['txtFechaCierre'];
@@ -150,32 +142,35 @@ include "modelo/conexion.php";
      $inversion=$_POST['txtInversion'];	 
 	 		
      //Id_DetalleSiembra	Id_ProyectoSiembra	FechaInicio	FechaCierre	CantidadHectareas	Id_Cultivo	RindeEspeculado	InversionInicial
-		
+		 // NO PUSE UN CONTROL NO SERIA NECESARIO EL ID ES AUTOINCREMENTAL
+     // SE DEBERIA PONER UN CONTROL EN CASO DE Q SE INGRESE UN PROYECTO CON EL MISMO NOMBRE
+     // DE TODAS FORMAS SERIA MISMO NOMBRE PERO DISTINTO ID------
      // Cadena que controla si hay una campaña creada con ese Id
-     $sql="select  * from detalleinicialsiembra  where Id_DetalleSiembra= $iddetalle";
+     //$sql="select  * from detalleinicialsiembra  where Id_DetalleSiembra= $iddetalle";
      // Ejecuta sentencia en sql
-      $re=$cn->query($sql);
+      //$re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
-      $c=$re->num_rows; 
-      if ( $c==0)
-     {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detalleinicialsiembra(Id_DetalleSiembra, Id_ProyectoSiembra, FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial) VALUES ('$iddetalle','$nombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";
+      //$c=$re->num_rows; 
+     // if ( $c==0)
+     // ACA FINALIZARIA EL CONTROL
+     //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
+        $cad = "INSERT INTO detalleinicialsiembra(Id_ProyectoSiembra,FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial) VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";
                            
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
        echo "El proyecto fue dado de alta con exito";
-    }
-    else 
-    {
+    //}
+    //else 
+    //{
       // mensaje que ya existe por lo tanto no fue dado de alta
-      echo "Ya existe un proyecto con ese ID";
+      //echo "Ya existe un proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
-     }
+     //}
      
   // cierra la conexion   
  $cn->close();
-}
+  }
 ?>
 
 <?php #Llammo a pie 

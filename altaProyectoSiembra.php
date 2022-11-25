@@ -24,7 +24,7 @@ include "modelo/conexion.php";
    Nombre del proyecto:</td>
   <td style="width: 366px; height: 47px">
   
-	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" />
+	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" required="required"/>
 	 </td>
  </tr>
  <tr>
@@ -37,9 +37,8 @@ include "modelo/conexion.php";
 		 ?>	 
 		 
 		<select  name="cmbparcela" style="width: 120px; height: 28px;">
-  
-        <option name="cmbParcelas" value="0">Seleccionar</option>
-    
+          <!--ANTES EL VALUE ERA 0- LO PASE A "" pero no funciono el required-->
+          <option name="cmbParcelas" value="">Seleccionar</option>
         <?php
   
           $query = $mysqli -> query ("SELECT * FROM Parcela ");
@@ -60,7 +59,8 @@ include "modelo/conexion.php";
    <td style="width: 366px">
      <form method="post">		
 		 <select name="cmbEstado" size="1"style="width: 120px; height: 28px">
-                            <option value="0" selected="selected">Asignar Estado</option>
+     <!--antes estaba el 1er value en 0- no pude hacer funcionar el REQUIRED -->
+                            <option value="" selected="selected">Asignar Estado</option>
                             <option value="Iniciado">Iniciado</option>
                             <option value="Finalizado">Finalizado</option>                           
     </select>
@@ -106,11 +106,11 @@ include "modelo/conexion.php";
       //if ( $c==0)
       // ACA FINALIZARIA EL CONTROL
      //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "(INSERT INTO ProyectoSiembra(Id_Parcela, NombreProyecto, Estado) VALUES ('$parcela','$nombre','$estado')";
+        $cad = "INSERT INTO ProyectoSiembra(Id_Parcela, NombreProyecto, Estado) VALUES ('$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
-       echo "El proyecto fue dado de alta con exito";
+        echo "El proyecto fue dado de alta con exito";
     //}
     //else 
     //{
@@ -120,8 +120,10 @@ include "modelo/conexion.php";
      //}
      
   // cierra la conexion   
- $cn->close();
+  $cn->close();
 }
+
+
 ?>
 
 <?php #Llammo a pie 

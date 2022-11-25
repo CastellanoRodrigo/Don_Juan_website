@@ -15,23 +15,20 @@ include('./template/cabecera.php');?>
 include "modelo/conexion.php";
 // include "Controlador/controlador_login.php";
 ?>
-	
-	
-	<br>
-	<br>
-	<br>
+
 	<br>
 	<br>
 	<br>
 	<br>
 	<br>
 	<center>
-	<h2>Muestra detalles proyectos de la parcela 1</h2>
+	<h2>Muestra detalles iniciales de proyectos de la parcela 1</h2>
 	</center>
-	<center><table border=2 width=400><tr>
-	<td style= "text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold; width: 108px;">Id_Detalle</td>
-	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;">Id_Proyecto</td>
-	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;">NombreProyecto</td>
+	<!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA
+		NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
+	<center>
+	<table border=2 width=400>
+	<tr><td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;">NombreProyecto</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 97px;">FechaInicio</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 97px;">Fechacierre</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 86px;">Hectareas</td>
@@ -41,8 +38,9 @@ include "modelo/conexion.php";
     <td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 162px;">Parcela</td>   
 	</tr>
 	</center>
-	   <?php
-	   	// conexion con la bd
+
+	<?php
+	// conexion con la bd
 	   		
 	$host = "localhost";
 	$usuario = "root";
@@ -51,11 +49,11 @@ include "modelo/conexion.php";
 
 	$cn=new mysqli($host, $usuario, $clave, $base);
 
-	$registros=$cn->query("SELECT d.Id_DetalleHacienda, d.Id_ProyectoHacienda, p.NombreProyecto, d.FechaInicio, d.FechaCierre,
+	$registros=$cn->query("SELECT p.NombreProyecto, d.FechaInicio, d.FechaCierre,
 						d.CantidadHectareas, d.CantidadCabezas, d.Categoria, d.InversionInicial, p.Id_Parcela 
 						FROM detalleinicialhacienda d
 						INNER JOIN proyectohacienda p ON d.Id_ProyectoHacienda = p.Id_ProyectoHacienda
-						WHERE p.Id_Parcela='1'");	
+						WHERE p.Id_Parcela='9'");	
 
 	 while ($myrow=$registros->fetch_row()) //mientras haya registros muestra la informacion
      {
@@ -69,8 +67,6 @@ include "modelo/conexion.php";
    	   		 <td>$myrow[5]</td>
    	   		 <td>$myrow[6]</td>
    	   		 <td>$myrow[7]</td>
-   	   		 <td>$myrow[8]</td>
-   	   		 <td>$myrow[9]</td>
    	   		 </tr>";
    	    
      } 
@@ -82,11 +78,11 @@ include "modelo/conexion.php";
 
     ?>
 	
-	
-	<center> <table border=2 width=400>
-    <tr><td style= text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold>Id_Detalle</td>
-	<td style= text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;> Id_Proyecto</td>
-	<td style= text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;>NombreProyecto</td>
+	<!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA
+		NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
+	<center>
+	<table border=2 width=400>
+	<tr><td style= text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;>NombreProyecto</td>
 	<td style= text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold>FechaInicio</td>
 	<td style= text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;>FechaCierre</td>
     <td style= text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold>Hectareas</td>
@@ -97,17 +93,17 @@ include "modelo/conexion.php";
 	</tr>
 	</center>
 	
-<?php
+	<?php
 	 
     $cn= new mysqli("localhost", "root", "", "sistema_dj"); //conexion con base de datos
   	
 
-    $registros= $cn->query("SELECT d.Id_DetalleSiembra, d.Id_ProyectoSiembra, p.NombreProyecto, d.FechaInicio, d.FechaCierre, d.CantidadHectareas, s.NombreCultivo,
- 								   d.RindeEspeculado, d.InversionInicial,p.Id_Parcela
+    $registros= $cn->query("SELECT p.NombreProyecto, d.FechaInicio, d.FechaCierre, d.CantidadHectareas, s.NombreCultivo,
+ 								   d.RindeEspeculado, d.InversionInicial, p.Id_Parcela
   							FROM detalleinicialsiembra d
  						    INNER JOIN proyectosiembra p ON d.Id_ProyectoSiembra = p.Id_ProyectoSiembra
   							INNER JOIN siembra s ON d.Id_Cultivo = s.Id_Cultivo
- 						    WHERE p.Id_Parcela='1'");    
+ 						    WHERE p.Id_Parcela='3'");    
     
 
      while ($myrow=$registros->fetch_row()) //mientras haya registros muestra dia y hora
@@ -121,9 +117,7 @@ include "modelo/conexion.php";
    	         <td> $myrow[4] </td>
    	         <td> $myrow[5] </td>
    	         <td> $myrow[6] </td>
-   	         <td> $myrow[7] </td>
-   	         <td> $myrow[8] </td>
-   	         <td> $myrow[9] </td>
+   	         <td> $myrow[7] </td> 	   
    	         </tr>";
    	    
      } 
@@ -134,7 +128,7 @@ include "modelo/conexion.php";
 	// Cierra conexion
     $cn->close();
  		 	
-?>
+	?>
 
 	<br>
 	<br>
@@ -143,4 +137,5 @@ include "modelo/conexion.php";
 </body>
 
 <?php #Llammo a pie 
-include('./template/pie.php');?>
+include('./template/pie.php');
+?>

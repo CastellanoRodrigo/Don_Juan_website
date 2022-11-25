@@ -50,14 +50,6 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 332px; height: 44px;">
-   ID del Proyecto</td>
-   <td style="width: 366px; height: 44px;">
-    
-		 <input name="txtIdDetalle" type="text" style="height: 30px; width: 127px" />
-	 </td>
- </tr>
- <tr>
   <td style="width: 332px; height: 47px;">
    Cantidad de cabezas:</td>
    <td style="width: 366px; height: 47px;">
@@ -120,7 +112,7 @@ include "modelo/conexion.php";
    {  // Conecta a la base de datos
       $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
-     $iddetalle=$_POST['txtIdDetalle'];
+     //$iddetalle=$_POST['txtIdDetalle'];
      $nombre=$_POST['cmbNombre']; 
      $fechainicio=$_POST['txtFechaInicio'];
      $fechacierre=$_POST['txtFechaCierre'];
@@ -129,32 +121,34 @@ include "modelo/conexion.php";
      $categoria=$_POST['txtCategoria'];
      $inversion=$_POST['txtInversion'];	 
 	 		
-		
+		 //FALTARIA REALIZAR ALGUN CONTROL 
      // Cadena que controla si hay una campaña creada con ese Id
-     $sql="select  * from detalleinicialhacienda  where Id_DetalleHacienda= $iddetalle";
+     //$sql="select  * from detalleinicialhacienda  where Id_DetalleHacienda= $iddetalle";
      // Ejecuta sentencia en sql
-      $re=$cn->query($sql);
+      //$re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
-      $c=$re->num_rows; 
-      if ( $c==0)
-     {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detalleinicialhacienda(Id_DetalleHacienda, Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Categoria, InversionInicial) VALUES ('$iddetalle','$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
+      //$c=$re->num_rows; 
+      //if ( $c==0)
+     //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
+        // ACA FINALIZARIA EL CONTROL
+        $cad = "INSERT INTO detalleinicialhacienda(Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Categoria, InversionInicial) VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
                            
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
        echo "El pryecto fue dada de alta con exito";
-    }
-    else 
-    {
+   //}
+    //else 
+    //{
+      //SI EN EL CONTROL NO DEJA HACER EL INSERT DEBERIA MOSTRAR MENSAJE QUE NO SE REALIZO
       // mensaje que ya existe por lo tanto no fue dado de alta
-      echo "Ya existe una proyecto con ese ID";
+      //echo "Ya existe una proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
-     }
+     //}
      
   // cierra la conexion   
- $cn->close();
-}
+      $cn->close();
+    }
 ?>
 
 
