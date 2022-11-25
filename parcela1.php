@@ -20,7 +20,7 @@ include "modelo/conexion.php";
 	<br>
 	<br>
 	<br>
-	<br>
+	<h1>Realizar los cambios que correspondan </h1>
 	<br>
 	<br>
 	<br>
