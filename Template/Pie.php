@@ -1,3 +1,4 @@
+<footer class="container-fluid bg-dark fixed-bottom">
 <section class="BarraInferior">
             <a href="Nosotros.php">Nosotros</a>
         </section>
@@ -36,5 +37,6 @@
     <p></p>
 
 -->
+</footer>
 </body>
 </html>
