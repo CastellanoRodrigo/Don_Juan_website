@@ -15,6 +15,8 @@
 body {
     align-items: center;
     font-family: sans-serif;
+    background: #FFF;
+    
 }
 
 .head {
@@ -173,7 +175,7 @@ p {
 
 .sau {
     padding: 50px 0;
-    background: #303030;
+    background: #FFF;
 }
 
 .box-container {
@@ -291,7 +293,7 @@ p {
 
 .box-container2 .box .stars i {
     font-size: 15px;
-    color: #e91e63;
+    color: #1e76e9;
 }
 
 .contact {
@@ -361,7 +363,7 @@ p {
 }
 
 .Boton:hover {
-    background: #e91e63;
+    background: #1e76e9;
 }
 
 .BotonesCampaña{
@@ -424,10 +426,11 @@ p {
     background-color: #8BFF63;
     padding: 5px;
     margin: 7px;
+    border-color: #1e76e9;
 }
 
 .Boton11:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .Boton9{
@@ -439,7 +442,7 @@ p {
 }
 
 .Boton9:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .Boton10{
@@ -451,7 +454,7 @@ p {
 }
 
 .Boton10:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .BotonInvisible{
@@ -468,7 +471,7 @@ p {
 }
 
 .Boton8:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .Boton7{
@@ -480,7 +483,7 @@ p {
 }
 
 .Boton7:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .Boton6{
@@ -492,7 +495,7 @@ p {
 }
 
 .Boton6:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .Boton4{
@@ -504,7 +507,7 @@ p {
 }
 
 .Boton4:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .Boton3{
@@ -516,7 +519,7 @@ p {
 }
 
 .Boton3:hover {
-    background: #fff;
+    background: #1e76e9ff;
 }
 
 .BotonInvisible2{
@@ -532,7 +535,7 @@ p {
 }
 
 .Boton5:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .Boton2{
@@ -544,7 +547,7 @@ p {
 }
 
 .Boton2:hover {
-    background: #fff;
+    background:#1e76e9;
 }
 
 .BotonInvisible3{
@@ -560,7 +563,7 @@ p {
 }
 
 .Boton1:hover {
-    background: #fff;
+    background: #1e76e9;
 }
 
 .BotonInvisible4{

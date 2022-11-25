@@ -12,30 +12,32 @@ include('./template/cabecera.php');?>
             </div>
         </section>
         <div>
-            <div>  
-                <!-- Onclick= nos lleva al formulario de carga -->             
+        
+        
+
+            <div> 
+                <button class="btn btn-dark mx-2 mt-2" data-bs-toggle="offcanvas" data-bs-target="#intro">Administrar Parcelas</button> 
+                <div class="offcanvas offcanvas-start" id="intro">
+                    <div class="offcanvas-header">
+                        <div class="offcanvas-title">
+                            <button class="btn btn-danger" data-bs-dismiss="offcanvas">Cerrar</button>
+                            
+                        </div>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <button class="btn btn-dark p1">Añadir proyecto de hacienda</button><br>
+                        <button class="btn btn-dark">Añadir proyecto de siembra</button><br>
+                        <button class="btn btn-dark">Modificar Proyecto</button><br>
+                        <button class="btn btn-dark">Finalizar Proyecto</button>
+
+                    </div>
+                </div>
+                <!-- Onclick= nos lleva al formulario de carga            
                 <button class="BotonAñadir" id="open" onclick="location.href='altaProyectoHacienda.php'"> AÑADIR CAMPAÑA DE HACIENDA</button>
                 <button class="BotonAñadir2" id="open" onclick="location.href='altaProyectoSiembra.php'"> AÑADIR CAMPAÑA DE SIEMBRA</button>
-                    <!-- <div id="modal_container" class="modal-container">
-
----  Comente este codigo porque nunca funciono,
-                            No como vos maty que me cagaste el nombre de la persona que estaba logueada, forro entabacado de mierda espero me leas xD ---
-
-
-                            <div class="modal">
-                            <h1>Descripcion de Parcela 1</h1>
-                            <p> Fecha de Creacion: 12 de Enero del 2021 </p>
-                            <p> Nombre de la campaña: Trigo 2022 </p>
-                            <p> Cantidad de hectarias: 800 hectareas </p>
-                            <p> Tipo de cultivo: Trigo </p>
-                            <p> Rendimiento especulado: 360 Tons. </p>
-                            <button id="close">Cerrar</button>
-                        </div>
-                        
-                    </div> 
-                    <script src="../JavaScript/Popup.js"></script>     -->      
-                <button class="BotonModificar"> MODIFICAR CAMPAÑA </button>
-                <button class="BotonEliminar"> ELIMINAR CAMPAÑA </button>
+                 <button class="BotonModificar"> MODIFICAR CAMPAÑA </button>
+                <button class="BotonEliminar"> ELIMINAR CAMPAÑA </button> --> 
             </div>
         
             <div>
