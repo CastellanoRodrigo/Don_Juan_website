@@ -53,7 +53,7 @@ include "modelo/conexion.php";
 						d.CantidadHectareas, d.CantidadCabezas, d.Categoria, d.InversionInicial, p.Id_Parcela 
 						FROM detalleinicialhacienda d
 						INNER JOIN proyectohacienda p ON d.Id_ProyectoHacienda = p.Id_ProyectoHacienda
-						WHERE p.Id_Parcela='9'");	
+						WHERE p.Id_Parcela='1'");	
 
 	 while ($myrow=$registros->fetch_row()) //mientras haya registros muestra la informacion
      {
@@ -103,7 +103,7 @@ include "modelo/conexion.php";
   							FROM detalleinicialsiembra d
  						    INNER JOIN proyectosiembra p ON d.Id_ProyectoSiembra = p.Id_ProyectoSiembra
   							INNER JOIN siembra s ON d.Id_Cultivo = s.Id_Cultivo
- 						    WHERE p.Id_Parcela='3'");    
+ 						    WHERE p.Id_Parcela='1'");    
     
 
      while ($myrow=$registros->fetch_row()) //mientras haya registros muestra dia y hora
