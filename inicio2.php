@@ -1,75 +1,96 @@
-<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
-include('./template/cabecera.php');?>
+<?php
+session_start();
+#controlamos el ingreso, si trata de acceder manualmente por url 
+#lo redirige al login
+if (empty($_SESSION["id"])) {
+    header("location: login.php");
+}
 
-<title>Inicio</title>
-        
-        <section>
-            <div class="Espacio"></div>
-            <div class="Cover2">
-                <div class="ImagenParcela">
-                    <h1> PARCELAS </h1>
-                </div>
-            </div>
-        </section>
-        <div>
-            <div>  
-                <!-- Onclick= nos lleva al formulario de carga -->             
-                <button class="BotonAñadir" id="open" onclick="location.href='altaProyectoHacienda.php'"> AÑADIR CAMPAÑA DE HACIENDA</button>
-                <button class="BotonAñadir2" id="open" onclick="location.href='altaProyectoSiembra.php'"> AÑADIR CAMPAÑA DE SIEMBRA</button>
-                    <!-- <div id="modal_container" class="modal-container">
-
----  Comente este codigo porque nunca funciono,
-                            No como vos maty que me cagaste el nombre de la persona que estaba logueada, forro entabacado de mierda espero me leas xD 
-                            JAJAJAJAJAJAJJA YO SI LO LEI- hernan ------
-
-                            <div class="modal">
-                            <h1>Descripcion de Parcela 1</h1>
-                            <p> Fecha de Creacion: 12 de Enero del 2021 </p>
-                            <p> Nombre de la campaña: Trigo 2022 </p>
-                            <p> Cantidad de hectarias: 800 hectareas </p>
-                            <p> Tipo de cultivo: Trigo </p>
-                            <p> Rendimiento especulado: 360 Tons. </p>
-                            <button id="close">Cerrar</button>
-                        </div>
-                        
-                    </div> 
-                    <script src="../JavaScript/Popup.js"></script>     -->      
-                <button class="BotonModificar"> MODIFICAR CAMPAÑA </button>
-                <button class="BotonEliminar"> ELIMINAR CAMPAÑA </button>
-            </div>
-        
-            <div>
-                <table align="center">
-                    <tr>
-                        <th><a href="parcela1.php"><button id="open"> Parcela 1 </button></a></th>
-                        <th><a href="parcela2.php"><button id="open"> Parcela 2 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="parcela3.php"><button id="open"> Parcela 3 </button></a></th>
-                        <th><a href="parcela4.php"><button id="open"> Parcela 4 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="parcela5.php"><button id="open"> Parcela 5 </button></a></th>
-                        <th><a href="parcela6.php"><button id="open"> Parcela 6 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="parcela7.php"><button id="open"> Parcela 7 </button></a></th>
-                        <th><a href="parcela8.php"><button id="open"> Parcela 8 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="parcela9.php"><button id="open"> Parcela 9 </button></a></th>
-                        <th><a href="parcela10.php"><button id="open"> Parcela 10 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="parcela11"><button id="open"> Parcela 11</button></a></th>
-                    </tr>
-                </table>
-            </div>
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" href="./menu-lateral/estilos.css">
+	
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+		<div class="btn-menu">
+			<label for="btn-menu">☰ </label>
+		</div>
+			<div class="logo">
+				<h1>Proyectos</h1>
+				
+			<!--Usuario Logueado-->
+			<div class="button">
+				<div class=".text-light">
+            <?php
+           echo $_SESSION["nombre"]." ".$_SESSION["apellido"];
+            ?>
+			</div>
         </div>
-        <div>
-            <h1>INFORMACION DE LAS PARCELAS</h1>
-        </div>
+				
+			</div>
+			<nav class="menu">
+			<a href="./menu-lateral/index.php">Inicio</a>
+				<a href="./Nosotros.php">Nosotros</a>
+				<a href="./Usuarios.php">Usuarios</a>
+				<a href="">Contacto</a>
+			</nav>
+		</div>
+	</header>
+ <div class="bd-example mb0" style="height: 15vh"></div>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md navbar-light fixed-top">
+	<div class="capa"></div>
+<!--	--------------->
+<input type="checkbox" id="btn-menu">
+<div class="container-menu">
+	<div class="cont-menu">
+		<nav>
+			<a href="#">Añadir proyecto hacienda</a>
+			<a href="#">Añadir proyecto siembra</a>
+			<a href="#">Añadir detalles hacienda</a>
+			<a href="#">Añadir detalles siembra</a>
+			<a href="#">Modificar</a>
+			<a href="#">Finalizar</a>
+		</nav>
+		<label for="btn-menu">✖️</label>
+	</div>
+</div>
+<div style="text-align:center;">
+	<table border="1" style="margin: 0 auto;">
 
-        <?php #Llammo a pie 
-include('./template/pie.php');?>
- 
+	
+		<h1>INFORMACION DE LAS PARCELAS</h1><br>
+        <div class="containerMap">
+        <!--division  por parcelas -->
+        <map name="mapa">
+        <img src="./imagenes/DonJuanSRL1.png" usemap="#mapa">
+            <area id="area1" class="area" shape="rectangle" coords="494, 690 333, 626" href="parcela1.php" >
+            <area id="area2" shape="rectangle" coords="333, 626 497, 478" class="area" href="parcela2.php" >
+            <area id="area" shape="rectangle" coords="494, 527 657, 367" class="area" href="parcela3.php" ">
+            <area id="area" shape="rectangle" coords="497, 478 334, 365" class="area" href="parcela4.php" >
+            <area id="area" shape="rectangle" coords="170, 481 331, 690" class="area" href="parcela5.php" >
+            <area id="area" shape="rectangle" coords="334, 365 170, 481" class="area" href="parcela6.php" >
+            <area id="area" shape="rectangle" coords="426, 365 667, 251" class="area" href="parcela7.php" >
+            <area id="area" shape="rectangle" coords="426, 365 342, 247" class="area" href="parcela8.php" >
+            <area id="area" shape="rectangle" coords="342, 247 429, 38" class="area" href="parcela9.php" >
+            <area id="area" shape="rectangle" coords="429, 38 542, 250" class="area" href="parcela10.php" >
+            <area id="area1" class="area" shape="rectangle" coords="347, 38 257, 163"  href="parcela11.php" >
+</map>
+        </div>
+        </div>
+    
+	</table>
+    
+    
+</div>
+</div>
+<div>
+
+</div>
+</body>
+</html>
