@@ -22,7 +22,7 @@ if (empty($_SESSION["id"])) {
 			<label for="btn-menu">☰ </label>
 		</div>
 			<div class="logo">
-				<h1>Proyectos</h1>
+			<h1>Proyectos</h1>
 				
 			<!--Usuario Logueado-->
 			
