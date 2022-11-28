@@ -4,19 +4,23 @@
 	 <table style="width: 45%">
 		 <tr>
 			 <td style="width: 293px">Seleccione:</td>
-			 <td> <select name="lista" style="width: 120px" > 
+			 <td><select name="lista" style="width: 160px;" required> 
     <?php
 	   $cn= new mysqli("localhost", "root", "", "sistema_dj");
 	   $registros= $cn->query("select * from usuarios");
 
+	   echo "<option disabled selected>Seleccione un usuario</option>"; //evita error del usuario
+	   // repetitiva que carga la lista con los nombres de los usuarios
 	while ($myrow=$registros->fetch_array())
-	     { 
+	     { 	  
 	      echo "<option value='$myrow[id]'>" ;
           echo "$myrow[nombre]";
           echo "</option>";
-          } $cn->close();	  
+          } $cn->close();	
    ?>
-	 </select></td>
+	 </select>
+	 
+	</td>
 		 </tr>
 		 <tr>
 			 <td style="width: 293px">&nbsp;</td>
