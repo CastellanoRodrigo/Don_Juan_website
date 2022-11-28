@@ -4,7 +4,7 @@ include('./template/cabecera.php');?>
 <title>Alta Usuario</title>
 
 <body>
-  <!--llamar controlador-->
+  
 <?php
 include "modelo/conexion.php";
 // include "Controlador/controlador_login.php";
