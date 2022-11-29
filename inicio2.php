@@ -68,7 +68,7 @@ if (empty($_SESSION["id"])) {
         <div class="containerMap">
         <!--division  por parcelas -->
         <map name="mapa">
-        <img src="./imagenes/DonJuanSRL1.png" usemap="#mapa">
+        <img src="./imagenes/DonJuanSRL1-MARCADA.png" usemap="#mapa">
             <area id="area1" class="area" shape="rectangle" coords="494, 690 333, 626" href="parcela1.php" >
             <area id="area2" shape="rectangle" coords="333, 626 497, 478" class="area" href="parcela2.php" >
             <area id="area" shape="rectangle" coords="494, 527 657, 367" class="area" href="parcela3.php" ">

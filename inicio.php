@@ -41,36 +41,30 @@ include('./template/cabecera.php');?>
             </div>
         
             <div>
-                <table align="center">
-                    <tr>
-                        <th><a href="CargaCampaña.php"><button id="open"> Parcela 1 </button></a></th>
-                        <th><a href="CargaCampaña.php" target="_blank"><button id="open"> Parcela 2 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="CargaCampaña.php"><button id="open"> Parcela 3 </button></a></th>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 4 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 5 </button></a></th>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 6 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 7 </button></a></th>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 8 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 9 </button></a></th>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 10 </button></a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="DescripcionParcelas.html"><button id="open"> Parcela 11</button></a></th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div>
-            <h1>INFORMACION DE LAS PARCELAS</h1>
-        </div>
+            <table border="1" style="margin: 0 auto;">
+
+	
+<h1>INFORMACION DE LAS PARCELAS</h1><br>
+<div class="containerMap">
+<!--division  por parcelas -->
+<map name="mapa">
+<img src="./imagenes/DonJuanSRL1-MARCADA.png" usemap="#mapa">
+    <area id="area1" class="area" shape="rectangle" coords="494, 690 333, 626" href="parcela1.php" >
+    <area id="area2" shape="rectangle" coords="333, 626 497, 478" class="area" href="parcela2.php" >
+    <area id="area" shape="rectangle" coords="494, 527 657, 367" class="area" href="parcela3.php" ">
+    <area id="area" shape="rectangle" coords="497, 478 334, 365" class="area" href="parcela4.php" >
+    <area id="area" shape="rectangle" coords="170, 481 331, 690" class="area" href="parcela5.php" >
+    <area id="area" shape="rectangle" coords="334, 365 170, 481" class="area" href="parcela6.php" >
+    <area id="area" shape="rectangle" coords="426, 365 667, 251" class="area" href="parcela7.php" >
+    <area id="area" shape="rectangle" coords="426, 365 342, 247" class="area" href="parcela8.php" >
+    <area id="area" shape="rectangle" coords="342, 247 429, 38" class="area" href="parcela9.php" >
+    <area id="area" shape="rectangle" coords="429, 38 542, 250" class="area" href="parcela10.php" >
+    <area id="area1" class="area" shape="rectangle" coords="347, 38 257, 163"  href="parcela11.php" >
+</map>
+</div>
+</div>
+
+</table>
 
         <?php #Llammo a pie 
 include('./template/pie.php');?>

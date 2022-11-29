@@ -187,7 +187,7 @@ h1 {
 	width: 740px;
 	height: 740px;
 
-	background-image:url("../imagenes/DonJuanSRL1.png");
+	background-image:url("../imagenes/DonJuanSRL1-MARCADA.png");
 	object-fit: contain;
 	display: grid;
 	grid-template-columns: repeat(16, 1fr);
