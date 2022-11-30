@@ -24,7 +24,7 @@ if (empty($_SESSION["id"])) {
                 <label for="btn-menu">☰ </label>
             </div>
             <div class="logo">
-                <h1>Proyectos</h1>
+                <h1>Menú</h1>
 
                 <!--Usuario Logueado-->
                 <div class="button">
@@ -52,40 +52,49 @@ if (empty($_SESSION["id"])) {
         <div class="container-menu">
             <div class="cont-menu">
                 <nav>
-                    <a href="/Don_Juan_website/altaProyectoHacienda.php">Añadir proyecto hacienda</a>
-                    <a href="/Don_Juan_website/altaProyectoSiembra.php">Añadir proyecto siembra</a>
-                    <a href="/Don_Juan_website/detalleHacienda.php">Añadir detalles hacienda</a>
-                    <a href="/Don_Juan_website/detalleSiembra.php">Añadir detalles siembra</a>
-                    <a href="#">Modificar</a>
-                    <a href="#">Finalizar</a>
+                <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
+					<ul class="menu">
+						<li><a href="#">Añadir proyecto 1</a></li>
+						<ul class="menu">
+							<li><a href="#">Añadir proyecto hacienda</a></li>
+							<li><a href="#">Añadir proyecto siembra</a></li>
+							<li><a href="#">Añadir detalles hacienda</a></li>
+							<li><a href="#">Añadir detalles hacienda</a></li>
+						</ul>
+						<li><a href="#">Opci�n 2</a></li>
+						<li><a href="#">Opci�n 3</a></li>
+						<li><a href="#">Opci�n 4</a></li>
+						<li><a href="#">Opci�n 5</a></li>
+					</ul>
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="./JavaScript/main.js"></script>
                 </nav>
                 <label for="btn-menu">✖️</label>
             </div>
         </div>
         <div style="text-align:center;">
-            <h1>INFORMACION DE LAS PARCELAS</h1><br>            
+				<table border="1" style="margin: 0 auto;">
 
-                <div class="contenedor">
-
-                    <div class="area"> </div>
-                    <div class="area"> </div>
-                    <div class="area active"> </div>
-                    <div class="area active"> </div>
-                    <div class="area"> </div>
-                    <div class="area active"> </div>
-                    <div class="area active"> </div>
-                    <div class="area"> </div>
-                    <div class="area active"> </div>
-                    <div class="area active"> </div>
-                    <div class="area active"> </div>
-                    <div class="area"> </div>
-                    <div class="area active"> </div>
-                    <div class="area active"> </div>
-
-                </div>
-           
-
-        </div>
+					<h1>INFORMACION DE LAS PARCELAS</h1><br>
+					<div class="containerMap">
+						<!--division  por parcelas -->
+						<map name="mapa">
+							<img src="./imagenes/DonJuanSRL1-MARCADA.png" usemap="#mapa">
+							<area id="area1" class="area" shape="rectangle" coords="494, 690 333, 626" href="parcela1.php">
+							<area id="area2" shape="rectangle" coords="333, 626 497, 478" class="area" href="parcela2.php">
+							<area id="area" shape="rectangle" coords="494, 527 657, 367" class="area" href="parcela3.php" ">
+            				<area id=" area" shape="rectangle" coords="497, 478 334, 365" class="area" href="parcela4.php">
+							<area id="area" shape="rectangle" coords="170, 481 331, 690" class="area" href="parcela5.php">
+							<area id="area" shape="rectangle" coords="334, 365 170, 481" class="area" href="parcela6.php">
+							<area id="area" shape="rectangle" coords="426, 365 667, 251" class="area" href="parcela7.php">
+							<area id="area" shape="rectangle" coords="426, 365 342, 247" class="area" href="parcela8.php">
+							<area id="area" shape="rectangle" coords="342, 247 429, 38" class="area" href="parcela9.php">
+							<area id="area" shape="rectangle" coords="429, 38 542, 250" class="area" href="parcela10.php">
+							<area id="area1" class="area" shape="rectangle" coords="347, 38 257, 163" href="parcela11.php">
+						</map>
+					</div>
+				</table>
+			</div>
         </div>
         <div>
 
