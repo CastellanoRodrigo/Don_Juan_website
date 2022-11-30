@@ -102,6 +102,7 @@ if (empty($_SESSION["id"])) {
                         <area id="area" shape="rectangle" coords="342, 247 429, 38" class="area" href="parcela9.php" title="Parcela 9 [65ha]">
                         <area id="area" shape="rectangle" coords="429, 38 542, 250" class="area" href="parcela10.php" title="Parcela 10 [95ha]">
                         <area id="area1" class="area" shape="rectangle" coords="347, 38 257, 163" href="parcela11.php" title="Parcela 11 [30ha]">
+                        <br><br><br><br><br>
                     </map>
                 </div>
             </table>
