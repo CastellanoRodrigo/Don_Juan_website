@@ -12,9 +12,9 @@ if (empty($_SESSION["id"])) {
 
 <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" href="./menu-lateral/estilos.css">
-
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="./JavaScript/main.js"></script>
 </head>
 
 <body>
@@ -54,7 +54,7 @@ if (empty($_SESSION["id"])) {
                 <nav>
                     <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
                     <ul class="menu">
-                        <li><a href="#">Añadir proyecto 1</a></li>
+                        <li><a href="#">Añadir proyecto</a></li>
                         <ul class="menu">
                             <li><a href="#">Añadir proyecto hacienda</a></li>
                             <li><a href="#">Añadir proyecto siembra</a></li>
@@ -66,8 +66,7 @@ if (empty($_SESSION["id"])) {
                         <li><a href="#">Opci�n 4</a></li>
                         <li><a href="#">Opci�n 5</a></li>
                     </ul>
-                    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-                    <script src="./JavaScript/main.js"></script>
+
                 </nav>
                 <label for="btn-menu">✖️</label>
             </div>
