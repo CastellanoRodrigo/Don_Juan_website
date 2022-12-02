@@ -13,8 +13,7 @@ if (empty($_SESSION["id"])) {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./menu-lateral/estilos.css">
-    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="./JavaScript/main.js"></script>
+
 </head>
 
 <body>
@@ -37,7 +36,7 @@ if (empty($_SESSION["id"])) {
 
             </div>
             <nav class="menu">
-                <a href="./menu-lateral/index.php">Inicio</a>
+                <a href="./inicio.php">Inicio</a>
                 <a href="./Nosotros.php">Nosotros</a>
                 <a href="./Usuarios.php">Usuarios</a>
                 <a href="">Contacto</a>
@@ -56,10 +55,12 @@ if (empty($_SESSION["id"])) {
                     <ul class="menu">
                         <li><a href="#">Añadir proyecto</a></li>
                         <ul class="menu">
-                            <li><a href="#">Añadir proyecto hacienda</a></li>
-                            <li><a href="#">Añadir proyecto siembra</a></li>
-                            <li><a href="#">Añadir detalles hacienda</a></li>
-                            <li><a href="#">Añadir detalles hacienda</a></li>
+                            <a href="/Don_Juan_website/altaProyectoHacienda.php">Añadir proyecto hacienda</a>
+                            <a href="/Don_Juan_website/altaProyectoSiembra.php">Añadir proyecto siembra</a>
+                            <a href="/Don_Juan_website/detalleHacienda.php">Añadir detalles hacienda</a>
+                            <a href="/Don_Juan_website/detalleSiembra.php">Añadir detalles siembra</a>
+                            <a href="#">Modificar</a>
+                            <a href="#">Finalizar</a>
                         </ul>
                         <li><a href="#">Opci�n 2</a></li>
                         <li><a href="#">Opci�n 3</a></li>
@@ -113,6 +114,7 @@ if (empty($_SESSION["id"])) {
         </div>
 
 
+        <script src="./JavaScript/main.js"></script>
 </body>
 
 </html>

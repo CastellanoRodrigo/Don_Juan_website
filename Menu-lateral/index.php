@@ -22,7 +22,7 @@ if (empty($_SESSION["id"])) {
 			<label for="btn-menu">☰ </label>
 		</div>
 			<div class="logo">
-			<h1>Proyectos</h1>
+			<h1>Menu</h1>
 				
 			<!--Usuario Logueado-->
 			
@@ -44,6 +44,7 @@ if (empty($_SESSION["id"])) {
 				
 			</div>
 			<nav class="menu">
+				
 				<a href="#">Inicio</a>
 				<a href="#">Nosotros</a>
 				<a href="#">Blog</a>
@@ -54,6 +55,7 @@ if (empty($_SESSION["id"])) {
         
  <div class="bd-example mb0" style="height: 15vh"></div>
         <nav class="navbar navbar-dark bg-dark navbar-expand-md navbar-light fixed-top">
+	
 	<div class="capa"></div>
 <!--	--------------->
 <input type="checkbox" id="btn-menu">

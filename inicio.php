@@ -12,7 +12,6 @@ if (empty($_SESSION["id"])) {
 
 <head>
     <meta charset="UTF-8">
-
     <link rel="stylesheet" href="./menu-lateral/estilos.css">
 
 </head>
@@ -37,7 +36,7 @@ if (empty($_SESSION["id"])) {
 
             </div>
             <nav class="menu">
-                <a href="./menu-lateral/index.php">Inicio</a>
+                <a href="./inicio.php">Inicio</a>
                 <a href="./Nosotros.php">Nosotros</a>
                 <a href="./Usuarios.php">Usuarios</a>
                 <a href="">Contacto</a>
@@ -54,20 +53,21 @@ if (empty($_SESSION["id"])) {
                 <nav>
                     <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
                     <ul class="menu">
-                        <li><a href="#">Añadir proyecto 1</a></li>
+                        <li><a href="#">Añadir proyecto</a></li>
                         <ul class="menu">
-                            <li><a href="#">Añadir proyecto hacienda</a></li>
-                            <li><a href="#">Añadir proyecto siembra</a></li>
-                            <li><a href="#">Añadir detalles hacienda</a></li>
-                            <li><a href="#">Añadir detalles hacienda</a></li>
+                            <a href="/Don_Juan_website/altaProyectoHacienda.php">Añadir proyecto hacienda</a>
+                            <a href="/Don_Juan_website/altaProyectoSiembra.php">Añadir proyecto siembra</a>
+                            <a href="/Don_Juan_website/detalleHacienda.php">Añadir detalles hacienda</a>
+                            <a href="/Don_Juan_website/detalleSiembra.php">Añadir detalles siembra</a>
+                            <a href="#">Modificar</a>
+                            <a href="#">Finalizar</a>
                         </ul>
                         <li><a href="#">Opci�n 2</a></li>
                         <li><a href="#">Opci�n 3</a></li>
                         <li><a href="#">Opci�n 4</a></li>
                         <li><a href="#">Opci�n 5</a></li>
                     </ul>
-                    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-                    <script src="./JavaScript/main.js"></script>
+
                 </nav>
                 <label for="btn-menu">✖️</label>
             </div>
@@ -103,6 +103,7 @@ if (empty($_SESSION["id"])) {
                         <area id="area" shape="rectangle" coords="342, 247 429, 38" class="area" href="parcela9.php" title="Parcela 9 [65ha]">
                         <area id="area" shape="rectangle" coords="429, 38 542, 250" class="area" href="parcela10.php" title="Parcela 10 [95ha]">
                         <area id="area1" class="area" shape="rectangle" coords="347, 38 257, 163" href="parcela11.php" title="Parcela 11 [30ha]">
+                        <br><br><br><br><br>
                     </map>
                 </div>
             </table>
@@ -113,6 +114,7 @@ if (empty($_SESSION["id"])) {
         </div>
 
 
+        <script src="./JavaScript/main.js"></script>
 </body>
 
 </html>

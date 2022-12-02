@@ -1,32 +1,53 @@
-<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
-include('./template/cabecera.php');?>
+<?php
+session_start();
+#controlamos el ingreso, si trata de acceder manualmente por url 
+#lo redirige al login
+if (empty($_SESSION["id"])) {
+    header("location: login.php");
+}
 
-    <title>Nosotros</title>
-<!-- Body -->
+?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./menu-lateral/estilos.css">
+
+</head>
+
 <body>
-<section class="home">
-        <div class="BarraNavegacion">
-            <img src="imagenes/Gafa.jpg">
-            <nav>
-                <a href="inicio.php"> Inicio </a>             
-                <a href="Consultas.php"> Consultas </a>
-                <a href="Usuarios.php"> Usuarios </a>
-            </nav>
-            <div>
-                <button class="BotonSalir"> Salir </button>
+    <header class="header">
+        <div class="container">
+            <div class="btn-menu">
+                <label for="btn-menu">☰ </label>
             </div>
-        </div>
-    <section>
-        <div class="Espacio"></div>
-        <div class="Cover2">
-            <div class="ImagenParcela">
-                <h1> NOSOTROS </h1>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div>IMAGEN NUESTRA</div>
-    </section>
+            <div class="logo">
+                <h1>Menú</h1>
 
-    <?php #Llammo a pie 
-include('./template/pie.php');?>
+                <!--Usuario Logueado-->
+                <div class="button">
+                    <div class=".text-light">
+                        <?php
+                        echo $_SESSION["nombre"] . " " . $_SESSION["apellido"];
+                        ?>
+                    </div>
+                </div>
+
+            </div>
+            <nav class="menu">
+                <a href="./inicio.php">Inicio</a>
+                <a href="./Nosotros.php">Nosotros</a>
+                <a href="./Usuarios.php">Usuarios</a>
+                <a href="">Contacto</a>
+            </nav>
+        </div>
+        <title>Nosotros</title>
+    </header>
+
+
+
+
+    </body>
+
+</html>
