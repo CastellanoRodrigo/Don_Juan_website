@@ -8,7 +8,7 @@ if (empty($_SESSION["id"])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,13 +28,14 @@ if (empty($_SESSION["id"])) {
 				<p>DON JUAN SRL <span>GAFA</span></p>
 				<i class="fas fa-caret-down"></i>
 				  <!--Usuario Logueado-->
-				  <div class="button">
+				  
+                </div>
+				<div class="button">
                     <div class=".text-light">
                         <?php
                         echo $_SESSION["nombre"] . " " . $_SESSION["apellido"];
                         ?>
                     </div>
-                </div>
 			</div>
 
 			<div class="enlaces">

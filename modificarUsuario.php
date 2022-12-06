@@ -1,4 +1,6 @@
-﻿
+﻿<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/cabecera.php');?>
+
 <form name="datos" action="modificarUsuario.php" method="post">
 	<center>
 	 <table style="width: 45%">

@@ -2,9 +2,9 @@
 
 * {
 	margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat Alternates', sans-serif;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat Alternates', sans-serif;
 }
 
 
@@ -12,10 +12,12 @@ body {
 	background: url(https://www.xtrafondos.com/wallpapers/planeta-en-el-campo-2820.jpg);
 	min-width: 100vh;
 	background-size: cover;
+	background-repeat: no-repeat;
 	background-position: center center;
 	justify-content: center;
 	align-items: center;
-
+	max-width: 100%;
+	height: auto;
 }
 
 a {
@@ -23,15 +25,16 @@ a {
 }
 
 h1 {
-	color:#0a6111;
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+	color: #0a6111;
+	display: block;
+	font-size: 2em;
+	margin-block-start: 0.67em;
+	margin-block-end: 0.67em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
 }
+
 .contenedor {
 	margin: auto;
 	width: 90%;
@@ -39,7 +42,7 @@ h1 {
 }
 
 main article {
-	background:#0a6111;
+	background: #0a6111;
 	margin: 20px 0;
 	padding: 20px;
 	height: 1000px;
@@ -88,15 +91,15 @@ main article {
 
 .menu .contenedor-enlaces-nav {
 	color: #cbddcc;
-	font:bolder;
+	font: bolder;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 .menu .btn-departamentos {
-	color:#c5dec7;
-	font:bold;
+	color: #c5dec7;
+	font: bold;
 	padding: 7px;
 	border-radius: 3px;
 	display: flex;
@@ -108,7 +111,7 @@ main article {
 
 .menu .btn-departamentos i {
 	color: #e2eae3;
-	font:bold;
+	font: bold;
 	margin-left: 20px;
 	position: relative;
 	bottom: 3px;
@@ -125,7 +128,7 @@ main article {
 }
 
 .menu .contenedor-enlaces-nav .enlaces a {
-	color:#e2eae3;
+	color: #e2eae3;
 	font: bold;
 	border: 1px solid rgb(201, 225, 200);
 	padding: 7px;
@@ -490,11 +493,12 @@ main article {
 /*Fin de Menù lateral*/
 
 /*Mapa parcelas*/
-.containerMap .mapa .map{
+.containerMap .mapa .map {
 	border-radius: 15px;
-box-shadow: 28px  28px 0 #00000080;
+	box-shadow: 28px 28px 0 #00000080;
 
 }
+
 .containerMap {
 	position: relative;
 	box-sizing: border border-box;

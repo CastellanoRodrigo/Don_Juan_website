@@ -1,4 +1,6 @@
-<?php
+
+<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/cabecera.php');?><?php
 // controla si $_Post esta vacio
 if (!empty ($_POST))  
    {
