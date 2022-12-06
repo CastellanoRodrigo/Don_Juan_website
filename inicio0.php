@@ -8,7 +8,7 @@ if (empty($_SESSION["id"])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,13 +28,14 @@ if (empty($_SESSION["id"])) {
 				<p>DON JUAN SRL <span>GAFA</span></p>
 				<i class="fas fa-caret-down"></i>
 				  <!--Usuario Logueado-->
-				  <div class="button">
+				  
+                </div>
+				<div class="button">
                     <div class=".text-light">
                         <?php
                         echo $_SESSION["nombre"] . " " . $_SESSION["apellido"];
                         ?>
                     </div>
-                </div>
 			</div>
 
 			<div class="enlaces">
@@ -66,10 +67,10 @@ if (empty($_SESSION["id"])) {
 						<div class="enlaces-subcategoria">
 							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
 							<h3 class="subtitulo">Proyectos</h3>
-							<a href="/altaProyectoHacienda.php">Alta de hacienda</a>
-							<a href="/altaProyectoSiembra.php">Alta siembra</a>
-							<a href="/detalleHacienda.php">Detalle inicial Hacienda</a>
-							<a href="/detalleSiembra.php">Detalle inicial Siembra</a>
+							<a href="./altaProyectoHacienda.php">Alta de hacienda</a>
+							<a href="./altaProyectoSiembra.php">Alta siembra</a>
+							<a href="./detalleHacienda.php">Detalle inicial Hacienda</a>
+							<a href="./detalleSiembra.php">Detalle inicial Siembra</a>
 							<a href="#">Modificar</a>
 						</div>
 
@@ -160,9 +161,9 @@ if (empty($_SESSION["id"])) {
 						<div class="enlaces-subcategoria">
 							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
 							<h3 class="subtitulo">Usuarios</h3>
-							<a href="/Usuarios.php">Alta de usuario</a>
-							<a href="/eliminarUsuario.php">Baja de usuario</a>
-							<a href="/modificarUsuario.php">Modificar usuario</a>
+							<a href="./Usuarios.php">Alta de usuario</a>
+							<a href="./eliminarUsuario.php">Baja de usuario</a>
+							<a href="./modificarUsuario.php">Modificar usuario</a>
 						
 						</div>
 
@@ -285,7 +286,7 @@ if (empty($_SESSION["id"])) {
 	</nav>
 
 	<main class="contenedor">
-		<article> <!-- Contenido parcelas -->
+		<!-- Contenido parcelas -->
 
 		<div style="text-align:center;">
 		<table border="1" style="margin: 0 auto;">
@@ -306,18 +307,19 @@ if (empty($_SESSION["id"])) {
 				• Parcela 11: 30 hectáreas.-->
 
 				<map name="mapa">
-					<img src="./imagenes/DonJuanSRL1-MARCADA.png" usemap="#mapa">
-					<area id="area1" class="area" shape="rectangle" coords="494, 690 333, 626" href="/Parcelas/parcela1.php" title="Parcela 1 [43ha]"></area>
-					<area id="area2" shape="rectangle" coords="333, 626 497, 478" class="area" href="/Parcelas/parcela2.php" title="Parcela 2 [90ha]">
-					<area id="area" shape="rectangle" coords="494, 527 657, 367" class="area" href="/Parcelas/parcela3.php" title="Parcela 3 [100ha]">
-					<area id=" area" shape="rectangle" coords="497, 478 334, 365" class="area" href="/Parcelas/parcela4.php" title="Parcela 4 [70ha]">
-					<area id="area" shape="rectangle" coords="170, 481 331, 690" class="area" href="/Parcelas/parcela5.php" title="Parcela 5 [100ha]">
-					<area id="area" shape="rectangle" coords="334, 365 170, 481" class="area" href="/Parcelas/parcela6.php" title="Parcela 6 [70ha]">
-					<area id="area" shape="rectangle" coords="426, 365 667, 251" class="area" href="/Parcelas/parcela7.php" title="Parcela 7 [100ha]">
-					<area id="area" shape="rectangle" coords="426, 365 342, 247" class="area" href="/Parcelas/parcela8.php" title="Parcela 8 [35ha]">
-					<area id="area" shape="rectangle" coords="342, 247 429, 38" class="area" href="/Parcelas/parcela9.php" title="Parcela 9 [65ha]">
-					<area id="area" shape="rectangle" coords="429, 38 542, 250" class="area" href="/Parcelas/parcela10.php" title="Parcela 10 [95ha]">
-					<area id="area1" class="area" shape="rectangle" coords="347, 38 257, 163" href="/Parcelas/parcela11.php" title="Parcela 11 [30ha]">
+					<img src="./imagenes/DonJuanSRL1-MARCADA.png" usemap="#mapa" style="	border-radius: 15px;
+box-shadow: 28px  28px 0 #00000080;">
+					<area id="area1" class="area" shape="rectangle" coords="494, 690 333, 626" href="./Parcelas/parcela1.php title="Parcela 1 [43ha]"></area>
+					<area id="area2" shape="rectangle" coords="333, 626 497, 478" class="area" href="./Parcelas/parcela2.php" title="Parcela 2 [90ha]">
+					<area id="area" shape="rectangle" coords="494, 527 657, 367" class="area" href="./Parcelas/parcela3.php" title="Parcela 3 [100ha]">
+					<area id=" area" shape="rectangle" coords="497, 478 334, 365" class="area" href="./Parcelas/parcela4.php" title="Parcela 4 [70ha]">
+					<area id="area" shape="rectangle" coords="170, 481 331, 690" class="area" href="./Parcelas/parcela5.php" title="Parcela 5 [100ha]">
+					<area id="area" shape="rectangle" coords="334, 365 170, 481" class="area" href="./Parcelas/parcela6.php" title="Parcela 6 [70ha]">
+					<area id="area" shape="rectangle" coords="426, 365 667, 251" class="area" href="./Parcelas/parcela7.php" title="Parcela 7 [100ha]">
+					<area id="area" shape="rectangle" coords="426, 365 342, 247" class="area" href="./Parcelas/parcela8.php" title="Parcela 8 [35ha]">
+					<area id="area" shape="rectangle" coords="342, 247 429, 38" class="area" href="./Parcelas/parcela9.php" title="Parcela 9 [65ha]">
+					<area id="area" shape="rectangle" coords="429, 38 542, 250" class="area" href="./Parcelas/parcela10.php" title="Parcela 10 [95ha]">
+					<area id="area1" class="area" shape="rectangle" coords="347, 38 257, 163" href="./Parcelas/parcela11.php" title="Parcela 11 [30ha]">
 					<br><br><br><br><br>
 				</map>
 			</div>
@@ -328,7 +330,7 @@ if (empty($_SESSION["id"])) {
 
 	</div>
 
-		</article>
+		<!--Fin parcelas-->
 	</main>
 	<!--  Fin del menu -->
 	
