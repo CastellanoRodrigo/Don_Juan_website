@@ -1,75 +1,5 @@
-<?php
-session_start();
-#controlamos el ingreso, si trata de acceder manualmente por url 
-#lo redirige al login
-if (empty($_SESSION["id"])) {
-    header("location: login.php");
-}
-
-?>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./menu-lateral/estilos.css">
-
-</head>
-
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="btn-menu">
-                <label for="btn-menu">☰ </label>
-            </div>
-            <div class="logo">
-                <h1>Menú</h1>
-
-                <!--Usuario Logueado-->
-                <div class="button">
-                    <div class=".text-light">
-                        <?php
-                        echo $_SESSION["nombre"] . " " . $_SESSION["apellido"];
-                        ?>
-                    </div>
-                </div>
-
-            </div>
-            <nav class="menu">
-                <a href="./menu-lateral/index.php">Inicio</a>
-                <a href="./Nosotros.php">Nosotros</a>
-                <a href="./Usuarios.php">Usuarios</a>
-                <a href="">Contacto</a>
-            </nav>
-        </div>
-    </header>
-    <div class="bd-example mb0" style="height: 15vh"></div>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-md navbar-light fixed-top">
-        <div class="capa"></div>
-        <!--	--------------->
-        <input type="checkbox" id="btn-menu">
-        <div class="container-menu">
-            <div class="cont-menu">
-                <nav>
-                    <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
-                    <ul class="menu">
-                        <li><a href="#">Añadir proyecto</a></li>
-                        <ul class="menu">
-                            <li><a href="#">Añadir proyecto hacienda</a></li>
-                            <li><a href="#">Añadir proyecto siembra</a></li>
-                            <li><a href="#">Añadir detalles hacienda</a></li>
-                            <li><a href="#">Añadir detalles hacienda</a></li>
-                        </ul>
-                        <li><a href="#">Opci�n 2</a></li>
-                        <li><a href="#">Opci�n 3</a></li>
-                        <li><a href="#">Opci�n 4</a></li>
-                        <li><a href="#">Opci�n 5</a></li>
-                    </ul>
-
-                </nav>
-                <label for="btn-menu">✖️</label>
-            </div>
-        </div>
+<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/cabecera.php');?>
 
 	<br>
 	<br>
@@ -191,6 +121,8 @@ if (empty($_SESSION["id"])) {
 	<br>
 	<br>
 	<br>
-</body>
+	
+	<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/pie.php');?>
 
 

@@ -40,8 +40,5 @@ include('./template/cabecera.php');?>
         </div>
 
 
-        <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
-        <script src="main.js"></script>
-</body>
-
-</html>
+        <?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/cabecera.php');?>

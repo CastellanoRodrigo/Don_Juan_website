@@ -10,8 +10,9 @@
 
 body {
 	background: url(https://www.xtrafondos.com/wallpapers/planeta-en-el-campo-2820.jpg);
+	object-fit: cover;
 	min-width: 100vh;
-	background-size: cover;
+	
 	background-repeat: no-repeat;
 	background-position: center center;
 	justify-content: center;

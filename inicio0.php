@@ -49,9 +49,5 @@ box-shadow: 28px  28px 0 #00000080;">
 		<!--Fin parcelas-->
 	</main>
 	<!--  Fin del menu -->
-	
-	
-	<script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
-	<script src="main.js"></script>
-</body>
-</html>
+	<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/pie.php');?>
