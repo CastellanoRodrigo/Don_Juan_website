@@ -22,7 +22,7 @@
                         <form method="post" action="">
                             <?php
                             // el error lo marca aca en estos include x ejemplo
-                            include "modelo/conexion.php";
+                            include "Modelo/Conexion.php";
                             include "Controlador/controlador_login.php";
                             ?>
                             <div class="cover">
