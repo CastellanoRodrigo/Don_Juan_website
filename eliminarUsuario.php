@@ -1,6 +1,6 @@
 
 <?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
-include('./template/cabecera.php');?><?php
+include('./template/p');?><?php
 // controla si $_Post esta vacio
 if (!empty ($_POST))  
    {
@@ -55,3 +55,18 @@ if (!empty ($_POST))
 
     echo "</center>";
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php #Llammo a pie
+include('./template/Pie.php');?>

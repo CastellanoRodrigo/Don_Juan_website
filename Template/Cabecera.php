@@ -41,7 +41,7 @@ if (empty($_SESSION["id"])) {
 			</div>
 
 			<div class="enlaces">
-				<a href="../inicio.php">Inicio</a>
+				<a href="../">Inicio</a>
 				<a href="#">Salir</a>
 				
 			</div>
