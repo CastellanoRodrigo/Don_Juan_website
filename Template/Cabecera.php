@@ -130,7 +130,8 @@ if (empty($_SESSION["id"])) {
 						<div class="enlaces-subcategoria">
 							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
 							<h3 class="subtitulo">Compras y Ventas </h3>
-							<a href="#">Gastos por proyecto</a>
+							<a href="/Don_Juan_website/compraHacienda.php">Compras hacienda</a>
+							<a href="#">Compras siembra</a>
 							<a href="#">Gastos arrendamiento</a>
 							<a href="#">Subir documentos</a>							
 						</div>
