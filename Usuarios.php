@@ -1,5 +1,5 @@
 <?php #Llammo a pie 
-include('./template//Cabecera.php');?>
+include('./Template/Cabecera.php');?>
 <!--codigo aca-->
 
 
