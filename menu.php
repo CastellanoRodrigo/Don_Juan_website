@@ -1,27 +1,67 @@
 
-<div class="container-menu">
-            <div class="cont-menu">
-                <nav>
-                    <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
-                    <ul class="menu">
-                        <li><a href="#">Añadir proyecto 1</a></li>
-                        <ul class="menu">
-                            <li><a href="./altaProyectoHacienda.php">Añadir proyecto hacienda</a></li>
-                            <li><a href="./altaProyectoSiembra.php">Añadir proyecto siembra</a></li>
-                            <li><a href="./detalleHacienda.php">Añadir detalles hacienda</a></li>
-                            <li><a href="./detalleSiembra.php">Añadir detalles hacienda</a></li>
-                        </ul>
-                        <li><a href="#">Añadir proyecto 1</a></li>
-                        <ul class="menu">
-                            <li><a href="#">Añadir proyecto hacienda</a></li>
-                            <li><a href="#">Añadir proyecto siembra</a></li>
-                            <li><a href="#">Añadir detalles hacienda</a></li>
-                            <li><a href="#">Añadir detalles hacienda</a></li>
-                        </ul>
-                    </ul>
-                    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-                    <script src="./JavaScript/main.js"></script>
-                </nav>
-                <label for="btn-menu">✖️</label>
-            </div>
-        </div>
+<div id="uno" > 
+ <center>
+ <h1>   <font size="+5" color="#800000">Campo Don juan <!--Define formanto para palabra ferro-->
+       </font>SRL
+   </h1> 
+     </center>    
+<ul id="nav"> <!--Define lista usando estilo llamado nav para formar la barra de menu horizontal-->
+   
+  <li> <!--Define item de la lista -->
+        <a href="home.php"> <!-- define enlace -->
+          Login
+       </a>        
+   <li> <!--Define item de la lista -->
+       <a href="#"> <!-- define enlace -->
+        Administrar Usuarios
+       </a>
+       <ul> <!--Define Sublista -->
+            
+          <li><!--Define item de la sublista -->
+             <a href="Productos.php"> <!-- define enlace -->
+               Registrar
+             </a>
+          </li>
+           <li><!--Define item de la sublista -->
+             <a href="Productos.php"> <!-- define enlace -->
+               Eliminar
+             </a>
+          </li>
+           <li><!--Define item de la sublista -->
+             <a href="Productos.php"> <!-- define enlace -->
+               Modificar
+             </a>
+          </li>
+       </ul> <!--Finaliza la definición de la sublista -->
+   </li>   
+   <li><!--Define item de la lista -->
+     <a href="Pedidosss.php"><!-- define enlace -->
+        Realizar consultas
+     </a>
+     <ul> <!--Define Sublista -->       
+          <li><!--Define item de la sublista -->
+             <a href="Agregar.php"> <!-- define enlace -->
+               Consultar estadisticas
+             </a>
+          </li>
+           <li><!--Define item de la sublista -->
+             <a href="Listar.php"> <!-- define enlace -->
+               Consultar historial
+             </a>
+          </li>
+<li><!--Define item de la sublista -->
+             <a href="Modificar.php"> <!-- define enlace -->
+               Ver parcelas
+             </a>
+          </li>
+<li><!--Define item de la sublista -->
+             <a href="Eliminar.php"> <!-- define enlace -->
+               Dejar nota
+             </a>
+          </li>
+          
+      </ul> <!--Finaliza la definición de la sublista --> 
+  </li>
+</ul> <!--Finaliza la definición de la lista que será la barra de menú -->
+ 
+ </div>
