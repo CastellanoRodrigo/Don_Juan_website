@@ -1,6 +1,10 @@
 <?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
-include('./template/cabecera.php');?>
-
+include('./Template/Cabecera.php');?>
+<?php
+include "modelo/conexion.php";
+// include "Controlador/controlador_login.php";
+?>
+	
 	<br>
 	<br>
 	<br>
@@ -14,6 +18,7 @@ include('./template/cabecera.php');?>
 	
 		NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
 		<h1 style="text-align:center ;">Detalle inicial de parcela</h1>
+		
 	<center>
 	<table border=2 width=400>
 	<tr><td style= "text-align:center;font-size:16pt;background-color:#fff;font-weight:bold; width: 97px;color:1f361f;">NombreProyecto</td>

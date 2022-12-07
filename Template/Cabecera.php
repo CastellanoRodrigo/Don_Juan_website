@@ -7,6 +7,8 @@ if (empty($_SESSION["id"])) {
 }
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
