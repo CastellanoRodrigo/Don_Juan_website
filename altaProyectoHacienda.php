@@ -1,5 +1,56 @@
-<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
-include('./template/cabecera.php');?>
+<?php
+session_start();
+#controlamos el ingreso, si trata de acceder manualmente por url 
+#lo redirige al login
+if (empty($_SESSION["id"])) {
+    header("location: login.php");
+}
+
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Menù Lateral con Css</title>
+	<link rel="stylesheet" href="./menu-lateral/estilos.css">
+	
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+		<div class="btn-menu">
+			<label for="btn-menu">☰ </label>
+		</div>
+			<div class="logo">
+				<h1>Proyectos</h1>
+				
+			<!--Usuario Logueado-->
+			
+			<div class=".text-light" style="
+    padding-top: 0px;
+    padding-right: 2px;
+    padding-left: 2px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+">
+            <?php
+           echo $_SESSION["nombre"]." ".$_SESSION["apellido"];
+            ?>
+			</div>
+    
+				
+			</div>
+			<nav class="menu">
+      <a href="./menu-lateral/index.php">Inicio</a>
+				<a href="./Nosotros.php">Nosotros</a>
+				<a href="./Usuarios.php">Usuarios</a>
+				<a href="">Contacto</a>
+			</nav>
+		</div>
+	</header>
 
 <title>Alta Proyecto de hacienda</title>
 
@@ -25,6 +76,14 @@ include "modelo/conexion.php";
   <td style="width: 366px; height: 47px">
    
 	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" />
+	 </td>
+ </tr>
+ <tr>
+  <td style="width: 264px">
+   ID del proyecto:</td>
+  <td style="width: 366px">
+   
+	   <input name="txtId" type="text" class="auto-style1" style="height: 30px; width: 127px" />
 	 </td>
  </tr>
  <tr>
@@ -89,34 +148,32 @@ include "modelo/conexion.php";
    {  // Conecta a la base de datos
       $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
-     //$idcamp=$_POST['txtId'];
+     $idcamp=$_POST['txtId'];
      $parcela=$_POST['cmbparcela'];
      $nombre=$_POST['txtNombre']; 
      //$iddetalle=$_POST['txtIdDetalle'];
      $estado=$_POST['cmbEstado'];
 
-     //FALTA EL CONTROL DE QUE NO EXISTA OTRA CAMPAÑA CON EL MISMO NOMBRE
      // Cadena que controla si hay una campaña creada con ese Id
-     //$sql="select  * from ProyectoHacienda  where Id_ProyectoHacienda= $idcamp";
+     $sql="select  * from ProyectoHacienda  where Id_ProyectoHacienda= $idcamp";
      // Ejecuta sentencia en sql
-      //$re=$cn->query($sql);
+      $re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
-      //$c=$re->num_rows; 
-      //if ( $c==0)
-      // HASTA ACA SERIA EL CONTROL QUE SE NECESITA HACER
-     //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO ProyectoHacienda(Id_Parcela, NombreProyecto, Estado) VALUES ('$parcela','$nombre','$estado')";
+      $c=$re->num_rows; 
+      if ( $c==0)
+     {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
+        $cad = "INSERT INTO ProyectoHacienda(Id_ProyectoHacienda, Id_Parcela, NombreProyecto, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
        echo "El Proyecto fue dado de alta con exito";
-    //}
-    //else 
-   // {
-      // mensaje que ya existe por lo tanto no fue dado de alta FALTA EL CONTROL
-      //echo "Ya existe un proyecto con ese ID";
+    }
+    else 
+    {
+      // mensaje que ya existe por lo tanto no fue dado de alta
+      echo "Ya existe un proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
-    // }
+     }
      
   // cierra la conexion   
  $cn->close();

@@ -1,6 +1,56 @@
-<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
-include('./template/cabecera.php');?>
+<?php
+session_start();
+#controlamos el ingreso, si trata de acceder manualmente por url 
+#lo redirige al login
+if (empty($_SESSION["id"])) {
+    header("location: login.php");
+}
 
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Menù Lateral con Css</title>
+	<link rel="stylesheet" href="./menu-lateral/estilos.css">
+	
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+		<div class="btn-menu">
+			<label for="btn-menu">☰ </label>
+		</div>
+			<div class="logo">
+				<h1>Proyectos</h1>
+				
+			<!--Usuario Logueado-->
+			
+			<div class=".text-light" style="
+    padding-top: 0px;
+    padding-right: 2px;
+    padding-left: 2px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+">
+            <?php
+           echo $_SESSION["nombre"]." ".$_SESSION["apellido"];
+            ?>
+			</div>
+    
+				
+			</div>
+			<nav class="menu">
+      <a href="./menu-lateral/index.php">Inicio</a>
+				<a href="./Nosotros.php">Nosotros</a>
+				<a href="./Usuarios.php">Usuarios</a>
+				<a href="">Contacto</a>
+			</nav>
+		</div>
+	</header>
 <title>Alta Proyecto de Siembra</title>
 <!-- Body -->
 <body>
@@ -24,7 +74,15 @@ include "modelo/conexion.php";
    Nombre del proyecto:</td>
   <td style="width: 366px; height: 47px">
   
-	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" required="required"/>
+	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" />
+	 </td>
+ </tr>
+ <tr>
+  <td style="width: 264px">
+   ID del proyecto:</td>
+  <td style="width: 366px">
+   
+	   <input name="txtId" type="text" class="auto-style1" style="height: 30px; width: 127px" />
 	 </td>
  </tr>
  <tr>
@@ -37,8 +95,9 @@ include "modelo/conexion.php";
 		 ?>	 
 		 
 		<select  name="cmbparcela" style="width: 120px; height: 28px;">
-          <!--ANTES EL VALUE ERA 0- LO PASE A "" pero no funciono el required-->
-          <option name="cmbParcelas" value="">Seleccionar</option>
+  
+        <option name="cmbParcelas" value="0">Seleccionar</option>
+    
         <?php
   
           $query = $mysqli -> query ("SELECT * FROM Parcela ");
@@ -59,8 +118,7 @@ include "modelo/conexion.php";
    <td style="width: 366px">
      <form method="post">		
 		 <select name="cmbEstado" size="1"style="width: 120px; height: 28px">
-     <!--antes estaba el 1er value en 0- no pude hacer funcionar el REQUIRED -->
-                            <option value="" selected="selected">Asignar Estado</option>
+                            <option value="0" selected="selected">Asignar Estado</option>
                             <option value="Iniciado">Iniciado</option>
                             <option value="Finalizado">Finalizado</option>                           
     </select>
@@ -89,41 +147,37 @@ include "modelo/conexion.php";
    {  // Conecta a la base de datos
       $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
-     //$idcamp=$_POST['txtId'];
+     $idcamp=$_POST['txtId'];
      $parcela=$_POST['cmbparcela'];
      $nombre=$_POST['txtNombre']; 
     // $iddetalle=$_POST['txtIdDetalle'];
      $estado=$_POST['cmbEstado'];
 
-     //ACA EMPEZARIA EL CONTROL QUE NO PUDE HACER FUNCIONAR
      // Cadena que controla si hay una campaña creada con ese Id
-     //$sql="select  * from ProyectoSiembra  where NombreProyecto= $nombre";
+     $sql="select  * from ProyectoSiembra  where Id_ProyectoSiembra= $idcamp";
      // Ejecuta sentencia en sql
      //$re significa registro y $cn significa conexion
-      //$re=$cn->query($sql);
+      $re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
-     // $c=$re->num_rows; 
-      //if ( $c==0)
-      // ACA FINALIZARIA EL CONTROL
-     //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO ProyectoSiembra(Id_Parcela, NombreProyecto, Estado) VALUES ('$parcela','$nombre','$estado')";
+      $c=$re->num_rows; 
+      if ( $c==0)
+     {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
+        $cad = "(INSERT INTO ProyectoSiembra(Id_ProyectoSiembra, Id_Parcela, NombreProyecto, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
-        echo "El proyecto fue dado de alta con exito";
-    //}
-    //else 
-    //{
+       echo "El proyecto fue dado de alta con exito";
+    }
+    else 
+    {
       // mensaje que ya existe por lo tanto no fue dado de alta
-     // echo "Ya existe una proyecto con ese ID";
+      echo "Ya existe una proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
-     //}
+     }
      
   // cierra la conexion   
-  $cn->close();
+ $cn->close();
 }
-
-
 ?>
 
 <?php #Llammo a pie 
