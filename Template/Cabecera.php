@@ -41,11 +41,9 @@ if (empty($_SESSION["id"])) {
 			</div>
 
 			<div class="enlaces">
-				<a href="#">Proyectos</a>
-				<a href="#">Detalles</a>
-				<a href="#">Usuarios</a>
-				<a href="#">Nosotros</a>
-				<a href="#">Nosotros</a>
+				<a href="../inicio.php">Inicio</a>
+				<a href="#">Salir</a>
+				
 			</div>
 		</div>
 <!--Menu Nav-->
