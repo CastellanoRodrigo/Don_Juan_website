@@ -69,4 +69,4 @@ if (!empty ($_POST))
 
 
     <?php #Llammo a pie
-include('./template/Pie.php');?>
+include('./Template/Pie.php');?>

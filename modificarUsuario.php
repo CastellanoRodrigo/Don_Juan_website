@@ -102,3 +102,6 @@ if (!empty ($_POST))
 	echo "</center>"; 
 	}	 
 ?> 
+<?php #Llammo a pie 
+include('./template/Pie.php');?>
+<!--codigo aca-->
