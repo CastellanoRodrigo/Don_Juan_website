@@ -21,7 +21,7 @@ include "modelo/conexion.php";
    Nombre del proyecto:</td>
   <td style="width: 366px; height: 47px">
    
-	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" />
+	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" required/>
 	 </td>
  </tr>
  <tr>
@@ -29,7 +29,7 @@ include "modelo/conexion.php";
    ID del proyecto:</td>
   <td style="width: 366px">
    
-	   <input name="txtId" type="text" class="auto-style1" style="height: 30px; width: 127px" />
+	   <input name="txtId" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
 	 </td>
  </tr>
  <tr>
@@ -41,7 +41,7 @@ include "modelo/conexion.php";
 	     $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
 		 
-		<select  name="cmbparcela" style="width: 120px; height: 28px;">
+		<select  name="cmbparcela" style="width: 120px; height: 28px;" required>
   
         <option name="cmbParcelas" value="0">Seleccionar</option>
   
@@ -64,7 +64,7 @@ include "modelo/conexion.php";
    Estado:</td>
    <td style="width: 366px">
      <form method="post">		
-		 <select name="cmbEstado" size="1"style="width: 120px; height: 28px">
+		 <select name="cmbEstado" size="1"style="width: 120px; height: 28px" required>
                             <option value="0" selected="selected">Asignar Estado</option>
                             <option value="Iniciado">Iniciado</option>
                             <option value="Finalizado">Finalizado</option>                           

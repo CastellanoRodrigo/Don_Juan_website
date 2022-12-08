@@ -22,7 +22,7 @@
                         <form method="post" action="">
                             <?php
                             // el error lo marca aca en estos include x ejemplo
-                            include "modelo/conexion.php";
+                            include "Modelo/Conexion.php";
                             include "Controlador/controlador_login.php";
                             ?>
                             <div class="cover">
@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="div">
                                             <h5>Usuario</h5>
-                                            <input id="usuario" type="text" class="input" required="required"  name="usuario">
+                                            <input id="usuario" type="text" class="input" required="required"  name="usuario" required>
                                         </div>
                                     </div>
                                     <div class="input-div pass">
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="div">
                                             <h5>Contraseña</h5>
-                                            <input id="input" type="password" required="required" class="input" name="password">
+                                            <input id="input" type="password" required="required" class="input" name="password" required>
                                         </div>
                                     </div>
                                     <div class="view">
