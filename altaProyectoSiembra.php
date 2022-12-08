@@ -11,7 +11,7 @@ include "modelo/conexion.php";
 <br>
 <br>
 <center>
-<h2>Dar de alta nuevo Proyecto de Siembra:</h2>
+<h2>Dar de Alta Nuevo Proyecto de Siembra:</h2>
 </center>
 <form method="post">
  <center>
@@ -24,15 +24,6 @@ include "modelo/conexion.php";
 	   <input name="txtNombre" style="width: 127px; height: 30px" type="text" required />
 	 </td>
  </tr>
- <tr>
-  <td style="width: 264px">
-   ID del proyecto:</td>
-  <td style="width: 366px">
-   
-	   <input name="txtId" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
-	 </td>
- </tr>
- <tr>
   <td style="width: 264px; height: 69px;">
    Parcelas involucradas:</td>
    <td style="width: 366px; height: 69px;">
@@ -94,36 +85,36 @@ include "modelo/conexion.php";
    {  // Conecta a la base de datos
       $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
-     $idcamp=$_POST['txtId'];
+     //$idcamp=$_POST['txtId']; lo hace la BD sola tiene q estar como autoincremental
      $parcela=$_POST['cmbparcela'];
      $nombre=$_POST['txtNombre']; 
     // $iddetalle=$_POST['txtIdDetalle'];
      $estado=$_POST['cmbEstado'];
 
      // Cadena que controla si hay una campaña creada con ese Id
-     $sql="select  * from ProyectoSiembra  where Id_ProyectoSiembra= $idcamp";
+     //$sql="select  * from ProyectoSiembra  where Id_ProyectoSiembra= $idcamp"; no se necesita este control
      // Ejecuta sentencia en sql
      //$re significa registro y $cn significa conexion
-      $re=$cn->query($sql);
+      //$re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
-      $c=$re->num_rows; 
-      if ( $c==0)
-     {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "(INSERT INTO ProyectoSiembra(Id_ProyectoSiembra, Id_Parcela, NombreProyecto, Estado) VALUES ('$idcamp','$parcela','$nombre','$estado')";
+      //$c=$re->num_rows; 
+     // if ( $c==0)
+     //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
+        $cad = "(INSERT INTO ProyectoSiembra(Id_Parcela, NombreProyecto, Estado) VALUES ('$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
        echo "El proyecto fue dado de alta con exito";
-    }
-    else 
-    {
+   // }
+    //else 
+   // {
       // mensaje que ya existe por lo tanto no fue dado de alta
-      echo "Ya existe una proyecto con ese ID";
+      //echo "Ya existe una proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
-     }
+    // }
      
   // cierra la conexion   
- $cn->close();
+    $cn->close();
 }
 ?>
 

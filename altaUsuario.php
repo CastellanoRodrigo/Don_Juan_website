@@ -111,10 +111,10 @@ include "modelo/conexion.php";
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
        echo "El Proyecto fue dado de alta con exito";
-      
+   } 
   // cierra la conexion   
     $cn->close();
-  }
+  //}
 ?>
 
 <?php #Llammo a pie 
