@@ -6,7 +6,7 @@ include('./template/cabecera.php');?>
 	 <table style="width: 45%">
 		 <tr>
 			 <td style="width: 293px">Seleccione:</td>
-			 <td><select name="lista" style="width: 160px;" required> 
+			 <td><select name="lista" style="width: 185px;" required> 
     <?php
 	   $cn= new mysqli("localhost", "root", "", "sistema_dj");
 	   $registros= $cn->query("select * from usuarios");

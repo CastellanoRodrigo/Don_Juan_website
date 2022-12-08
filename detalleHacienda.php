@@ -43,7 +43,7 @@ include "modelo/conexion.php";
    Fecha de inicio (yyyy/MM/dd):</td>
   <td style="width: 366px">
    
-	   <input name="txtFechaInicio" type="text" class="auto-style1" style="height: 30px; width: 127px" />
+	   <input name="txtFechaInicio" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
 	 </td>
  </tr>
  <tr>
@@ -51,7 +51,7 @@ include "modelo/conexion.php";
    ID del Proyecto</td>
    <td style="width: 366px; height: 44px;">
     
-		 <input name="txtIdDetalle" type="text" style="height: 30px; width: 127px" />
+		 <input name="txtIdDetalle" type="text" style="height: 30px; width: 127px" required/>
 	 </td>
  </tr>
  <tr>
@@ -59,7 +59,7 @@ include "modelo/conexion.php";
    Cantidad de cabezas:</td>
    <td style="width: 366px; height: 47px;">
    
-         <input name="txtCabezas" type="text" class="auto-style1" style="height: 30px; width: 127px" />
+         <input name="txtCabezas" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
 		  
    </td>
  </tr>
@@ -68,7 +68,7 @@ include "modelo/conexion.php";
    Inversion inicial:</td>
    <td style="width: 366px">
      <form method="post">				        
-	   <input name="txtInversion" type="text" class="auto-style1" style="height: 30px; width: 127px" />                               
+	   <input name="txtInversion" type="text" class="auto-style1" style="height: 30px; width: 127px" required />                               
 	 </td>
  </tr>
  <tr>
@@ -76,7 +76,7 @@ include "modelo/conexion.php";
    Cantidad Hectareas utilizadas:</td>
   <td style="width: 366px">
    
-	   <input name="txtHectareas" type="text" class="auto-style1" style="height: 30px; width: 127px" />
+	   <input name="txtHectareas" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
 	 </td>
  </tr>
 <tr>
@@ -84,7 +84,7 @@ include "modelo/conexion.php";
    Categoria:</td>
   <td style="width: 366px">
    
-	   <input name="txtCategoria" type="text" class="auto-style1" style="height: 30px; width: 127px" />
+	   <input name="txtCategoria" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
 	 </td>
  </tr>
  <tr>
@@ -92,7 +92,7 @@ include "modelo/conexion.php";
    Fecha de cierre aproximado (yyyy/MM/dd):</td>
   <td style="width: 366px">
    
-	   <input name="txtFechaCierre" type="text" class="auto-style1" style="height: 30px; width: 127px" />
+	   <input name="txtFechaCierre" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
 	 </td>
  </tr>
  <tr>

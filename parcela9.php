@@ -1,16 +1,21 @@
-V
+<?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
+include('./template/Cabecera.php');?>
+<?php
+include "modelo/conexion.php";
+// include "Controlador/controlador_login.php";
+?>
 	<center>
+	<br>
+	<br>
+	<br>	
 	<h2>Muestra detalles proyectos de la parcela 9</h2>
+	<br>
+	<br>
+
 	</center>
 	
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	
+	
 	<center>
 <table border=2 width=400><tr><td style= "text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold; width: 108px;"> Id_Detalle</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;"> Id_Proyecto</td>
