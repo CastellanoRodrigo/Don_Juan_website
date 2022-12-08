@@ -41,9 +41,9 @@ include "modelo/conexion.php";
 	     $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
 		 
-		<select  name="cmbparcela" style="width: 120px; height: 28px;" required>
+		<select  name="cmbparcela" style="width: 130px; height: 28px;" required>
   
-        <option name="cmbParcelas" value="0">Seleccionar</option>
+        <option name="cmbParcelas" value="">Seleccionar</option>
   
         <?php
   
@@ -64,8 +64,8 @@ include "modelo/conexion.php";
    Estado:</td>
    <td style="width: 366px">
      <form method="post">		
-		 <select name="cmbEstado" size="1"style="width: 120px; height: 28px" required>
-                            <option value="0" selected="selected">Asignar Estado</option>
+		 <select name="cmbEstado" size="1"style="width: 130px; height: 28px" required>
+                            <option value="" selected="selected">Asignar Estado</option>
                             <option value="Iniciado">Iniciado</option>
                             <option value="Finalizado">Finalizado</option>                           
     </select>

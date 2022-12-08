@@ -109,7 +109,7 @@ if (empty($_SESSION["id"])) {
 		 
 		                        <select  name="cmbparcela" style="width: 120px; height: 28px;">
   
-                                <option name="cmbParcelas" value="0">Seleccionar</option>
+                                <option name="cmbParcelas" value="" disabled selected>Seleccionar</option>
   
                                 <?php
   
@@ -137,7 +137,7 @@ if (empty($_SESSION["id"])) {
 		 
 		                        <select  name="cmbparcela" style="width: 120px; height: 28px;">
   
-                                <option name="cmbParcelas" value="0">Seleccionar</option>
+                                <option name="cmbParcelas" value="" disabled selected>Seleccionar</option>
   
                                 <?php
                                     /* Query */

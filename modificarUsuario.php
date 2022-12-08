@@ -11,7 +11,7 @@ include('./template/cabecera.php');?>
 	   $cn= new mysqli("localhost", "root", "", "sistema_dj");
 	   $registros= $cn->query("select * from usuarios");
 
-	   echo "<option disabled selected>Seleccione un usuario</option>"; //evita error del usuario
+	   echo "<option disabled selected>Seleccione un usuario</option>"; //evita error del usuario CONTROL
 	   // repetitiva que carga la lista con los nombres de los usuarios
 	while ($myrow=$registros->fetch_array())
 	     { 	  

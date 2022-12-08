@@ -57,10 +57,10 @@ include "modelo/conexion.php";
 		 <?php
 	     $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
-		 
+
 		<select  name="cmbTipoUsuario" style="width: 120px; height: 28px;" required>
-  
-        <option name="cmbTipoUsuario" value="">Seleccionar</option>
+        
+        <option name="cmbTipoUsuario" value="" disabled selected>Seleccionar</option>
   
         <?php
   

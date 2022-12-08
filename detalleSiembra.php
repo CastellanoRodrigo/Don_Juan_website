@@ -23,7 +23,7 @@ include "modelo/conexion.php";
   <td style="width: 366px; height: 47px"> 
 	   &nbsp;<select  name="cmbNombre" style="width: 155px; height: 28px;">
   
-        <option name="cmbnombre" value="0">Seleccionar</option>
+        <option name="cmbnombre" value="" disabled selected>Seleccionar</option>
 
 	   <?php
 	      $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 

@@ -10,13 +10,14 @@ include "modelo/conexion.php";
 ?>
 
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+
 	<center>
+	<br>
+	<br>
+	<br>
 	<h2>Parcela 2</h2>
-    <h4></h4>
+	<br>
+	<br>
 	</center>
 	<!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA
 		NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
@@ -38,7 +39,8 @@ include "modelo/conexion.php";
 
 	$host = "localhost";
 	$usuario = "root";
-	
+	$clave = "";
+	$base = "sistema_dj";
 
 	$cn=new mysqli($host, $usuario, $clave, $base);
 
@@ -95,7 +97,7 @@ include "modelo/conexion.php";
   							INNER JOIN siembra s ON d.Id_Cultivo = s.Id_Cultivo
  						    WHERE p.Id_Parcela='2'");    
     
-     while ($myrow=$registros->fetch_row()) //mientras haya registros muestra dia y hora
+     while ($myrow=$registros->fetch_row()) //mientras haya registros muestra
      {
       	    
    	   echo "<tr>
