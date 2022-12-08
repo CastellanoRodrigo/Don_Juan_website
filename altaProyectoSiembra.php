@@ -3,7 +3,7 @@ include('./template//Cabecera.php');?>
 <!--codigo aca-->
 
 <?php
-include "modelo/conexion.php";
+include "Modelo/Conexion.php";
 // include "Controlador/controlador_login.php";
 ?>
 <br>
@@ -98,9 +98,9 @@ include "modelo/conexion.php";
       //$re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
       //$c=$re->num_rows; 
-     // if ( $c==0)
+      //if ( $c==0)
      //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "(INSERT INTO ProyectoSiembra(Id_Parcela, NombreProyecto, Estado) VALUES ('$parcela','$nombre','$estado')";
+        $cad = "INSERT INTO ProyectoSiembra(Id_Parcela, NombreProyecto, Estado) VALUES ('$parcela','$nombre','$estado')";
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta

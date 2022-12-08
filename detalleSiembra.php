@@ -132,12 +132,12 @@ include "modelo/conexion.php";
      //$iddetalle=$_POST['txtIdDetalle'];
      $nombre=$_POST['cmbNombre']; 
      $fechainicio=$_POST['txtFechaInicio'];
-     $fechacierre=$_POST['txtFechaCierre'];
-     $cantHectareas=$_POST['txtHectareas'];
      $cultivo=$_POST['cmbCultivo']; 
-     $rinde=$_POST['txtRinde'];
-     $inversion=$_POST['txtInversion'];	 
-	 		
+     $inversion=$_POST['txtInversion'];
+     $rinde=$_POST['txtRinde'];    
+     $cantHectareas=$_POST['txtHectareas'];
+     $fechacierre=$_POST['txtFechaCierre'];
+	
      //Id_DetalleSiembra	Id_ProyectoSiembra	FechaInicio	FechaCierre	CantidadHectareas	Id_Cultivo	RindeEspeculado	InversionInicial
 		
      // Cadena que controla si hay una campaña creada con ese Id
@@ -148,12 +148,12 @@ include "modelo/conexion.php";
       //$c=$re->num_rows; 
       //if ( $c==0)
      //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detalleinicialsiembra(Id_DetalleSiembra, Id_ProyectoSiembra, FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial) VALUES ('$iddetalle','$nombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";
+        $cad = "INSERT INTO detalleinicialsiembra(Id_ProyectoSiembra, FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial) VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";
                            
         // Ejecuta sentencia INSERT
-        //$result = $cn->query($cad);
+        $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
-       echo "El proyecto fue dado de alta con exito";
+        echo "El proyecto fue dado de alta con exito";
     //}
     //else 
    // {
@@ -168,4 +168,5 @@ include "modelo/conexion.php";
 ?>
 
 <?php #Llammo a pie 
-include('./template/pie.php');?>
+include('./template/pie.php');
+?>
