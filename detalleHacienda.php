@@ -17,10 +17,10 @@ include "modelo/conexion.php";
  <center>
  <table>
  <tr>
-  <td style="height: 47px; width: 332px;">
+  <td style="height: 47px; width: 381px;">
    Nombre del proyecto</td>
   <td style="width: 366px; height: 47px"> 
-	   &nbsp;<select  name="cmbNombre" style="width: 155px; height: 28px;">
+	   &nbsp;<select  name="cmbNombre" style="width: 155px; height: 28px;" required>
   
         <option name="cmbnombre" value="" disabled selected >Seleccionar</option>
 
@@ -39,7 +39,7 @@ include "modelo/conexion.php";
 	 <td/>	   	 
  </tr>
  <tr>
-  <td style="width: 332px">
+  <td style="width: 381px">
    Fecha de inicio (yyyy/MM/dd):</td>
   <td style="width: 366px">
    
@@ -47,15 +47,8 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 332px; height: 44px;">
-   ID del Proyecto</td>
-   <td style="width: 366px; height: 44px;">
-    
-		 <input name="txtIdDetalle" type="text" style="height: 30px; width: 127px" required/>
-	 </td>
- </tr>
  <tr>
-  <td style="width: 332px; height: 47px;">
+  <td style="width: 381px; height: 47px;">
    Cantidad de cabezas:</td>
    <td style="width: 366px; height: 47px;">
    
@@ -64,7 +57,7 @@ include "modelo/conexion.php";
    </td>
  </tr>
  <tr>
-  <td style="width: 332px">
+  <td style="width: 381px">
    Inversion inicial:</td>
    <td style="width: 366px">
      <form method="post">				        
@@ -72,7 +65,7 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 332px">
+  <td style="width: 381px">
    Cantidad Hectareas utilizadas:</td>
   <td style="width: 366px">
    
@@ -80,7 +73,7 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
 <tr>
-  <td style="width: 332px">
+  <td style="width: 381px">
    Categoria:</td>
   <td style="width: 366px">
    
@@ -88,7 +81,7 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 332px">
+  <td style="width: 381px">
    Fecha de cierre aproximado (yyyy/MM/dd):</td>
   <td style="width: 366px">
    
@@ -96,14 +89,14 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 332px">
+  <td style="width: 381px">
    &nbsp;
    </td>
    <td style="width: 366px">
    </td>
  </tr>
  <tr>
-  <td style="width: 332px">
+  <td style="width: 381px">
    <input type="submit" value="Cargar detalle">
    <input  type="reset" value="Cancelar" style="width: 83px"></td>
  </tr>
@@ -117,7 +110,7 @@ include "modelo/conexion.php";
    {  // Conecta a la base de datos
       $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
-     $iddetalle=$_POST['txtIdDetalle'];
+     //$iddetalle=$_POST['txtIdDetalle'];
      $nombre=$_POST['cmbNombre']; 
      $fechainicio=$_POST['txtFechaInicio'];
      $fechacierre=$_POST['txtFechaCierre'];
@@ -128,26 +121,26 @@ include "modelo/conexion.php";
 	 		
 		
      // Cadena que controla si hay una campaña creada con ese Id
-     $sql="select  * from detalleinicialhacienda  where Id_DetalleHacienda= $iddetalle";
+     //$sql="select  * from detalleinicialhacienda  where Id_DetalleHacienda= $iddetalle";
      // Ejecuta sentencia en sql
-      $re=$cn->query($sql);
+      //$re=$cn->query($sql);
       // controla cantidad de registros que existen en la tabla
-      $c=$re->num_rows; 
-      if ( $c==0)
-     {  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detalleinicialhacienda(Id_DetalleHacienda, Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Categoria, InversionInicial) VALUES ('$iddetalle','$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
+      //$c=$re->num_rows; 
+      //if ( $c==0)
+    //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
+        $cad = "INSERT INTO detalleinicialhacienda(Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Categoria, InversionInicial) VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
                            
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
        echo "El pryecto fue dada de alta con exito";
-    }
-    else 
-    {
+    //}
+    //else 
+   // {
       // mensaje que ya existe por lo tanto no fue dado de alta
-      echo "Ya existe una proyecto con ese ID";
+      //echo "Ya existe una proyecto con ese ID";
       //. mysql_error().":". mysql_error()."<br>";
-     }
+    // }
      
   // cierra la conexion   
  $cn->close();
