@@ -1,4 +1,3 @@
-
 <title>Don Juan S.R.L detalles</title>
 <?php #Llammo a cabecera, incluye el archivo cabecera.php desde template
 include('./Template/Cabecera.php');?>
@@ -13,16 +12,14 @@ include "modelo/conexion.php";
 
 	<center>
 	<br>
-	<br>
-	<br>
-	<h2>Parcela 8</h2>
-	<br>
+	<h1> Parcela 8 </h1>
 	<br>
 	</center>
-	<!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA
-		NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
+	<!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
 	<center>
+	<br>
 	<table border=2 width=400>
+	<h2> PROYECTO DE HACIENDA </h2>
 	<tr><td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;">NombreProyecto</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 97px;">FechaInicio</td>
 	<td style= "text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 97px;">Fechacierre</td>
@@ -64,8 +61,14 @@ include "modelo/conexion.php";
    	   		 <td>$myrow[7]</td>
    	   		 </tr>";
 
-     } 
-	
+     } 	 
+	 // se nos habia escapado este if 
+	if (mysqli_num_rows($registros) <= 0) {
+	  echo "<br>";
+	  echo 'No hay proyecto de HACIENDA en esta parcela'; //si no hay mensaje
+	  echo "<br>";
+	}
+
     $cn->close();
 
     ?>
@@ -73,7 +76,11 @@ include "modelo/conexion.php";
 	<!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA
 		NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
 	<center>
+	<br>
 	<table border=2 width=400>
+	<br>
+	<br>
+	<h2> PROYECTO DE SIEMBRA </h2>	
 	<tr><td style= text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;>NombreProyecto</td>
 	<td style= text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold>FechaInicio</td>
 	<td style= text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;>FechaCierre</td>
@@ -113,6 +120,8 @@ include "modelo/conexion.php";
 
      } 
      if (mysqli_num_rows($registros) <= 0) {
+	   echo "<br>";
+	   echo "<br>";
        echo 'No hay proyecto de SIEMBRA en esta parcela'; //si no hay mensaje
      }
      
@@ -120,7 +129,6 @@ include "modelo/conexion.php";
     $cn->close();
 
 	?>
-
 	<br>
 	<br>
 	<br>
