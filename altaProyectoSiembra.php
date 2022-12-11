@@ -32,7 +32,7 @@ include "Modelo/Conexion.php";
 	     $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
 		 
-		<select  name="cmbparcela" style="width: 120px; height: 28px;" required>
+		<select  name="cmbparcela" style="width: 130px; height: 28px;" required>
   
         <option name="cmbParcelas" value="" disabled selected>Seleccionar</option>
     
@@ -55,7 +55,7 @@ include "Modelo/Conexion.php";
    Estado:</td>
    <td style="width: 366px">
      <form method="post">		
-		 <select name="cmbEstado" size="1"style="width: 120px; height: 28px" required>
+		 <select name="cmbEstado" size="1"style="width: 130px; height: 28px" required>
                             <option value="" selected="selected" disabled selected>Asignar Estado</option>
                             <option value="Iniciado">Iniciado</option>
                             <option value="Finalizado">Finalizado</option>                           
@@ -88,7 +88,7 @@ include "Modelo/Conexion.php";
      //$idcamp=$_POST['txtId']; lo hace la BD sola tiene q estar como autoincremental
      $parcela=$_POST['cmbparcela'];
      $nombre=$_POST['txtNombre']; 
-    // $iddetalle=$_POST['txtIdDetalle'];
+    // $iddetalle=$_POST['txtIdDetalle']; no es necesario - BD autoincremental
      $estado=$_POST['cmbEstado'];
 
      // Cadena que controla si hay una campaña creada con ese Id

@@ -35,7 +35,7 @@ include "modelo/conexion.php";
 		 
 		<select  name="cmbparcela" style="width: 130px; height: 28px;" required>
   
-        <option name="cmbParcelas" value="">Seleccionar</option>
+        <option name="cmbParcelas" value="" disabled selected>Seleccionar</option>
   
         <?php
   
@@ -57,7 +57,7 @@ include "modelo/conexion.php";
    <td style="width: 366px">
      <form method="post">		
 		 <select name="cmbEstado" size="1"style="width: 130px; height: 28px" required>
-                            <option value="" selected="selected">Asignar Estado</option>
+                            <option value="" selected="selected" disabled selected>Asignar Estado</option>
                             <option value="Iniciado">Iniciado</option>
                             <option value="Finalizado">Finalizado</option>                           
     </select>

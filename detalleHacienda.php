@@ -20,7 +20,7 @@ include "modelo/conexion.php";
   <td style="height: 47px; width: 381px;">
    Nombre del proyecto</td>
   <td style="width: 366px; height: 47px"> 
-	   &nbsp;<select  name="cmbNombre" style="width: 155px; height: 28px;" required>
+	   &nbsp;<select  name="cmbNombre" style="height: 30px; width: 127px;" required>
   
         <option name="cmbnombre" value="" disabled selected >Seleccionar</option>
 
@@ -39,67 +39,61 @@ include "modelo/conexion.php";
 	 <td/>	   	 
  </tr>
  <tr>
-  <td style="width: 381px">
+  <td style="width: 381px; height: 47px;">
    Fecha de inicio (yyyy/MM/dd):</td>
-  <td style="width: 366px">
-   
+  <td style="width: 381px; height: 47px;">  
 	   <input name="txtFechaInicio" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
-	 </td>
+	</td>
  </tr>
  <tr>
  <tr>
   <td style="width: 381px; height: 47px;">
    Cantidad de cabezas:</td>
-   <td style="width: 366px; height: 47px;">
-   
-         <input name="txtCabezas" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
-		  
-   </td>
+  <td style="width: 366px; height: 47px;">   
+         <input name="txtCabezas" type="text" class="auto-style1" style="height: 30px; width: 127px" required />		  
+  </td>
  </tr>
  <tr>
-  <td style="width: 381px">
+  <td style="width: 381px; height: 47px;">
    Inversion inicial:</td>
-   <td style="width: 366px">
+   <td style="width: 381px; height: 47px;">
      <form method="post">				        
 	   <input name="txtInversion" type="text" class="auto-style1" style="height: 30px; width: 127px" required />                               
 	 </td>
  </tr>
  <tr>
-  <td style="width: 381px">
+  <td style="width: 381px; height: 47px;">
    Cantidad Hectareas utilizadas:</td>
-  <td style="width: 366px">
-   
+  <td style="width: 381px; height: 47px;">  
 	   <input name="txtHectareas" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
 	 </td>
  </tr>
 <tr>
-  <td style="width: 381px">
+  <td style="width: 381px; height: 47px;">
    Categoria:</td>
-  <td style="width: 366px">
-   
+  <td style="width: 381px; height: 47px;">   
 	   <input name="txtCategoria" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
-	 </td>
+	</td>
  </tr>
  <tr>
-  <td style="width: 381px">
+  <td style="width: 381px; height: 47px;">
    Fecha de cierre aproximado (yyyy/MM/dd):</td>
-  <td style="width: 366px">
-   
+  <td style="width: 381px; height: 47px;">  
 	   <input name="txtFechaCierre" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
-	 </td>
+	</td>
  </tr>
  <tr>
-  <td style="width: 381px">
+  <td style="width: 381px; height: 47px;">
    &nbsp;
    </td>
-   <td style="width: 366px">
+   <td style="width: 381px; height: 47px;">
    </td>
  </tr>
  <tr>
-  <td style="width: 381px">
+  <td style="width: 381px; height: 47px;">
    <input type="submit" value="Cargar detalle">
    <input  type="reset" value="Cancelar" style="width: 83px"></td>
- </tr>
+  </tr>
 </table>
 </form>
 </center>

@@ -18,11 +18,10 @@ include "modelo/conexion.php";
  <center>
  <table>
  <tr>
-  <td style="height: 47px; width: 349px;">
+  <td style="height: 47px; width: 381px;">
    Nombre del proyecto:</td>
-  <td style="width: 366px; height: 47px"> 
-	   &nbsp;<select  name="cmbNombre" style="width: 155px; height: 28px;" required>
-  
+  <td style="width: 381px; height: 47px;"> 
+	   &nbsp;<select  name="cmbNombre" style="height: 30px; width: 127px;" required> 
         <option name="cmbnombre" value="" disabled selected>Seleccionar</option>
 
 	   <?php
@@ -41,23 +40,22 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 349px">
+  <td style="width: 381px; height: 47px;">
    Fecha de inicio (yyyy/MM/dd):</td>
-  <td style="width: 366px">
-   
+  <td style="width: 381px; height: 47px;">   
 	   <input name="txtFechaInicio" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
-	 </td>
+	</td>
  </tr>
  <tr>
-  <td style="width: 349px; height: 69px;">
+  <td style="width: 381px; height: 47px;">
    Cultivo:</td>
-   <td style="width: 366px; height: 69px;">
-     		 
+   <td style="width: 381px; height: 47px;">
+    		 
 		 <?php
 	     $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
 		 
-		<select  name="cmbCultivo" style="width: 155px; height: 28px;" required>
+		<select  name="cmbCultivo" style="height: 30px; width: 127px;" required>
   
         <option name="cmbCultivos" value="" disabled selected>Seleccionar</option>
   
@@ -76,46 +74,43 @@ include "modelo/conexion.php";
 	 </td>
  </tr>
  <tr>
-  <td style="width: 349px">
+  <td style="width: 381px; height: 47px;">
    Inversion inicial:</td>
-   <td style="width: 366px">
+   <td style="width: 381px; height: 47px;">
      <form method="post">				        
 	   <input name="txtInversion" type="text" class="auto-style1" style="height: 30px; width: 127px" required />                               
 	 </td>
  </tr>
  <tr>
-  <td style="width: 349px">
+  <td style="width: 381px; height: 47px;">
    Cantidad Hectareas utilizadas:</td>
-  <td style="width: 366px">
-   
+  <td style="width: 381px; height: 47px;">   
 	   <input name="txtHectareas" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
-	 </td>
+	</td>
  </tr>
 <tr>
-  <td style="width: 349px">
+  <td style="width: 381px; height: 47px;">
    Rinde Especulado:</td>
-  <td style="width: 366px">
-   
+  <td style="width: 381px; height: 47px;">   
 	   <input name="txtRinde" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
-	 </td>
+	</td>
  </tr>
  <tr>
-  <td style="width: 349px">
+  <td style="width: 381px; height: 47px;">
    Fecha de cierre aproximado (yyyy/MM/dd):</td>
-  <td style="width: 366px">
-   
+  <td style="width: 381px; height: 47px;">  
 	   <input name="txtFechaCierre" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
-	 </td>
+	</td>
  </tr>
  <tr>
-  <td style="width: 349px">
+  <td style="width: 381px; height: 47px;">
    &nbsp;
    </td>
-   <td style="width: 366px">
+   <td style="width: 381px; height: 47px;">
    </td>
  </tr>
  <tr>
-  <td style="width: 349px">
+  <td style="width: 381px; height: 47px;">
    <input type="submit" value="Cargar detalle">
    <input  type="reset" value="Cancelar" style="width: 83px"></td>
  </tr>
