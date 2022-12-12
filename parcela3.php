@@ -16,8 +16,8 @@ include "modelo/conexion.php";
 	<div class="descipcion">
 		<div class="descripcion2" position: absolute>
 
-			<p>Ubicación: -35.99935, -63.97019 </p>
-			<p>Dimensión: 100 ha, 1.00 km²</p>
+			<p> Ubicación: -35.99935, -63.97019 <br>
+			Dimensión: 100 ha, 1.00 km²</p>
 			<div class="img">
 				<img src="" alt="">
 			</div>

@@ -49,8 +49,8 @@ h1 {
 	width: fit-content;
   }
   .descripcion2 {
-	background-color: #0a6111;
-	display:flex;
+	background-color: rgb(10, 97, 17, 4.7);
+	display:list-item;
 	align-items: center;
 	height: 20vh;
 	justify-content: flex-start;
