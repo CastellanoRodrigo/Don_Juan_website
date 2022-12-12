@@ -42,6 +42,24 @@ h1 {
 	max-width: 1200px;
 }
 
+
+.descripcion {
+	background-color: #558058;
+
+	width: fit-content;
+  }
+  .descripcion2 {
+	background-color: #0a6111;
+	display:flex;
+	align-items: center;
+	height: 20vh;
+	justify-content: flex-start;
+  }
+
+  p{
+	margin: 0%;
+  }
+
 main article {
 	background: #0a6111;
 	margin: 20px 0;
