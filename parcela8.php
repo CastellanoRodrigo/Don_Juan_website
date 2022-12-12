@@ -17,7 +17,7 @@ include "modelo/conexion.php";
 		<div class="descripcion2" position: absolute>
 
 			<p> Ubicación: -35.99133, -63.98324<br>
-			Dimensión: 35 ha, 0,35 km²</p>
+			Dimensión: 35 has, 0,35 km²</p>
 			<div class="img">
 				<img src="" alt="">
 			</div>
@@ -25,6 +25,7 @@ include "modelo/conexion.php";
 	</div>
 	<br>
 </center>
+<center>
 <br>
 <table border=2 width=400>
 	<h2> PROYECTO DE HACIENDA </h2>
