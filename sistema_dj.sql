@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-12-2022 a las 22:11:37
+-- Tiempo de generación: 12-12-2022 a las 20:19:58
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -109,7 +109,7 @@ CREATE TABLE `detalleinicialhacienda` (
   `CantidadHectareas` int(20) NOT NULL,
   `CantidadCabezas` int(20) NOT NULL,
   `Categoria` varchar(25) NOT NULL,
-  `InversionInicial` decimal(25,0) NOT NULL
+  `InversionInicial` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -117,10 +117,10 @@ CREATE TABLE `detalleinicialhacienda` (
 --
 
 INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Categoria`, `InversionInicial`) VALUES
-(1, 1, '2022-11-19', '2024-01-05', 45, 50, 'Novillo', '350000'),
-(2, 2, '2022-11-22', '2024-06-15', 50, 25, 'Vaca', '66666666'),
-(3, 7, '2022-10-10', '2024-01-05', 15, 35, 'Novillo', '4444444'),
-(4, 9, '2022-10-10', '2024-06-03', 20, 50, 'Novillo', '1234');
+(1, 1, '2022-10-10', '2023-11-11', 45, 50, 'Novillo', 500000),
+(2, 2, '2022-06-09', '2023-06-08', 30, 35, 'Vaca', 350000),
+(3, 3, '2022-09-10', '2023-12-12', 40, 25, 'Novillo', 250000),
+(4, 4, '2022-03-06', '2023-06-06', 20, 35, 'Vaca', 400000);
 
 -- --------------------------------------------------------
 
@@ -136,7 +136,7 @@ CREATE TABLE `detalleinicialsiembra` (
   `CantidadHectareas` int(20) NOT NULL,
   `Id_Cultivo` int(20) NOT NULL,
   `RindeEspeculado` int(20) NOT NULL,
-  `InversionInicial` decimal(10,0) NOT NULL
+  `InversionInicial` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -144,10 +144,10 @@ CREATE TABLE `detalleinicialsiembra` (
 --
 
 INSERT INTO `detalleinicialsiembra` (`Id_DetalleSiembra`, `Id_ProyectoSiembra`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `Id_Cultivo`, `RindeEspeculado`, `InversionInicial`) VALUES
-(1, 1, '0000-00-00', '0000-00-00', 50, 1, 250000, '500000'),
-(2, 1, '2022-10-10', '2023-11-11', 50, 1, 250000, '500000'),
-(4, 4, '0000-00-00', '2023-11-11', 20, 3, 250000, '52222222'),
-(5, 11, '2022-10-10', '2023-11-11', 15, 3, 69, '12341234');
+(1, 4, '2022-06-09', '2023-05-15', 60, 7, 1111111111, 500000),
+(2, 3, '2022-10-10', '2023-05-08', 50, 3, 750000, 350000),
+(3, 2, '2022-08-10', '2024-06-03', 45, 6, 60000, 200000),
+(4, 1, '2022-07-10', '2023-04-10', 48, 2, 40000, 666666);
 
 -- --------------------------------------------------------
 
@@ -228,6 +228,7 @@ INSERT INTO `parcela` (`Id_Parcela`, `CantidadHectareas`) VALUES
 (4, 70),
 (5, 100),
 (6, 70),
+(7, 100),
 (8, 35),
 (9, 65),
 (10, 95),
@@ -251,11 +252,10 @@ CREATE TABLE `proyectohacienda` (
 --
 
 INSERT INTO `proyectohacienda` (`Id_ProyectoHacienda`, `Id_Parcela`, `NombreProyecto`, `Estado`) VALUES
-(1, 8, 'Aberdinangus', 'Iniciado'),
-(2, 9, 'Helford', 'Iniciado'),
-(6, 10, 'Costillares', 'Finalizado'),
-(7, 4, 'vacaGrande', 'Iniciado'),
-(9, 4, 'RodriCuleado', 'Iniciado');
+(1, 2, 'Aberdinangus', 'Iniciado'),
+(2, 3, 'Helford', 'Iniciado'),
+(3, 6, 'Aberdinangus 2023', 'Iniciado'),
+(4, 9, 'Helford 2024', 'Iniciado');
 
 -- --------------------------------------------------------
 
@@ -276,9 +276,9 @@ CREATE TABLE `proyectosiembra` (
 
 INSERT INTO `proyectosiembra` (`Id_ProyectoSiembra`, `Id_Parcela`, `NombreProyecto`, `Estado`) VALUES
 (1, 5, 'Cosecha Gruesa Maiz 2023', 'Iniciado'),
-(2, 1, 'Alfalfa 2023', 'Iniciado'),
-(4, 3, 'pepinos verdes', 'Iniciado'),
-(11, 1, 'pepe el grillo', 'Iniciado');
+(2, 9, 'Alfalfa 2024', 'Iniciado'),
+(3, 10, 'Girasol 2022', 'Iniciado'),
+(4, 7, 'Soja 2023', 'Iniciado');
 
 -- --------------------------------------------------------
 
@@ -420,19 +420,19 @@ ALTER TABLE `detalleinicialhacienda`
 -- AUTO_INCREMENT de la tabla `detalleinicialsiembra`
 --
 ALTER TABLE `detalleinicialsiembra`
-  MODIFY `Id_DetalleSiembra` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_DetalleSiembra` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `proyectohacienda`
 --
 ALTER TABLE `proyectohacienda`
-  MODIFY `Id_ProyectoHacienda` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Id_ProyectoHacienda` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `proyectosiembra`
 --
 ALTER TABLE `proyectosiembra`
-  MODIFY `Id_ProyectoSiembra` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Id_ProyectoSiembra` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_usuario`

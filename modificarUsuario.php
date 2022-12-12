@@ -3,6 +3,9 @@ include('./template/cabecera.php');?>
 
 <form name="datos" action="modificarUsuario.php" method="post">
 	<center>
+	 <br>
+	 <br>
+	 <br>
 	 <table style="width: 45%">
 		 <tr>
 			 <td style="width: 293px">Seleccione:</td>
@@ -29,7 +32,11 @@ include('./template/cabecera.php');?>
 			 <td>&nbsp;</td>
 		 </tr>
 		 <tr>
-			 <td style="width: 293px; height: 23px;">Ingrese los nuevos datos</td>
+			 <td style="width: 293px; height: 23px;">INGRESE LOS NUEVOS DATOS</td>
+			 <td style="height: 23px"></td>
+		 </tr>
+		 <tr>
+			 <td style="width: 293px; height: 23px;"></td>
 			 <td style="height: 23px"></td>
 		 </tr>
 		 <tr>
@@ -49,9 +56,9 @@ include('./template/cabecera.php');?>
 	    		 $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 	 ?>	 
 		 
-			  <select  name="cmbTipoUsuario" style="width: 120px; height: 28px;" required>
+			  <select  name="cmbTipoUsuario" style="width: 165px; height: 28px;" required>
   
-                <option name="cmbTipoUsuario" value="">Seleccionar</option>
+                <option name="cmbTipoUsuario" value="" disabled selected>Seleccionar</option>
   
              <?php
   
