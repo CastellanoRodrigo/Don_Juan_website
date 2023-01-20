@@ -29,7 +29,8 @@ include "Modelo/Conexion.php";
    <td style="width: 366px; height: 69px;">
      		 
 		 <?php
-	     $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
+       $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');
+	     //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
 		 
 		<select  name="cmbparcela" style="width: 130px; height: 28px;" required>
@@ -83,7 +84,8 @@ include "Modelo/Conexion.php";
     // Controla si hubo ingreso de datos
    if (!empty ($_POST))  
    {  // Conecta a la base de datos
-      $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
+      //$cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
+     $cn= new mysqli("localhost:3307" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
      //$idcamp=$_POST['txtId']; lo hace la BD sola tiene q estar como autoincremental
      $parcela=$_POST['cmbparcela'];

@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 08-12-2022 a las 22:11:37
+-- Servidor: localhost:3307
+-- Tiempo de generación: 20-01-2023 a las 19:29:28
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -35,6 +35,29 @@ CREATE TABLE `alquiler` (
   `FechaFin` date NOT NULL,
   `Estado` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `Id_Categoria` int(20) NOT NULL,
+  `nombreCategoria` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`Id_Categoria`, `nombreCategoria`) VALUES
+(1, 'Ternero'),
+(2, 'Novillito'),
+(3, 'Vaquillona'),
+(4, 'Novillo'),
+(5, 'Vaca'),
+(6, 'Toro');
 
 -- --------------------------------------------------------
 
@@ -108,7 +131,7 @@ CREATE TABLE `detalleinicialhacienda` (
   `FechaCierre` date NOT NULL,
   `CantidadHectareas` int(20) NOT NULL,
   `CantidadCabezas` int(20) NOT NULL,
-  `Categoria` varchar(25) NOT NULL,
+  `Id_Categoria` int(25) NOT NULL,
   `InversionInicial` decimal(25,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -116,11 +139,11 @@ CREATE TABLE `detalleinicialhacienda` (
 -- Volcado de datos para la tabla `detalleinicialhacienda`
 --
 
-INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Categoria`, `InversionInicial`) VALUES
-(1, 1, '2022-11-19', '2024-01-05', 45, 50, 'Novillo', '350000'),
-(2, 2, '2022-11-22', '2024-06-15', 50, 25, 'Vaca', '66666666'),
-(3, 7, '2022-10-10', '2024-01-05', 15, 35, 'Novillo', '4444444'),
-(4, 9, '2022-10-10', '2024-06-03', 20, 50, 'Novillo', '1234');
+INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Id_Categoria`, `InversionInicial`) VALUES
+(1, 1, '2022-11-19', '2024-01-05', 45, 50, 1, '350000'),
+(2, 2, '2022-11-22', '2024-06-15', 50, 25, 2, '66666666'),
+(3, 7, '2022-10-10', '2024-01-05', 15, 35, 1, '4444444'),
+(4, 9, '2022-10-10', '2024-06-03', 20, 50, 2, '1234');
 
 -- --------------------------------------------------------
 
@@ -145,9 +168,9 @@ CREATE TABLE `detalleinicialsiembra` (
 
 INSERT INTO `detalleinicialsiembra` (`Id_DetalleSiembra`, `Id_ProyectoSiembra`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `Id_Cultivo`, `RindeEspeculado`, `InversionInicial`) VALUES
 (1, 1, '0000-00-00', '0000-00-00', 50, 1, 250000, '500000'),
-(2, 1, '2022-10-10', '2023-11-11', 50, 1, 250000, '500000'),
-(4, 4, '0000-00-00', '2023-11-11', 20, 3, 250000, '52222222'),
-(5, 11, '2022-10-10', '2023-11-11', 15, 3, 69, '12341234');
+(2, 1, '2022-10-10', '2023-11-11', 50, 1, 4500100, '500000'),
+(4, 4, '0000-00-00', '2023-11-11', 20, 3, 320001, '52222222'),
+(5, 11, '2022-10-10', '2023-11-11', 15, 3, 55555, '12341234');
 
 -- --------------------------------------------------------
 
@@ -371,6 +394,12 @@ INSERT INTO `usuarios` (`id`, `usuario`, `password`, `nombre`, `apellido`, `tipo
 --
 
 --
+-- Indices de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`Id_Categoria`);
+
+--
 -- Indices de la tabla `detalleinicialhacienda`
 --
 ALTER TABLE `detalleinicialhacienda`
@@ -409,6 +438,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `Id_Categoria` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `detalleinicialhacienda`
