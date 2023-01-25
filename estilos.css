@@ -49,10 +49,10 @@ h1 {
 	width: fit-content;
   }
   .descripcion2 {
-
+	font-family: 'Montserrat Alternates', sans-serif;
 	font-weight: bold;
 	color: #fff;
-	background-color: #278e2d38;
+	background-color: rgb(10, 97, 17, 4.7);
 	display:list-item;
 	align-items: center;
 	height: 15vh;
