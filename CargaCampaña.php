@@ -104,8 +104,7 @@ if (empty($_SESSION["id"])) {
                             <td style="width: 366px; height: 69px;">
      		 
 		                        <?php
-                                $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');
-	                            //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
+	                            $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		                        ?>	 
 		 
 		                        <select  name="cmbparcela" style="width: 120px; height: 28px;">
@@ -133,8 +132,7 @@ if (empty($_SESSION["id"])) {
                             <td style="width: 366px; height: 69px;">
      		 
 		                        <?php
-                                $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');
-	                            //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
+	                            $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		                        ?>	 
 		 
 		                        <select  name="cmbparcela" style="width: 120px; height: 28px;">

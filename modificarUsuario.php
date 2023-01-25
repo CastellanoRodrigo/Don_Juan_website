@@ -8,8 +8,7 @@ include('./template/cabecera.php');?>
 			 <td style="width: 293px">Seleccione:</td>
 			 <td><select name="lista" style="width: 185px;" required> 
     <?php
-	   $cn= new mysqli("localhost:3307", "root", "", "sistema_dj");
-	   //$cn= new mysqli("localhost", "root", "", "sistema_dj");
+	   $cn= new mysqli("localhost", "root", "", "sistema_dj");
 	   $registros= $cn->query("select * from usuarios");
 
 	   echo "<option disabled selected>Seleccione un usuario</option>"; //evita error del usuario CONTROL
@@ -47,12 +46,13 @@ include('./template/cabecera.php');?>
 			 <td style="width: 293px">Seleccionar tipo de usuario:</td>
 			 <td>
 			 <?php
-	    		 $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');		
-				 //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
+	    		 $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 	 ?>	 
 		 
-			  <select  name="cmbTipoUsuario" style="width: 120px; height: 28px;" required> 
-                <option name="cmbTipoUsuario" value="">Seleccionar</option> 
+			  <select  name="cmbTipoUsuario" style="width: 120px; height: 28px;" required>
+  
+                <option name="cmbTipoUsuario" value="">Seleccionar</option>
+  
              <?php
   
                 $query = $mysqli -> query ("SELECT * FROM tipo_usuario ");
@@ -83,8 +83,8 @@ include('./template/cabecera.php');?>
 <?php
 if (!empty ($_POST))  
 	{
+	 
 	 $cn= new mysqli("localhost", "root", "", "sistema_dj");
-	 //$cn= new mysqli("localhost", "root", "", "sistema_dj");
 
 	    $dato=$_POST['lista'];
 	    $nuevoUsuario=$_POST['txtNuevoUsuario'];

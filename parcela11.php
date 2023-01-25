@@ -15,10 +15,9 @@ include "modelo/conexion.php";
 	<h1> Parcela 11 </h1>
 	<div class="descipcion">
 		<div class="descripcion2" position: absolute>
-			<p>
-			Ubicación: -36.01162, -63.98526 <br>
-			Dimensión: 30 has, 0.30 km²
-			</p>
+
+			<p> Ubicación: -36.01162, -63.98526 <br>
+			Dimensión: 30 has, 0.30 km²</p>
 			<div class="img">
 				<img src="" alt="">
 			</div>
@@ -39,14 +38,14 @@ include "modelo/conexion.php";
 			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 86px;">Cabezas</td>
 			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 97px;">Categoria</td>
 			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 162px;">InversionInicial</td>
-			
+			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 162px;">Parcela</td>
 		</tr>
 </center>
 
 <?php
 // conexion con la bd
-$host = "localhost:3307";
-//$host = "localhost";
+
+$host = "localhost";
 $usuario = "root";
 $clave = "";
 $base = "sistema_dj";
@@ -54,10 +53,9 @@ $base = "sistema_dj";
 $cn = new mysqli($host, $usuario, $clave, $base);
 
 $registros = $cn->query("SELECT p.NombreProyecto, d.FechaInicio, d.FechaCierre,
-						d.CantidadHectareas, d.CantidadCabezas, c.nombreCategoria, d.InversionInicial, p.Id_Parcela 
+						d.CantidadHectareas, d.CantidadCabezas, d.Categoria, d.InversionInicial, p.Id_Parcela 
 						FROM detalleinicialhacienda d
 						INNER JOIN proyectohacienda p ON d.Id_ProyectoHacienda = p.Id_ProyectoHacienda
-						INNER JOIN Categoria c ON c.Id_Categoria = d.Id_Categoria
 						WHERE p.Id_Parcela='11'");
 
 while ($myrow = $registros->fetch_row()) //mientras haya registros muestra la informacion
@@ -101,13 +99,13 @@ $cn->close();
 			<td style=text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;>Cultivo </td>
 			<td style=text-align:center;font-size:16pt;height:30px;background-color:lightgreen;font-weight:bold>RindeEspeculado</td>
 			<td style=text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;>InversionInicial</td>
-			
+			<td style=text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold;>Parcela</td>
 		</tr>
 </center>
 
 <?php
-$cn = new mysqli("localhost:3307", "root", "", "sistema_dj"); //conexion con base de datos
-//$cn = new mysqli("localhost", "root", "", "sistema_dj"); //conexion con base de datos
+
+$cn = new mysqli("localhost", "root", "", "sistema_dj"); //conexion con base de datos
 
 
 $registros = $cn->query("SELECT p.NombreProyecto, d.FechaInicio, d.FechaCierre, d.CantidadHectareas, s.NombreCultivo,

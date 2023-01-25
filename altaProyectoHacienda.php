@@ -30,8 +30,7 @@ include "modelo/conexion.php";
    <td style="width: 366px; height: 69px;">
      		 
 		 <?php
-        $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');
-	     //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
+	     $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
 		 
 		<select  name="cmbparcela" style="width: 130px; height: 28px;" required>
@@ -85,8 +84,7 @@ include "modelo/conexion.php";
     // Controla si hubo ingreso de datos
    if (!empty ($_POST))  
    {  // Conecta a la base de datos
-      $conexion=new mysqli("localhost:3307","root","","sistema_dj"); 
-     //$cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
+      $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
      //$idcamp=$_POST['txtId']; el id no va xq es autoincremental lo hace la bd
      $parcela=$_POST['cmbparcela'];

@@ -25,12 +25,14 @@ include "modelo/conexion.php";
         <option name="cmbnombre" value="" disabled selected >Seleccionar</option>
 
 	   <?php
-        $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');		
-	      // $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
-         
+	      $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
+	 
           $query = $mysqli -> query ("SELECT * FROM ProyectoHacienda ");
+  
           while ($valores = mysqli_fetch_array($query)) {
+  
             echo '<option value="'.$valores['Id_ProyectoHacienda'].'">'.$valores['NombreProyecto'].'</option>';
+  
           } 
         ?>
         
@@ -66,25 +68,12 @@ include "modelo/conexion.php";
 	   <input name="txtHectareas" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
 	 </td>
  </tr>
-
-
 <tr>
   <td style="width: 381px; height: 47px;">
    Categoria:</td>
-   <td style="width: 366px; height: 47px"> 
-	   &nbsp;<select  name="cmbCategoria" style="height: 30px; width: 127px;" required> 
-        <option name="cmbcategoria" value="" disabled selected >Seleccionar</option>
-	   <?php
-        $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');		
-	      // $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
-	 
-          $query = $mysqli -> query ("SELECT * FROM Categoria ");
-  
-          while ($valores = mysqli_fetch_array($query)) {  
-            echo '<option value="'.$valores['Id_Categoria'].'">'.$valores['nombreCategoria'].'</option>'; 
-          } 
-        ?>       
-	 <td/>	   	
+  <td style="width: 381px; height: 47px;">   
+	   <input name="txtCategoria" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
+	</td>
  </tr>
  <tr>
   <td style="width: 381px; height: 47px;">
@@ -113,8 +102,7 @@ include "modelo/conexion.php";
     // Controla si hubo ingreso de datos
    if (!empty ($_POST))  
    {  // Conecta a la base de datos
-     $cn= new mysqli("localhost:3307" , "root" ,"" , "sistema_dj" );
-     // $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
+      $cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
      //$iddetalle=$_POST['txtIdDetalle'];
      $nombre=$_POST['cmbNombre']; 
@@ -122,8 +110,7 @@ include "modelo/conexion.php";
      $fechacierre=$_POST['txtFechaCierre'];
      $cantHectareas=$_POST['txtHectareas'];
      $cabezas=$_POST['txtCabezas']; 
-     $categoria=$_POST['cmbCategoria'];
-     //$categoria=$_POST['txtCategoria']; antes era asi con la caja de texto
+     $categoria=$_POST['txtCategoria'];
      $inversion=$_POST['txtInversion'];	 
 	 		
 		
@@ -135,7 +122,7 @@ include "modelo/conexion.php";
       //$c=$re->num_rows; 
       //if ( $c==0)
     //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detalleinicialhacienda(Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Id_Categoria, InversionInicial) VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
+        $cad = "INSERT INTO detalleinicialhacienda(Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Categoria, InversionInicial) VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
                            
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);

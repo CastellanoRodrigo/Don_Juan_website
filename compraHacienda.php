@@ -10,8 +10,7 @@ include('./template/Cabecera.php');?>
     // Controla si hubo ingreso de datos
    if (!empty ($_POST))  
    {  // Conecta a la base de datos
-    $cn= new mysqli("localhost:3307" , "root" ,"" , "campodonjuan" );
-      //$cn= new mysqli("localhost" , "root" ,"" , "campodonjuan" );
+      $cn= new mysqli("localhost" , "root" ,"" , "campodonjuan" );
      // captura datos ingresados
      $fecha=$_REQUEST['Fecha'];
      $vendedor=$_REQUEST['Vendedor'];  
