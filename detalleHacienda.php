@@ -135,12 +135,13 @@ include "modelo/conexion.php";
       //$c=$re->num_rows; 
       //if ( $c==0)
     //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detalleinicialhacienda(Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Id_Categoria, InversionInicial) VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
+        $cad = "INSERT INTO detalleinicialhacienda(Id_ProyectoHacienda, FechaInicio, FechaCierre, CantidadHectareas, CantidadCabezas, Id_Categoria, InversionInicial) 
+                VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cabezas','$categoria','$inversion')";
                            
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
-       echo "El pryecto fue dada de alta con exito";
+       echo "El proyecto fue dada de alta con exito";
     //}
     //else 
    // {

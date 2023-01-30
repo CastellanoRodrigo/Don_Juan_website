@@ -30,7 +30,7 @@ include "modelo/conexion.php";
 <!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA NO LO PUDE HACER  - cambie a posucion top-->
 <center>
 	<br>
-	<table border=2 width=400 background-color: white>
+	<table border=2 width=400 style="background-color: white">
 		<h2> PROYECTO DE HACIENDA </h2>
 		<tr>
 			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;">NombreProyecto</td>
@@ -53,13 +53,21 @@ $clave = "";
 $base = "sistema_dj";
 
 $cn = new mysqli($host, $usuario, $clave, $base);
-
+/* esto es lo q estaba antes de que pruebe las cosas nuevas
 $registros = $cn->query("SELECT p.NombreProyecto, d.FechaInicio, d.FechaCierre,
 						d.CantidadHectareas, d.CantidadCabezas, c.nombreCategoria, d.InversionInicial, p.Id_Parcela 
 						FROM detalleinicialhacienda d
 						INNER JOIN proyectohacienda p ON d.Id_ProyectoHacienda = p.Id_ProyectoHacienda
 						INNER JOIN Categoria c ON c.Id_Categoria = d.Id_Categoria
-						WHERE p.Id_Parcela='11'");
+						WHERE p.Id_Parcela='11'"); puse el 8 para probar asi estaria bn
+						modificar tmb borrar el td my row 7
+*/
+$registros = $cn->query("SELECT p.NombreProyecto, d.FechaInicio, d.FechaCierre,
+						d.CantidadHectareas, d.CantidadCabezas, c.nombreCategoria, d.InversionInicial
+						FROM detalleinicialhacienda d
+						INNER JOIN proyectohacienda p ON d.Id_ProyectoHacienda = p.Id_ProyectoHacienda
+						INNER JOIN Categoria c ON c.Id_Categoria = d.Id_Categoria
+						WHERE p.Id_Parcela='8'");
 
 while ($myrow = $registros->fetch_row()) //mientras haya registros muestra la informacion
 {
@@ -72,7 +80,6 @@ while ($myrow = $registros->fetch_row()) //mientras haya registros muestra la in
    	   		 <td>$myrow[4]</td>
    	   		 <td>$myrow[5]</td>
    	   		 <td>$myrow[6]</td>
-   	   		 <td>$myrow[7]</td>
    	   		 </tr>";
 }
 // se nos habia escapado este if 
@@ -90,7 +97,7 @@ $cn->close();
 		NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
 <center>
 	<br>
-	<table border=2 width=400>
+	<table border=2 width=400 style="background-color: white">
 		<br>
 		<br>
 		<h2> PROYECTO DE SIEMBRA </h2>
@@ -112,11 +119,11 @@ $cn = new mysqli("localhost:3307", "root", "", "sistema_dj"); //conexion con bas
 
 
 $registros = $cn->query("SELECT p.NombreProyecto, d.FechaInicio, d.FechaCierre, d.CantidadHectareas, s.NombreCultivo,
- 								   d.RindeEspeculado, d.InversionInicial, p.Id_Parcela
+ 								   d.RindeEspeculado, d.InversionInicial
   							FROM detalleinicialsiembra d
  						    INNER JOIN proyectosiembra p ON d.Id_ProyectoSiembra = p.Id_ProyectoSiembra
   							INNER JOIN siembra s ON d.Id_Cultivo = s.Id_Cultivo
- 						    WHERE p.Id_Parcela='11'");
+ 						    WHERE p.Id_Parcela='1'");
 
 while ($myrow = $registros->fetch_row()) //mientras haya registros muestra
 {
@@ -128,8 +135,7 @@ while ($myrow = $registros->fetch_row()) //mientras haya registros muestra
    	         <td> $myrow[3] </td>
    	         <td> $myrow[4] </td>
    	         <td> $myrow[5] </td>
-   	         <td> $myrow[6] </td>
-   	         <td> $myrow[7] </td> 	   
+   	         <td> $myrow[6] </td>	   
    	         </tr>";
 }
 if (mysqli_num_rows($registros) <= 0) {

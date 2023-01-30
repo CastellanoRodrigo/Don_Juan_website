@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+
 
 * {
 	margin: 0;
@@ -10,6 +10,7 @@
 
 body {
 	background: url(https://www.xtrafondos.com/wallpapers/planeta-en-el-campo-2820.jpg);
+	/*background: url(imgs/casa2.jpeg);*/
 	object-fit: cover;
 	min-width: 100vh;
 	
@@ -52,14 +53,16 @@ h1 {
 	font-family: 'Montserrat Alternates', sans-serif;
 	font-weight: bold;
 	color: #fff;
-	background-color: rgb(10, 97, 17, 4.7);
+	background-color:rgb(104, 175, 106);
 	display:list-item;
 	align-items: center;
-	height: 15vh;
+	height: 10vh;
 	justify-content: flex-start;
-	position:absolute;
+	position: center top; 
     top:50%;
     left:50%;
+	padding: 10px;
+	width: 280px;
   }
 
   p{
