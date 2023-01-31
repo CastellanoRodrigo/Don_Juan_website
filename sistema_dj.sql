@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 20-01-2023 a las 19:29:28
+-- Tiempo de generación: 31-01-2023 a las 21:06:05
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -97,26 +97,29 @@ CREATE TABLE `chequesemtidos` (
 
 CREATE TABLE `compras` (
   `Id_Compra` int(20) NOT NULL,
-  `Id_Campaña` int(20) NOT NULL,
   `Fecha` date NOT NULL,
-  `TipoFactura` int(25) NOT NULL,
+  `TipoFactura` varchar(25) NOT NULL,
   `PuntoDeVenta` int(25) NOT NULL,
-  `NumeroDesde` int(25) NOT NULL,
-  `NumeroHasta` int(25) NOT NULL,
-  `CodAutorizacion` int(25) NOT NULL,
+  `NroFactura` int(20) NOT NULL,
   `TipoDocEmisor` varchar(25) NOT NULL,
   `NroDocEmisor` int(25) NOT NULL,
-  `DenominacionEmisor` varchar(25) NOT NULL,
+  `Proveedor` varchar(25) NOT NULL,
   `TipoCambio` varchar(25) NOT NULL,
   `Moneda` varchar(25) NOT NULL,
-  `ImpNetoGravado` double NOT NULL,
-  `ImNetoNoGravado` double NOT NULL,
-  `ImpOpExentas` double NOT NULL,
+  `ImporteNeto` decimal(10,0) NOT NULL,
   `IVA` varchar(25) NOT NULL,
-  `ImporteTotal` double NOT NULL,
+  `ImporteTotal` decimal(10,0) NOT NULL,
   `Detalle` varchar(25) NOT NULL,
-  `FormaPago` varchar(25) NOT NULL
+  `FormaPago` varchar(25) NOT NULL,
+  `TipoCompra` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `compras`
+--
+
+INSERT INTO `compras` (`Id_Compra`, `Fecha`, `TipoFactura`, `PuntoDeVenta`, `NroFactura`, `TipoDocEmisor`, `NroDocEmisor`, `Proveedor`, `TipoCambio`, `Moneda`, `ImporteNeto`, `IVA`, `ImporteTotal`, `Detalle`, `FormaPago`, `TipoCompra`) VALUES
+(2, '2023-09-01', 'B', 123, 789456, 'CUIT', 27, 'hernansinho', '330', '$', '1000', '12,5', '1785', 'estoy probando', 'Efectivo', 'General');
 
 -- --------------------------------------------------------
 
@@ -143,7 +146,8 @@ INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda
 (1, 1, '2022-11-19', '2024-01-05', 45, 50, 1, '350000'),
 (2, 2, '2022-11-22', '2024-06-15', 50, 25, 2, '66666666'),
 (3, 7, '2022-10-10', '2024-01-05', 15, 35, 1, '4444444'),
-(4, 9, '2022-10-10', '2024-06-03', 20, 50, 2, '1234');
+(4, 9, '2022-10-10', '2024-06-03', 20, 50, 2, '1234'),
+(5, 6, '2021-05-09', '2022-11-11', 28, 28, 1, '6000000');
 
 -- --------------------------------------------------------
 
@@ -362,8 +366,8 @@ CREATE TABLE `tipo_usuario` (
 --
 
 INSERT INTO `tipo_usuario` (`id`, `tipo`) VALUES
-(1, 'Adm. de Negocio'),
-(2, 'Adm. General');
+(1, 'Administrador'),
+(2, 'Lector');
 
 -- --------------------------------------------------------
 
@@ -387,7 +391,7 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `nombre`, `apellido`, `tipo_usuario`) VALUES
 (1, 'admin', 'admin', 'Aldo', 'Dolce', 1),
 (2, 'Admin_Gen', 'admin', 'Lucila', 'Dolce', 1),
-(3, 'Tu turrito', '456', 'her', 'altola', 1);
+(3, 'hernan', '456', 'hernan', 'altola', 2);
 
 --
 -- Índices para tablas volcadas
@@ -398,6 +402,12 @@ INSERT INTO `usuarios` (`id`, `usuario`, `password`, `nombre`, `apellido`, `tipo
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`Id_Categoria`);
+
+--
+-- Indices de la tabla `compras`
+--
+ALTER TABLE `compras`
+  ADD PRIMARY KEY (`Id_Compra`);
 
 --
 -- Indices de la tabla `detalleinicialhacienda`
@@ -446,10 +456,16 @@ ALTER TABLE `categoria`
   MODIFY `Id_Categoria` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `Id_Compra` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `detalleinicialhacienda`
 --
 ALTER TABLE `detalleinicialhacienda`
-  MODIFY `Id_DetalleHacienda` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_DetalleHacienda` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `detalleinicialsiembra`
