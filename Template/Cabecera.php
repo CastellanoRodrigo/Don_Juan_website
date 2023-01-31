@@ -132,7 +132,7 @@ if (empty($_SESSION["id"])) {
 							<h3 class="subtitulo">Compras y Ventas </h3>
 							<a href="/Don_Juan_website/compras.php">Compras hacienda</a>
 							<a href="/Don_Juan_website/compras.php">Compras siembra</a>
-							<a href="#">Gastos arrendamiento</a>
+							<a href="/Don_Juan_website/verCompras.php">Ver compras</a>
 							<a href="#">Subir documentos</a>							
 						</div>
 

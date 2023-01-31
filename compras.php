@@ -9,9 +9,9 @@ include('./template/Cabecera.php');?>
 <center>
 <table>
  <tr>
-  <td style="height: 47px">
+  <td>
    Fecha:</td>
-  <td style="width: 366px; height: 47px">
+  <td style="width: 366px">
 	   <input name="txtFecha" style="width: 127px; height: 30px" type="text" required/>
 	 </td>
  </tr>

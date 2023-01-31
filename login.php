@@ -50,8 +50,7 @@
                                         <div class="fas fa-eve verPassword" onclick="vista()" id="verPassword"></div>
                                     </div>
                                     <div>
-                                        <input name="btningresar" class="BotonIniciar"  type="submit" value="INICIAR SESION"> 
-                                        <!-- no sirve <button name="btningresar" class="BotonIniciar" class="btn" > INICIAR SESION </button> -->
+                                        <input name="btningresar" class="BotonIniciar"  type="submit" value="INICIAR SESION">
                                     </div>
                                 </div>
                             </div>
