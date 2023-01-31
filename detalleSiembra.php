@@ -25,8 +25,9 @@ include "modelo/conexion.php";
         <option name="cmbnombre" value="" disabled selected>Seleccionar</option>
 
 	   <?php
-	      $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
-	 
+	      $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');
+        //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
+
           $query = $mysqli -> query ("SELECT * FROM ProyectoSiembra ");
   
           while ($valores = mysqli_fetch_array($query)) {
@@ -52,7 +53,8 @@ include "modelo/conexion.php";
    <td style="width: 381px; height: 47px;">
     		 
 		 <?php
-	     $mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
+       $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');
+	     //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
 		 
 		<select  name="cmbCultivo" style="height: 30px; width: 127px;" required>

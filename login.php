@@ -9,15 +9,15 @@
                 <title>Login GAFA</title>
             </head>
             <body>
-                <section class="home">
-                    <div class="BarraNavegacion">
+                <section class="home" >
+                    <div class="BarraNavegacion">                    
                         <h1> G.A.F.A </h1>
                         <div>
                             <img src="imagenes/Gafa.jpg">
                         </div>     
                     </div>
                     <!-- Envio de datos seguro -->
-                    <div class="login-content">
+                    <div class=".home">
                     <!-- Formulario-metodo de envio-->
                         <form method="post" action="">
                             <?php
@@ -25,7 +25,7 @@
                             include "Modelo/Conexion.php";
                             include "Controlador/controlador_login.php";
                             ?>
-                            <div class="cover">
+                            <div Class="cover">
                                 <div class="Content">
                                     <h1>INICIAR SESION</h1>
                                     <div class="input-div one">
@@ -50,8 +50,7 @@
                                         <div class="fas fa-eve verPassword" onclick="vista()" id="verPassword"></div>
                                     </div>
                                     <div>
-                                        <input name="btningresar" class="BotonIniciar"  type="submit" value="INICIAR SESION"> 
-                                        <!-- no sirve <button name="btningresar" class="BotonIniciar" class="btn" > INICIAR SESION </button> -->
+                                        <input name="btningresar" class="BotonIniciar"  type="submit" value="INICIAR SESION">
                                     </div>
                                 </div>
                             </div>

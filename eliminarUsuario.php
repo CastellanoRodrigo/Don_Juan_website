@@ -6,7 +6,8 @@ if (!empty ($_POST))
    {
     
     // Conecta a la base de datos
-    $cn= new mysqli("localhost", "root", "", "sistema_dj");
+    $cn= new mysqli("localhost:3307", "root", "", "sistema_dj");
+    //$cn= new mysqli("localhost", "root", "", "sistema_dj");
    // Captura usuario a eliminar 
      $seleccion=$_REQUEST['cmbEliminar'];
     //Ejecuta sentencia en sql para eliminar de la tabla usuarios el seleccionado
@@ -22,7 +23,8 @@ if (!empty ($_POST))
    <?php
     echo"<center>";
     // Conecta a la base de datos
-    $cn= new mysqli("localhost", "root", "", "sistema_dj");
+    $cn= new mysqli("localhost:3307", "root", "", "sistema_dj");
+    //$cn= new mysqli("localhost", "root", "", "sistema_dj");
     // selecciona el usuario de la tabla
     $registros= $cn->query("SELECT * FROM usuarios");
      // Define formulario
