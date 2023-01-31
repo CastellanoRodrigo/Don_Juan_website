@@ -16,15 +16,13 @@ if(!empty($_POST["btningresar"])) {
         $_SESSION["tipo_usuario"]=$datos->tipo_usuario;
         /* header("location: inicio.php"); */  
         header("location: inicio.php");     
-       }else{
-        echo "<div class='alert alert-danger'>Acceso denegado</div>";
-    }
-       
-    } else {
-       echo "Campos incompletos o vacios";
-    }
-    
-}
+       }else{     
+          echo "<div class='alert alert-danger'>Acceso denegado</div>";
+        }
 
+    } else { // no se va a ejecutar nunca xq los campos tienen required
+       echo "Campos incompletos o vacios";
+    }   
+}
 
 ?>
