@@ -11,9 +11,7 @@ include "modelo/conexion.php";
 <br>
 
 <center>
-	<br>
-	<h1> Parcela 11 </h1>
-	<div class="descipcion">
+<div class="descipcion">
 		<div class="descripcion2" position: absolute>
 
 			<p> Ubicación: -36.01162, -63.98526 <br>
@@ -24,11 +22,14 @@ include "modelo/conexion.php";
 		</div>
 	</div>
 	<br>
+	<h1> Parcela 11 </h1>
+	
+	<br>
 </center>
-<!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA NO LO PUDE HACER QUEDAR BIEN POR ESO PUSE EL COMENTARIO-->
+<!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA NO LO PUDE HACER  - cambie a posucion top-->
 <center>
 	<br>
-	<table border=2 width=400>
+	<table border=2 width=400 background-color: white>
 		<h2> PROYECTO DE HACIENDA </h2>
 		<tr>
 			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 79px;">NombreProyecto</td>
