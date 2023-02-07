@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 31-01-2023 a las 21:06:05
+-- Tiempo de generación: 07-02-2023 a las 20:51:45
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -143,11 +143,11 @@ CREATE TABLE `detalleinicialhacienda` (
 --
 
 INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Id_Categoria`, `InversionInicial`) VALUES
-(1, 1, '2022-11-19', '2024-01-05', 45, 50, 1, '350000'),
-(2, 2, '2022-11-22', '2024-06-15', 50, 25, 2, '66666666'),
 (3, 7, '2022-10-10', '2024-01-05', 15, 35, 1, '4444444'),
 (4, 9, '2022-10-10', '2024-06-03', 20, 50, 2, '1234'),
-(5, 6, '2021-05-09', '2022-11-11', 28, 28, 1, '6000000');
+(5, 6, '2021-05-09', '2022-11-11', 28, 28, 1, '6000000'),
+(6, 1, '2022-10-10', '2023-11-11', 2, 2, 1, '2222'),
+(8, 1, '2022-02-02', '2023-11-11', 2, 2, 1, '222');
 
 -- --------------------------------------------------------
 
@@ -465,7 +465,7 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de la tabla `detalleinicialhacienda`
 --
 ALTER TABLE `detalleinicialhacienda`
-  MODIFY `Id_DetalleHacienda` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id_DetalleHacienda` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `detalleinicialsiembra`
