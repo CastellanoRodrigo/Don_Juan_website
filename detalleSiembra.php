@@ -42,9 +42,9 @@ include "modelo/conexion.php";
  </tr>
  <tr>
   <td style="width: 381px; height: 47px;">
-   Fecha de inicio (yyyy/MM/dd):</td>
+   Fecha de inicio:</td>
   <td style="width: 381px; height: 47px;">   
-	   <input name="txtFechaInicio" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
+	   <input name="txtFechaInicio" type="date" class="auto-style1" style="height: 30px; width: 127px" required/>
 	</td>
  </tr>
  <tr>
@@ -99,9 +99,9 @@ include "modelo/conexion.php";
  </tr>
  <tr>
   <td style="width: 381px; height: 47px;">
-   Fecha de cierre aproximado (yyyy/MM/dd):</td>
+   Fecha de cierre aproximado:</td>
   <td style="width: 381px; height: 47px;">  
-	   <input name="txtFechaCierre" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
+	   <input name="txtFechaCierre" type="date" class="auto-style1" style="height: 30px; width: 127px" required />
 	</td>
  </tr>
  <tr>
@@ -145,7 +145,8 @@ include "modelo/conexion.php";
       //$c=$re->num_rows; 
       //if ( $c==0)
      //{  //cadena que agrega el regsitro osea la fila a la tabla CampañaHacienda
-        $cad = "INSERT INTO detalleinicialsiembra(Id_ProyectoSiembra, FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial) VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";
+        $cad = "INSERT INTO detalleinicialsiembra(Id_ProyectoSiembra, FechaInicio, FechaCierre, CantidadHectareas, Id_Cultivo, RindeEspeculado, InversionInicial)
+                VALUES ('$nombre','$fechainicio','$fechacierre','$cantHectareas','$cultivo','$rinde','$inversion')";
                            
         // Ejecuta sentencia INSERT
         $result = $cn->query($cad);

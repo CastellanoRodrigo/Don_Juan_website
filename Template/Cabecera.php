@@ -39,11 +39,10 @@ if (empty($_SESSION["id"])) {
                         ?>
                     </div>
 			</div>
-
+			<!-- El boton de salir no esta cerrando la sesion solo redirige al login.php CREO-->
 			<div class="enlaces">
 				<a href="./inicio.php">Inicio</a>
-				<a href="#">Salir</a>
-				
+				<a href="./login.php">Salir</a>				
 			</div>
 		</div>
 <!--Menu Nav-->
@@ -133,7 +132,7 @@ if (empty($_SESSION["id"])) {
 							<a href="/Don_Juan_website/compras.php">Compras hacienda</a>
 							<a href="/Don_Juan_website/compras.php">Compras siembra</a>
 							<a href="/Don_Juan_website/verCompras.php">Ver compras</a>
-							<a href="#">Subir documentos</a>							
+							<a href="/Don_Juan_website/subirDocumentos.php">Subir documentos</a>							
 						</div>
 
 						<div class="banner-subcategoria">

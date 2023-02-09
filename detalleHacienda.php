@@ -38,9 +38,9 @@ include "modelo/conexion.php";
  </tr>
  <tr>
   <td style="width: 381px; height: 47px;">
-   Fecha de inicio (yyyy/MM/dd):</td>
+   Fecha de inicio:</td>
   <td style="width: 381px; height: 47px;">  
-	   <input name="txtFechaInicio" type="text" class="auto-style1" style="height: 30px; width: 127px" required />
+	   <input name="txtFechaInicio" type="date" class="auto-style1" style="height: 30px; width: 127px" required />
 	</td>
  </tr>
  <tr>
@@ -88,9 +88,9 @@ include "modelo/conexion.php";
  </tr>
  <tr>
   <td style="width: 381px; height: 47px;">
-   Fecha de cierre aproximado (yyyy/MM/dd):</td>
+   Fecha de cierre aproximado:</td>
   <td style="width: 381px; height: 47px;">  
-	   <input name="txtFechaCierre" type="text" class="auto-style1" style="height: 30px; width: 127px" required/>
+	   <input name="txtFechaCierre" type="date" class="auto-style1" style="height: 30px; width: 127px" required/>
 	</td>
  </tr>
  <tr>
