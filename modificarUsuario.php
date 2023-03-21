@@ -8,7 +8,7 @@ include('./template/cabecera.php');?>
 			 <td style="width: 293px">Seleccione:</td>
 			 <td><select name="lista" style="width: 185px;" required> 
     <?php
-	   $cn= new mysqli("localhost:3307", "root", "", "sistema_dj");
+	   $cn= new mysqli("localhost:3307", "root", "", "donjuandb");
 	   //$cn= new mysqli("localhost", "root", "", "sistema_dj");
 	   $registros= $cn->query("select * from usuarios");
 
@@ -16,7 +16,7 @@ include('./template/cabecera.php');?>
 	   // repetitiva que carga la lista con los nombres de los usuarios
 	while ($myrow=$registros->fetch_array())
 	     { 	  
-	      echo "<option value='$myrow[id]'>" ;
+	      echo "<option value='$myrow[id_usuario]'>" ;
           echo "$myrow[nombre]";
           echo "</option>";
           } $cn->close();	
@@ -30,7 +30,7 @@ include('./template/cabecera.php');?>
 			 <td>&nbsp;</td>
 		 </tr>
 		 <tr>
-			 <td style="width: 293px; height: 23px;">Ingrese los nuevos datos</td>
+			 <td style="width: 293px; height: 23px;">INGRESE LOS NUEVOS DATOS</td>
 			 <td style="height: 23px"></td>
 		 </tr>
 		 <tr>
@@ -47,7 +47,7 @@ include('./template/cabecera.php');?>
 			 <td style="width: 293px">Seleccionar tipo de usuario:</td>
 			 <td>
 			 <?php
-	    		 $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');		
+	    		 $mysqli = new mysqli('localhost:3307', 'root', '', 'donjuandb');		
 				 //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 	 ?>	 
 		 
@@ -59,7 +59,7 @@ include('./template/cabecera.php');?>
   
                 while ($valores = mysqli_fetch_array($query)) {
   
-                echo '<option value="'.$valores['id'].'">'.$valores['tipo'].'</option>'; 
+                echo '<option value="'.$valores['id_tipoUsuario'].'">'.$valores['tipo'].'</option>'; 
                 } 				
              ?>
 
@@ -83,7 +83,7 @@ include('./template/cabecera.php');?>
 <?php
 if (!empty ($_POST))  
 	{
-	 $cn= new mysqli("localhost", "root", "", "sistema_dj");
+	 $cn= new mysqli("localhost:3307", "root", "", "donjuandb");
 	 //$cn= new mysqli("localhost", "root", "", "sistema_dj");
 
 	    $dato=$_POST['lista'];
@@ -91,7 +91,7 @@ if (!empty ($_POST))
 	    $nuevaPass=$_POST['txtNuevaPassword'];
 	    $tipoUsuario=$_POST['cmbTipoUsuario'];
 	    
-	    $sql="UPDATE usuarios SET usuario='$nuevoUsuario', password='$nuevaPass', tipo_Usuario='$tipoUsuario'  WHERE id=$dato";
+	    $sql="UPDATE usuarios SET usuario='$nuevoUsuario', password='$nuevaPass', id_tipoUsuario='$tipoUsuario'  WHERE id_usuario=$dato";
  
 	$result=$cn->query($sql);
 	

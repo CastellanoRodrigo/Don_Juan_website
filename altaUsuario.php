@@ -55,7 +55,7 @@ include "modelo/conexion.php";
    <td style="width: 366px; height: 69px;">
      		 
 		 <?php
-      $mysqli = new mysqli('localhost:3307', 'root', '', 'sistema_dj');
+      $mysqli = new mysqli('localhost:3307', 'root', '', 'donjuandb');
 	     //$mysqli = new mysqli('localhost', 'root', '', 'sistema_dj');		 
 		 ?>	 
 
@@ -69,7 +69,7 @@ include "modelo/conexion.php";
   
           while ($valores = mysqli_fetch_array($query)) {
   
-            echo '<option value="'.$valores['id'].'">'.$valores['tipo'].'</option>';
+            echo '<option value="'.$valores['id_tipoUsuario'].'">'.$valores['tipo'].'</option>';
   
           }
   
@@ -97,7 +97,7 @@ include "modelo/conexion.php";
     // Controla si hubo ingreso de datos
    if (!empty ($_POST))  
    {  // Conecta a la base de datos
-      $cn= new mysqli("localhost:3307" , "root" ,"" , "sistema_dj" );
+      $cn= new mysqli("localhost:3307" , "root" ,"" , "donjuandb" );
       //$cn= new mysqli("localhost" , "root" ,"" , "sistema_dj" );
      // captura datos ingresados
      $usuario=$_POST['txtUsuario'];
@@ -107,16 +107,18 @@ include "modelo/conexion.php";
      $tipo=$_POST['cmbTipoUsuario'];
      
       //cadena que agrega el regsitro osea la fila a la tabla CampaÃ±aHacienda
-        $cad = "INSERT INTO usuarios(usuario, password, nombre, apellido, tipo_usuario) VALUES ('$usuario','$password','$nombre','$apellido', '$tipo')";
+     $cad = "INSERT INTO usuarios(usuario, password, nombre, apellido, id_tipoUsuario)
+             VALUES ('$usuario','$password','$nombre','$apellido', '$tipo')";
         
-        // Ejecuta sentencia INSERT
-        $result = $cn->query($cad);
+     // Ejecuta sentencia INSERT
+      $result = $cn->query($cad);
        // muestra mensaje que fue dado de alta
        echo "El Proyecto fue dado de alta con exito";
-   } 
-  // cierra la conexion   
-    $cn->close();
-  //}
+    
+     //cierra la conexion
+     $cn->close();
+   }
+
 ?>
 
 <?php #Llammo a pie 

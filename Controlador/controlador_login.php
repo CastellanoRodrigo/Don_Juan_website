@@ -7,20 +7,21 @@ if(!empty($_POST["btningresar"])) {
       #almacenamos usuario y contraseña
       $usuario=$_POST["usuario"];
       $password=$_POST["password"];
-      $sql=$conexion->query(" select * from usuarios where usuario='$usuario' and password='$password' ");
+      $sql=$conexion->query("SELECT * FROM usuarios WHERE usuario='$usuario' and password='$password' ");
      
       if ($datos=$sql->fetch_object()) {
-        $_SESSION["id"]=$datos->id;
+        $_SESSION["id_usuario"]=$datos->id_usuario;       
         $_SESSION["nombre"]=$datos->nombre;
         $_SESSION["apellido"]=$datos->apellido;
-        $_SESSION["tipo_usuario"]=$datos->tipo_usuario;
+        $_SESSION["id_tipoUsuario"]=$datos->id_tipoUsuario;
+
         /* header("location: inicio.php"); */  
         header("location: inicio.php");     
        }else{     
           echo "<div class='alert alert-danger'>Acceso denegado</div>";
         }
 
-    } else { // no se va a ejecutar nunca xq los campos tienen required
+    } else { // NO SE VA A EJECUTAR NUNCA xq los campos tienen required
        echo "Campos incompletos o vacios";
     }   
 }

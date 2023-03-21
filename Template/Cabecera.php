@@ -2,7 +2,7 @@
 session_start();
 #controlamos el ingreso, si trata de acceder manualmente por url 
 #lo redirige al login
-if (empty($_SESSION["id"])) {
+if (empty($_SESSION["id_usuario"])) {
     header("location: login.php");
 }
 
@@ -161,7 +161,7 @@ if (empty($_SESSION["id"])) {
 						<div class="enlaces-subcategoria">
 							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
 							<h3 class="subtitulo">Usuarios</h3>
-							<a href="./Usuarios.php">Alta de usuario</a>
+							<a href="./altaUsuario.php">Alta de usuario</a>
 							<a href="./eliminarUsuario.php">Baja de usuario</a>
 							<a href="./modificarUsuario.php">Modificar usuario</a>
 						

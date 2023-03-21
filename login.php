@@ -2,60 +2,24 @@
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
-                <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-                
+                <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->             
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link rel="stylesheet" type="text/css" href="Css/estilos.css">
+                <link rel="stylesheet" type="text/css" href="Css/estiloLogin.css">
                 <title>Login GAFA</title>
             </head>
             <body>
-                <section class="home" >
-                    <div class="BarraNavegacion">                    
-                        <h1> G.A.F.A </h1>
-                        <div>
-                            <img src="imagenes/Gafa.jpg">
-                        </div>     
-                    </div>
-                    <!-- Envio de datos seguro -->
-                    <div class=".home">
-                    <!-- Formulario-metodo de envio-->
-                        <form method="post" action="">
-                            <?php
-                            // el error lo marca aca en estos include x ejemplo
-                            include "Modelo/Conexion.php";
-                            include "Controlador/controlador_login.php";
-                            ?>
-                            <div Class="cover">
-                                <div class="Content">
-                                    <h1>INICIAR SESION</h1>
-                                    <div class="input-div one">
-                                        <div class="i">
-                                            <i class="fas fa-user"></i>
-                                        </div>
-                                        <div class="div">
-                                            <h5>Usuario</h5>
-                                            <input id="usuario" type="text" class="input" required="required"  name="usuario" required>
-                                        </div>
-                                    </div>
-                                    <div class="input-div pass">
-                                        <div class="i">
-                                            <i class="fas fa-lock"></i>
-                                        </div>
-                                        <div class="div">
-                                            <h5>Contraseña</h5>
-                                            <input id="input" type="password" required="required" class="input" name="password" required>
-                                        </div>
-                                    </div>
-                                    <div class="view">
-                                        <div class="fas fa-eve verPassword" onclick="vista()" id="verPassword"></div>
-                                    </div>
-                                    <div>
-                                        <input name="btningresar" class="BotonIniciar"  type="submit" value="INICIAR SESION">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </section>
+                <form method="post" action="">
+                <?php            
+                    include('./Modelo/Conexion.php');
+                    include "Controlador/controlador_login.php";
+                ?>
+                <section class="form-login">
+                    <h5>Inicio de sesion</h5>
+                    <input class="cajas" type="text" name="usuario" value="" placeholder="ingresar usuario" required>
+                    <input class="cajas" type="password" name="password" value="" placeholder="ingresar password" required>
+                    <input class="btn" type="submit" name="btningresar" value="Ingresar">
+
+                </section>   
+                </form>         
             </body>
         </html>
