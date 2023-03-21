@@ -5,7 +5,6 @@
 body{
     margin: 0px;
     padding: 0px;
-    /*background-color: rgb(243, 248, 176);*/
 }
 
 /*Con esta clase nos permite personalizar el fondo*/
@@ -82,21 +81,3 @@ body{
 }
 
 /* Fin de Login*/
-.table__Hacienda{
-    background-color: red;
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-/* titulo de la tabla que muestra los detalles */
-.tabla-titulo{
-    text-align:center;
-    font-size:16pt;
-    background-color:rgb(123, 214, 123);
-    font-weight:bold;
-
-}

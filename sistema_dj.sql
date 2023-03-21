@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2022 a las 22:01:06
+-- Servidor: localhost:3307
+-- Tiempo de generación: 07-02-2023 a las 20:51:45
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -35,6 +35,29 @@ CREATE TABLE `alquiler` (
   `FechaFin` date NOT NULL,
   `Estado` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `Id_Categoria` int(20) NOT NULL,
+  `nombreCategoria` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`Id_Categoria`, `nombreCategoria`) VALUES
+(1, 'Ternero'),
+(2, 'Novillito'),
+(3, 'Vaquillona'),
+(4, 'Novillo'),
+(5, 'Vaca'),
+(6, 'Toro');
 
 -- --------------------------------------------------------
 
@@ -74,26 +97,29 @@ CREATE TABLE `chequesemtidos` (
 
 CREATE TABLE `compras` (
   `Id_Compra` int(20) NOT NULL,
-  `Id_Campaña` int(20) NOT NULL,
   `Fecha` date NOT NULL,
-  `TipoFactura` int(25) NOT NULL,
+  `TipoFactura` varchar(25) NOT NULL,
   `PuntoDeVenta` int(25) NOT NULL,
-  `NumeroDesde` int(25) NOT NULL,
-  `NumeroHasta` int(25) NOT NULL,
-  `CodAutorizacion` int(25) NOT NULL,
+  `NroFactura` int(20) NOT NULL,
   `TipoDocEmisor` varchar(25) NOT NULL,
   `NroDocEmisor` int(25) NOT NULL,
-  `DenominacionEmisor` varchar(25) NOT NULL,
+  `Proveedor` varchar(25) NOT NULL,
   `TipoCambio` varchar(25) NOT NULL,
   `Moneda` varchar(25) NOT NULL,
-  `ImpNetoGravado` double NOT NULL,
-  `ImNetoNoGravado` double NOT NULL,
-  `ImpOpExentas` double NOT NULL,
+  `ImporteNeto` decimal(10,0) NOT NULL,
   `IVA` varchar(25) NOT NULL,
-  `ImporteTotal` double NOT NULL,
+  `ImporteTotal` decimal(10,0) NOT NULL,
   `Detalle` varchar(25) NOT NULL,
-  `FormaPago` varchar(25) NOT NULL
+  `FormaPago` varchar(25) NOT NULL,
+  `TipoCompra` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `compras`
+--
+
+INSERT INTO `compras` (`Id_Compra`, `Fecha`, `TipoFactura`, `PuntoDeVenta`, `NroFactura`, `TipoDocEmisor`, `NroDocEmisor`, `Proveedor`, `TipoCambio`, `Moneda`, `ImporteNeto`, `IVA`, `ImporteTotal`, `Detalle`, `FormaPago`, `TipoCompra`) VALUES
+(2, '2023-09-01', 'B', 123, 789456, 'CUIT', 27, 'hernansinho', '330', '$', '1000', '12,5', '1785', 'estoy probando', 'Efectivo', 'General');
 
 -- --------------------------------------------------------
 
@@ -108,7 +134,7 @@ CREATE TABLE `detalleinicialhacienda` (
   `FechaCierre` date NOT NULL,
   `CantidadHectareas` int(20) NOT NULL,
   `CantidadCabezas` int(20) NOT NULL,
-  `Categoria` varchar(25) NOT NULL,
+  `Id_Categoria` int(25) NOT NULL,
   `InversionInicial` decimal(25,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -116,9 +142,12 @@ CREATE TABLE `detalleinicialhacienda` (
 -- Volcado de datos para la tabla `detalleinicialhacienda`
 --
 
-INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Categoria`, `InversionInicial`) VALUES
-(1, 1, '2022-11-19', '2024-01-05', 45, 50, 'Novillo', '350000'),
-(2, 2, '2022-11-22', '2024-06-15', 50, 25, 'Vaca', '66666666');
+INSERT INTO `detalleinicialhacienda` (`Id_DetalleHacienda`, `Id_ProyectoHacienda`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `CantidadCabezas`, `Id_Categoria`, `InversionInicial`) VALUES
+(3, 7, '2022-10-10', '2024-01-05', 15, 35, 1, '4444444'),
+(4, 9, '2022-10-10', '2024-06-03', 20, 50, 2, '1234'),
+(5, 6, '2021-05-09', '2022-11-11', 28, 28, 1, '6000000'),
+(6, 1, '2022-10-10', '2023-11-11', 2, 2, 1, '2222'),
+(8, 1, '2022-02-02', '2023-11-11', 2, 2, 1, '222');
 
 -- --------------------------------------------------------
 
@@ -143,8 +172,9 @@ CREATE TABLE `detalleinicialsiembra` (
 
 INSERT INTO `detalleinicialsiembra` (`Id_DetalleSiembra`, `Id_ProyectoSiembra`, `FechaInicio`, `FechaCierre`, `CantidadHectareas`, `Id_Cultivo`, `RindeEspeculado`, `InversionInicial`) VALUES
 (1, 1, '0000-00-00', '0000-00-00', 50, 1, 250000, '500000'),
-(2, 1, '2022-10-10', '2023-11-11', 50, 1, 250000, '500000'),
-(3, 2, '2022-07-12', '2023-04-10', 30, 6, 150000, '200000');
+(2, 1, '2022-10-10', '2023-11-11', 50, 1, 4500100, '500000'),
+(4, 4, '0000-00-00', '2023-11-11', 20, 3, 320001, '52222222'),
+(5, 11, '2022-10-10', '2023-11-11', 15, 3, 55555, '12341234');
 
 -- --------------------------------------------------------
 
@@ -249,7 +279,10 @@ CREATE TABLE `proyectohacienda` (
 
 INSERT INTO `proyectohacienda` (`Id_ProyectoHacienda`, `Id_Parcela`, `NombreProyecto`, `Estado`) VALUES
 (1, 8, 'Aberdinangus', 'Iniciado'),
-(2, 9, 'Helford', 'Iniciado');
+(2, 9, 'Helford', 'Iniciado'),
+(6, 10, 'Costillares', 'Finalizado'),
+(7, 4, 'vacaGrande', 'Iniciado'),
+(9, 4, 'RodriCuleado', 'Iniciado');
 
 -- --------------------------------------------------------
 
@@ -270,7 +303,9 @@ CREATE TABLE `proyectosiembra` (
 
 INSERT INTO `proyectosiembra` (`Id_ProyectoSiembra`, `Id_Parcela`, `NombreProyecto`, `Estado`) VALUES
 (1, 5, 'Cosecha Gruesa Maiz 2023', 'Iniciado'),
-(2, 1, 'Alfalfa 2023', 'Iniciado');
+(2, 1, 'Alfalfa 2023', 'Iniciado'),
+(4, 3, 'pepinos verdes', 'Iniciado'),
+(11, 1, 'pepe el grillo', 'Iniciado');
 
 -- --------------------------------------------------------
 
@@ -331,8 +366,8 @@ CREATE TABLE `tipo_usuario` (
 --
 
 INSERT INTO `tipo_usuario` (`id`, `tipo`) VALUES
-(1, 'Adm. de Negocio'),
-(2, 'Adm. General');
+(1, 'Administrador'),
+(2, 'Lector');
 
 -- --------------------------------------------------------
 
@@ -355,11 +390,48 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `nombre`, `apellido`, `tipo_usuario`) VALUES
 (1, 'admin', 'admin', 'Aldo', 'Dolce', 1),
-(2, 'Admin_Gen', 'admin', 'Lucila', 'Dolce', 1);
+(2, 'Admin_Gen', 'admin', 'Lucila', 'Dolce', 1),
+(3, 'hernan', '456', 'hernan', 'altola', 2);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`Id_Categoria`);
+
+--
+-- Indices de la tabla `compras`
+--
+ALTER TABLE `compras`
+  ADD PRIMARY KEY (`Id_Compra`);
+
+--
+-- Indices de la tabla `detalleinicialhacienda`
+--
+ALTER TABLE `detalleinicialhacienda`
+  ADD PRIMARY KEY (`Id_DetalleHacienda`);
+
+--
+-- Indices de la tabla `detalleinicialsiembra`
+--
+ALTER TABLE `detalleinicialsiembra`
+  ADD PRIMARY KEY (`Id_DetalleSiembra`);
+
+--
+-- Indices de la tabla `proyectohacienda`
+--
+ALTER TABLE `proyectohacienda`
+  ADD PRIMARY KEY (`Id_ProyectoHacienda`);
+
+--
+-- Indices de la tabla `proyectosiembra`
+--
+ALTER TABLE `proyectosiembra`
+  ADD PRIMARY KEY (`Id_ProyectoSiembra`);
 
 --
 -- Indices de la tabla `tipo_usuario`
@@ -378,6 +450,42 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `Id_Categoria` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `Id_Compra` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `detalleinicialhacienda`
+--
+ALTER TABLE `detalleinicialhacienda`
+  MODIFY `Id_DetalleHacienda` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `detalleinicialsiembra`
+--
+ALTER TABLE `detalleinicialsiembra`
+  MODIFY `Id_DetalleSiembra` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `proyectohacienda`
+--
+ALTER TABLE `proyectohacienda`
+  MODIFY `Id_ProyectoHacienda` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `proyectosiembra`
+--
+ALTER TABLE `proyectosiembra`
+  MODIFY `Id_ProyectoSiembra` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT de la tabla `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
@@ -387,7 +495,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -2,7 +2,7 @@
 session_start();
 #controlamos el ingreso, si trata de acceder manualmente por url 
 #lo redirige al login
-if (empty($_SESSION["id_usuario"])) {
+if (empty($_SESSION["id"])) {
     header("location: login.php");
 }
 

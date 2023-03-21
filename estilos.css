@@ -9,12 +9,11 @@
 
 
 body {
-	/*background: url(https://www.xtrafondos.com/wallpapers/planeta-en-el-campo-2820.jpg);*/
-	background: url(https://www.xtrafondos.com/wallpapers/degradado-difuminado-amarillo-7951.jpg);
-	/*https://www.xtrafondos.com/wallpapers/degradado-difuminado-cafe-y-azul-8005.jpg*/
-	/*background: url('./imgs/casa0.jpg');*/
+	background: url(https://www.xtrafondos.com/wallpapers/planeta-en-el-campo-2820.jpg);
+	/*background: url(imgs/casa2.jpeg);*/
 	object-fit: cover;
 	min-width: 100vh;
+	
 	background-repeat: no-repeat;
 	background-position: center center;
 	justify-content: center;
@@ -44,26 +43,26 @@ h1 {
 	max-width: 1200px;
 }
 
-/*LO SACO NO ME GUSTO*/
+
 .descripcion {
-	/*background-color: rgb(84, 128, 88, 4);*/
-	width: 40px;/*fit-content;*/
+	background-color: rgb(85, 128, 88, 4);
+
+	width: fit-content;
   }
-  /*VIENDO QUE ONDA PORQUE NO FUNCIONA NO LO AGARRA*/
   .descripcion2 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Montserrat Alternates', sans-serif;
 	font-weight: bold;
 	color: #fff;
-	background-color:rgb(122, 185, 124);
-	/*display:list-item;*/
+	background-color:rgb(104, 175, 106);
+	display:list-item;
 	align-items: center;
-	height: 300px;
+	height: 10vh;
 	justify-content: flex-start;
 	position: center top; 
     top:50%;
     left:50%;
-	padding: 1em;
-	width: 350px;
+	padding: 10px;
+	width: 280px;
   }
 
   p{
@@ -558,17 +557,5 @@ main article {
  place-items: center;
 }
 
-.inupt[type="text"]{
-	margin: 0.4m;
-}
 
-.input[type="submit"]{
-	background-color: rgb(45, 170, 14);
-	font-weight: bold;
-	color:#000;
-	border-radius: 10px;
-	padding: 0.2em;
-	margin: 0.5em;
-	padding: 0.4em;
-	cursor: pointer;
-}
+
