@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 15-03-2023 a las 11:32:12
+-- Tiempo de generación: 23-03-2023 a las 00:06:34
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categoria` (
-  `id_categoria` int(11) NOT NULL,
+  `id_Categoria` int(11) NOT NULL,
   `nombreCategoria` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,7 +36,7 @@ CREATE TABLE `categoria` (
 -- Volcado de datos para la tabla `categoria`
 --
 
-INSERT INTO `categoria` (`id_categoria`, `nombreCategoria`) VALUES
+INSERT INTO `categoria` (`id_Categoria`, `nombreCategoria`) VALUES
 (1, 'Ternero'),
 (2, 'Novillito'),
 (3, 'Vaquillona'),
@@ -51,7 +51,7 @@ INSERT INTO `categoria` (`id_categoria`, `nombreCategoria`) VALUES
 --
 
 CREATE TABLE `cultivos` (
-  `id_cultivo` int(11) NOT NULL,
+  `id_Cultivo` int(11) NOT NULL,
   `nombreCultivo` varchar(45) NOT NULL,
   `kgSemillaHas` int(11) NOT NULL,
   `rideEsperadoHas` varchar(45) NOT NULL
@@ -61,7 +61,7 @@ CREATE TABLE `cultivos` (
 -- Volcado de datos para la tabla `cultivos`
 --
 
-INSERT INTO `cultivos` (`id_cultivo`, `nombreCultivo`, `kgSemillaHas`, `rideEsperadoHas`) VALUES
+INSERT INTO `cultivos` (`id_Cultivo`, `nombreCultivo`, `kgSemillaHas`, `rideEsperadoHas`) VALUES
 (1, 'Maiz de Primera', 20, '5000'),
 (2, 'Maiz de Segunda', 20, '6000'),
 (3, 'Girasol', 20, '2000'),
@@ -86,6 +86,14 @@ CREATE TABLE `detallehacienda` (
   `inversion` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `detallehacienda`
+--
+
+INSERT INTO `detallehacienda` (`id_DetalleHacienda`, `id_Proyecto`, `fechaInicio`, `fechaCierre`, `cantidadCabezas`, `id_Categoria`, `inversion`) VALUES
+(1, 2, '2023-01-02', '2024-06-18', 12, 1, '1500000'),
+(2, 4, '2022-09-21', '2023-08-25', 25, 1, '4500000');
+
 -- --------------------------------------------------------
 
 --
@@ -101,6 +109,14 @@ CREATE TABLE `detallesiembra` (
   `rindeEsperadoHas` int(11) NOT NULL,
   `inversion` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `detallesiembra`
+--
+
+INSERT INTO `detallesiembra` (`id_DetalleSiembra`, `id_Proyecto`, `fechaInicio`, `fechaCierre`, `id_Cultivo`, `rindeEsperadoHas`, `inversion`) VALUES
+(4, 1, '2022-11-02', '2023-06-22', 2, 300000, 1500000),
+(5, 3, '2022-11-06', '2023-07-20', 3, 120000, 6500000);
 
 -- --------------------------------------------------------
 
@@ -165,6 +181,16 @@ CREATE TABLE `proyectos` (
   `id_EstadoProyecto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `proyectos`
+--
+
+INSERT INTO `proyectos` (`id_Proyecto`, `id_Parcela`, `nombreProyecto`, `id_TipoProyecto`, `cantidadHas`, `id_EstadoProyecto`) VALUES
+(1, 7, 'Cosecha Gruesa Maiz 2023', 2, 50, 2),
+(2, 7, 'Aberdinangus', 1, 15, 2),
+(3, 5, 'Girasol 2022', 2, 60, 2),
+(4, 5, 'Heldford 2022', 1, 40, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -225,7 +251,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `usuario`, `password`, `nombre`, `apellido`, `id_tipoUsuario`) VALUES
 (1, 'admin', '123', 'lucila', 'dolce', 1),
-(2, 'hernan', '123', 'hernan', 'altola', 2);
+(2, 'Hernan', '1234', 'hernan', 'altola', 1),
+(3, 'Aldito', '1234', 'Aldo', 'Dolce', 1);
 
 --
 -- Índices para tablas volcadas
@@ -235,13 +262,13 @@ INSERT INTO `usuarios` (`id_usuario`, `usuario`, `password`, `nombre`, `apellido
 -- Indices de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`id_categoria`);
+  ADD PRIMARY KEY (`id_Categoria`);
 
 --
 -- Indices de la tabla `cultivos`
 --
 ALTER TABLE `cultivos`
-  ADD PRIMARY KEY (`id_cultivo`);
+  ADD PRIMARY KEY (`id_Cultivo`);
 
 --
 -- Indices de la tabla `detallehacienda`
@@ -299,25 +326,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `cultivos`
 --
 ALTER TABLE `cultivos`
-  MODIFY `id_cultivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_Cultivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `detallehacienda`
 --
 ALTER TABLE `detallehacienda`
-  MODIFY `id_DetalleHacienda` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_DetalleHacienda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `detallesiembra`
 --
 ALTER TABLE `detallesiembra`
-  MODIFY `id_DetalleSiembra` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_DetalleSiembra` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `estadoproyecto`
@@ -335,7 +362,7 @@ ALTER TABLE `parcela`
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `id_Proyecto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_Proyecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tipoproyecto`
@@ -353,7 +380,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
