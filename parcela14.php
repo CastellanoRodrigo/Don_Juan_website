@@ -58,6 +58,17 @@ include "modelo/conexion.php";
 							  INNER JOIN Proyectos pr on p.id_Parcela = pr.id_Parcela
 							  WHERE p.id_Parcela = '7'");
 
+	/* 	CREO QUE DEBERIA TMB EN EL WHERE TENER EN CUENTA SOLO LOS PROYECTOS ACTIVOS POR LO TANTO SERIA ASI 
+
+		(" SELECT
+			 p.dimension, sum(pr.cantidadHas), p.dimension - sum(pr.cantidadHas), count(pr.id_Proyecto)
+			FROM parcela p
+			INNER JOIN Proyectos pr on p.id_Parcela = pr.id_Parcela
+			WHERE p.id_Parcela = '7' AND pr.id_Proyecto = '2'");
+	
+	*/
+
+
 	while ($myrow = $registros->fetch_row()) //mientras haya registros muestra la informacion
 			{
 
