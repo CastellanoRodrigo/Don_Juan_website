@@ -28,7 +28,7 @@ include "modelo/conexion.php";
 <!--ACA IRIA UN TITULO DICIENDO: PROYECTOS DE HACIENDA NO LO PUDE HACER  - cambie a posucion top-->
 <center>
 	<br>
-	<table border=2 width=400 style="background-color: white">
+	<table border=2 style="background-color: white">
 		<h2> COMPRAS REALIZADAS</h2>
 		<input  type="reset" value="PDF" style="width: 83px">
 		<input  type="reset" value="Excel" style="width: 83px">
@@ -46,8 +46,7 @@ include "modelo/conexion.php";
 			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 86px;">IVA</td>
 			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 86px;">Total</td>
 			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 97px;">Detalle</td>
-			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 162px;">FromaPago</td>
-			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 162px;">TipoCompra</td>
+			<td style="text-align:center;font-size:16pt;background-color:lightgreen;font-weight:bold; width: 162px;">FromaPago</td>			
 		</tr>
 </center>
 
@@ -57,7 +56,7 @@ $host = "localhost:3307";
 //$host = "localhost";
 $usuario = "root";
 $clave = "";
-$base = "sistema_dj";
+$base = "donjuandb";
 
 $cn = new mysqli($host, $usuario, $clave, $base);
 
@@ -67,9 +66,9 @@ $cn = new mysqli($host, $usuario, $clave, $base);
                 
 */
 
-$registros = $cn->query("SELECT c.Fecha, c.TipoFactura, c.PuntoDeVenta, c.NroFactura, c.TipoDocEmisor, c.NroDocEmisor, c.Proveedor,
-						c.TipoCambio, c.Moneda, c.ImporteNeto, c.IVA, c.ImporteTotal, c.Detalle, c.FormaPago, c.TipoCompra
-						FROM compras c");
+$registros = $cn->query("SELECT c.fecha, c.tipoFactura, c.puntoDeVenta, c.nroFactura, c.tipoDocEmisor, c.nroDocEmisor, c.proveedor,
+						c.tipoCambio, c.moneda, c.importeNeto, c.IVA, c.importeTotal, c.detalle, c.formaPago
+						FROM Compras c");
 
 while ($myrow = $registros->fetch_row()) //mientras haya registros muestra la informacion
 {
@@ -89,7 +88,7 @@ while ($myrow = $registros->fetch_row()) //mientras haya registros muestra la in
 			 <td style=text-align:right;>$myrow[11]</td>
 			 <td style=text-align:center;>$myrow[12]</td>
 			 <td style=text-align:center;>$myrow[13]</td>
-			 <td style= text-align:center;>$myrow[14]</td>
+			 
    	   	   </tr>";
 }
 

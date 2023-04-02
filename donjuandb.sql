@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 23-03-2023 a las 00:06:34
+-- Tiempo de generación: 02-04-2023 a las 20:55:00
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -43,6 +43,50 @@ INSERT INTO `categoria` (`id_Categoria`, `nombreCategoria`) VALUES
 (4, 'Novillo'),
 (5, 'Vaca'),
 (6, 'Toro');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compraproyecto`
+--
+
+CREATE TABLE `compraproyecto` (
+  `id_CompraProyecto` int(11) NOT NULL,
+  `id_Compras` int(11) NOT NULL,
+  `tipoCompra` varchar(45) NOT NULL,
+  `id_Proyecto` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compras`
+--
+
+CREATE TABLE `compras` (
+  `id_Compras` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `tipoFactura` varchar(45) NOT NULL,
+  `puntoDeVenta` int(11) NOT NULL,
+  `nroFactura` int(11) NOT NULL,
+  `tipoDocEmisor` varchar(45) NOT NULL,
+  `nroDocEmisor` int(11) NOT NULL,
+  `proveedor` varchar(45) NOT NULL,
+  `tipoCambio` varchar(45) NOT NULL,
+  `moneda` varchar(45) NOT NULL,
+  `importeNeto` decimal(10,0) NOT NULL,
+  `IVA` varchar(45) NOT NULL,
+  `importeTotal` decimal(10,0) NOT NULL,
+  `detalle` varchar(150) NOT NULL,
+  `formaPago` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `compras`
+--
+
+INSERT INTO `compras` (`id_Compras`, `fecha`, `tipoFactura`, `puntoDeVenta`, `nroFactura`, `tipoDocEmisor`, `nroDocEmisor`, `proveedor`, `tipoCambio`, `moneda`, `importeNeto`, `IVA`, `importeTotal`, `detalle`, `formaPago`) VALUES
+(1, '2022-11-06', 'B', 123, 789456, 'DNI', 13150131, 'lorinho', '330', 'USD', '1500', '12,5', '1785', 'probando esto', 'Transferencia');
 
 -- --------------------------------------------------------
 
@@ -207,8 +251,8 @@ CREATE TABLE `tipoproyecto` (
 --
 
 INSERT INTO `tipoproyecto` (`id_tipoProyecto`, `tipoProyecto`) VALUES
-(1, 'hacieda'),
-(2, 'siembra'),
+(1, 'Hacienda'),
+(2, 'Siembra'),
 (3, 'alquiler');
 
 -- --------------------------------------------------------
@@ -263,6 +307,18 @@ INSERT INTO `usuarios` (`id_usuario`, `usuario`, `password`, `nombre`, `apellido
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_Categoria`);
+
+--
+-- Indices de la tabla `compraproyecto`
+--
+ALTER TABLE `compraproyecto`
+  ADD PRIMARY KEY (`id_CompraProyecto`);
+
+--
+-- Indices de la tabla `compras`
+--
+ALTER TABLE `compras`
+  ADD PRIMARY KEY (`id_Compras`);
 
 --
 -- Indices de la tabla `cultivos`
@@ -327,6 +383,18 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `categoria`
   MODIFY `id_Categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `compraproyecto`
+--
+ALTER TABLE `compraproyecto`
+  MODIFY `id_CompraProyecto` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `id_Compras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cultivos`

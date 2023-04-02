@@ -129,8 +129,8 @@ if (empty($_SESSION["id_usuario"])) {
 						<div class="enlaces-subcategoria">
 							<button class="btn-regresar"><i class="fas fa-arrow-left"></i>Regresar</button>
 							<h3 class="subtitulo">Compras y Ventas </h3>
-							<a href="/Don_Juan_website/compras.php">Compras hacienda</a>
-							<a href="/Don_Juan_website/compras.php">Compras siembra</a>
+							<a href="/Don_Juan_website/altaCompras.php">Cargar Compra</a>
+							<a href="/Don_Juan_website/asignarCompra.php"> Asignar Compra</a>
 							<a href="/Don_Juan_website/verCompras.php">Ver compras</a>
 							<a href="/Don_Juan_website/subirDocumentos.php">Subir documentos</a>							
 						</div>
